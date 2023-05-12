@@ -1,0 +1,16 @@
+
+
+{
+    _id:ObjectId("asasdfbngjnvgmjk4546"),
+    tags:['roof','muscle','bath','temple','cable','raft' ]
+}
+
+we can query like this:-
+db.collections.find({tags:"roof"},{tags:1})
+or,
+db.collections.find({tags:["roof","temple","cable"]},{tags:1})
+here ,the orders of tags must be exactly same otherwise it will not match.
+solution of this problem is:-
+db.collections.find({tags:{$all:["roof","temple","cable"]}},{tags:1})
+
+

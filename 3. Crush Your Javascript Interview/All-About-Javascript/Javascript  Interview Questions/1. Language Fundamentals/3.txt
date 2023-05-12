@@ -1,0 +1,6 @@
+----------------What is Automatic Semicolon Insertion?--------------
+:-You must have used ";" many times in javascript code.
+:-Almost all lines are terminated by ";"
+:-If you forgot to write ";",then also javascript will not show any error.
+:- The Reason for not showing error is that,the compiler Automatically adds a Semicolon at the end of those lines.
+This feature is called ASI(Automatic Semicolon Insertion).

@@ -1,0 +1,4 @@
+$lookup:-
+it is an additional aggregation pipeline stage that can takes each document from 
+a collection ('to') and matches it to a document in another collection ('from').
+matching documents are added as an array of embedded documents

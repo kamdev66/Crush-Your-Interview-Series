@@ -1,0 +1,9 @@
+console.log(Number.POSITIVE_INFINITY);   //Infinity
+console.log(Number.NEGATIVE_INFINITY)   //-Infinity
+
+
+In javascript,the numbers are stored in 64-bit format. It means any value which cannot fit in the 64-bit format,will return Infinity.
+console.log(Number.MAX_VALUE*2);   //Infinity
+console.log(-Number.MAX_VALUE*2)   //-Infinity
+
+console.log(1/0)   //Infinity

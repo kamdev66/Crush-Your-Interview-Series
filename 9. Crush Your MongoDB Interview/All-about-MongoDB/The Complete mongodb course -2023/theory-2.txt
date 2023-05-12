@@ -1,0 +1,32 @@
+Replica Sets and Clusters:-
+
+:- Replica sets consist of 3 machines.
+There are 3 'instances' in a replica set and each 'instance' contains a full copy
+of the data in each instance.
+
+:- A sharded Cluster contains a group of replica sets.
+Sharded cluster contains:-
+1. Shard - containing a partition of data
+2. Mongos - interface between any application using mongodb and the sharded cluster.
+3. Config servers- store metadeta and configure settings.
+
+Suppose,you have a very large collection consisting of many many documents.mongodb 
+uses a shard key to distribute this collection across the shards.
+
+//jab large collection of data rhega to hum shard key ki help se isko small small 
+shard me distribute kr skte hai.
+
+Benefits of sharded Cluster:-
+fault tolerance:- 
+scalability:-by sharding the data we can increase the storage capacity
+move data closer to users(eg:- we can deploy  cluster to america or any place as well)
+
+NOTE:-
+Fault tolerance in MongoDB refers to the ability of the database system to 
+continue operating in the event of a failure, such as a hardware or network 
+outage, software error, or other unforeseen issue.
+MongoDB provides fault tolerance by using a distributed architecture 
+that enables replication and automatic failover. The system can replicate 
+data across multiple servers, called replicasets, so that if one server fails, 
+the remaining replicas can continue serving the application.
+

@@ -1,0 +1,25 @@
+-------------------------Akshay saini-----------------------------------------------
+
+:- Web storage api is used by developer to store the data into the web browser.
+:- this data is nothing but key value pair of strings.
+
+There are two mechanism to store the data;-
+1. Session storage
+2. Local storage
+
+When i say, the data is stored in session storage,that means the data is persisted only for particular session.
+
+It is very useful than cookies,Unlike cookies session storage data is not being sent to the server while making the network request.
+Session storage has larger capacity to hold the data.[min. 5 mb data we can store]
+
+In cookies, we can store only 4000 bytes of data.
+
+local storage is same as session storage but it not clears the data itself.It has higher capacity to store the data than session.
+here, capacity depends on what type of device you are using, what type of Browser you are using.
+
+Due to security reasons,they follow same origin policy.
+
+
+
+--------------------------------------Sofia Goyal-----------------------------------
+

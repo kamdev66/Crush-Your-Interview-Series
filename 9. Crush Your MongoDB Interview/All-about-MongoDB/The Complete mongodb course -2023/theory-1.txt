@@ -1,0 +1,23 @@
+TODO: - Import and Export data using terminal
+
+SYNTAX:-
+mongoexport --uri="" --collection= --out=
+here,
+uri=uniform resource identifier
+
+eg:-
+mongoexport --uri="mongodb+srv://kamdev:bholenath123@ecommerce.jqtely8.mongodb.net/test" --collection=categories --out=categories.json
+
+For import:-
+SYNTAX:-
+mongoimport --uri="" --collection= --file=
+
+eg:-
+mongoimport --uri="mongodb+srv://kamdev:bholenath123@ecommerce.jqtely8.mongodb.net/test" --collection=categories --file=categories.json
+
+
+
+NOTE:- we can also use mongodump and mongorestore for import and export data from terminal.
+But it exports in BSON format.and mongoimport and mongoexport does in JSON.
+
+BSON is not human readable.But It optimise speed and performance.

@@ -1,0 +1,214 @@
+TODO: What is CSS and what is it used for?
+:- CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is used to control the layout, formatting, and style of web pages and user interfaces written in HTML or XML.
+
+
+TODO: What is the difference between inline, internal, and external CSS?
+:- Inline CSS: Inline CSS is applied directly to a single HTML element using the `style` attribute. eg:- <p style="color: red; font-size: 16px;">This text is styled with inline CSS.</p>
+:- Internal CSS: Internal CSS is defined within the head section of an HTML document using the style tag. 
+:-  External CSS is defined in a separate stylesheet file, with the .css file extension. The external stylesheet is linked to the HTML document using the link tag within the head section. 
+
+
+TODO: What are selectors in CSS and how do they work?
+:- Selectors are patterns used to select and style HTML elements in CSS. CSS selectors allow developers to target specific elements on a web page and apply styles to them.
+:- Element Selector: Selects all instances of a specific HTML element, such as p, h1, ul, etc.
+:- Class Selector: Selects all elements with a specific class attribute value.
+:- ID Selector: Selects a single element with a specific ID attribute value.
+:- Attribute Selector: Selects elements with a specific attribute value.
+eg:- 
+a[target="_blank"] {
+  color: red;
+}
+:- Pseudo-class Selector: Selects elements based on their state, such as :hover, :active, and :visited.
+
+
+TODO: What is the difference between a class and an ID in CSS?
+:- In CSS, a class and an ID are both used to apply styles to HTML elements, but they have some important differences:
+:- ID: An ID is a unique identifier for an HTML element. Only one element on a web page can have a particular ID. IDs are used to target specific elements on a page with CSS and are defined using the id attribute in HTML.
+:- Class: A class is a way of grouping multiple HTML elements together and applying styles to all of them at once. Multiple elements on a web page can have the same class. Classes are defined using the class attribute in HTML.
+
+
+TODO: What is the difference between padding and margin in CSS?
+:-Padding: Padding is the space between an HTML element and its content. Padding is applied inside the border of an element
+:-Margin: Margin is the space between an HTML element and other elements on the page. Margin is applied outside the border of an element 
+
+
+TODO: How do you center an element horizontally and vertically in CSS?
+:- To center an element using flexbox, set the display property of the parent element to flex and use the justify-content and align-items properties to center the child element.
+:- To center an element using grid, set the display property of the parent element to grid and use the place-items property to center the child element.
+:- You can also center an element using absolute positioning by setting the top, bottom, left, and right properties to 0 and setting the margin property to auto.
+
+
+TODO: What are pseudo-classes in CSS ?
+:- a pseudo-class is a keyword that is used to select and style a specific state or condition of an element. Pseudo-classes are preceded by a colon (:) and are used to style elements based on user interaction, element state, or other criteria that cannot be expressed by a regular selector.
+:- :hover: This pseudo-class is used to select and style an element when the user hovers over it with their mouse.
+:- active: This pseudo-class is used to select and style an element when it is being clicked or activated by the user.
+:- focus: This pseudo-class is used to select and style an element when it has focus, such as when it is selected by the user using the keyboard.
+:- first-child: This pseudo-class is used to select and style the first child element of a parent element.
+:- nth-child(n): This pseudo-class is used to select and style the nth child element of a parent element.
+
+
+TODO: What is the difference between relative and absolute positioning in CSS?
+:- relative and absolute positioning are two ways to position elements on a webpage. 
+:- Reference point: When an element is positioned relatively, its position is determined relative to its normal position in the document flow. When an element is positioned absolutely, its position is determined relative to the nearest positioned ancestor element or to the initial containing block if there is no positioned ancestor.
+:- Impact on document flow: When an element is positioned relatively, it still takes up space in the document flow, and other elements will be positioned as if it were still in its normal position. When an element is positioned absolutely, it is removed from the document flow, and other elements will be positioned as if it were not there.
+:- Movement with scrolling: When an element is positioned relatively, it will move along with the rest of the document when the user scrolls. When an element is positioned absolutely, it will remain in the same position on the screen even when the user scrolls.
+
+
+TODO: What is the difference between a pseudo-element and a pseudo-class in CSS?
+:- a pseudo-class is a keyword that is added to a selector to specify a special state of the selected element, such as when it is hovered over, active, or visited. For example, the :hover, :active, and :visited pseudo-classes are used to define styles for elements in these specific states.
+:- a pseudo-element is used to style a specific part of an element, such as the first letter or line of a paragraph. Pseudo-elements are denoted by a double colon (::) preceding the name of the element. For example, the ::before and ::after pseudo-elements can be used to add content before or after an element.
+:- In summary, a pseudo-class is used to style an element based on its state or interaction, while a pseudo-element is used to style a specific part of an element.
+
+
+TODO: What is the CSS box-shadow property and how is it used?
+:- The CSS box-shadow property is used to add a shadow effect to an HTML element. It allows you to create a shadow that appears around the outside of an element's border.
+syntax:-
+{
+   box-shadow: h-shadow v-shadow blur spread color inset;
+}
+Where,
+h-shadow and v-shadow define the horizontal and vertical offset of the shadow, respectively.
+blur is the amount of blurring applied to the shadow.
+spread is the size of the shadow.
+color specifies the color of the shadow.
+inset is an optional keyword that specifies that the shadow should be inside the element instead of outside.
+
+
+TODO: What is the difference between the float and clear properties in CSS?
+:- float and clear properties are both used in CSS for page layout and positioning.
+:- float property is used to specify that an element should be moved to the left or right of its containing element and allows other content to wrap around it.
+:- clear property is used to control the flow of content around floated elements. It specifies whether an element should be placed below, above, or next to a floated element. When an element is cleared, it is moved down below any preceding floated elements. 
+
+
+TODO: How do you implement animations and transitions in CSS?
+:- Transitions are a way to change CSS property values smoothly over a specified duration. They can be triggered by user events such as hover or click. To implement transitions in CSS, you will need to use the transition property.
+syntax:-
+.box {
+  background-color: blue;
+  transition: background-color 0.5s ease;
+}
+:- Animations are a way to create more complex and custom effects than transitions. They can be used to create animations that are triggered by user events or that run automatically.
+:- To implement animations in CSS, you will need to use the @keyframes rule to define the animation and the animation property to apply it to an element.
+:- syntax:-
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.box {
+  animation: pulse 2s infinite;
+}
+
+
+TODO: What is the difference between the display and visibility properties in CSS?
+:- The display and visibility properties in CSS are used to control the visibility of elements on a web page, but they have different effects.
+:- The display property specifies how an element should be displayed. It determines whether an element is rendered as a block, inline, or inline-block element. It also determines whether an element takes up space in the document flow or not. When the value of display property is set to none, the element is removed from the document flow, and it does not take up any space on the page.
+:- The visibility property, on the other hand, controls whether an element is visible or not, but it does not affect the layout of the page. When the value of visibility property is set to hidden, the element is hidden, but it still takes up space on the page.
+
+
+TODO: How do you optimize CSS performance for faster page load times?
+:- Minimize CSS code: Remove any unnecessary white spaces, comments, and code that is not being used. This will reduce the size of the CSS file, resulting in faster page load times.
+:- Use CSS Preprocessors: CSS preprocessors like Sass and Less allow developers to use variables, mixins, and other features that make it easier to manage and organize CSS code. They also have built-in optimization features that can help reduce the size of the CSS code.
+:- Use CSS sprites: CSS sprites are images that contain multiple images. By using CSS sprites, multiple images can be loaded with a single HTTP request, which can reduce the page load times.
+:- Use CDN: A Content Delivery Network (CDN) can store your CSS files on multiple servers around the world, reducing the distance between the server and the user's device. This can result in faster page load times.
+:- Use media queries: Media queries can be used to create responsive designs that adjust the layout and styles based on the user's device. By using media queries, you can avoid loading unnecessary CSS code on devices that don't need it, which can reduce page load times.
+:- Use CSS caching: Set the Expires or Cache-Control header to allow browsers to cache the CSS file. This can reduce the number of requests made to the server, resulting in faster page load times.
+:- Use inline styles: Inline styles can be used to style elements on a page without the need for a separate CSS file. This can reduce the number of HTTP requests, resulting in faster page load times. However, this approach can make the code harder to manage and maintain.
+
+
+TODO: What is the CSS calc() function and how is it used?
+:- The CSS calc() function is used to perform mathematical calculations in CSS values. It takes an expression as its argument and evaluates it to produce a final value.
+:- The calc() function can be used in various CSS properties, such as width, height, padding, margin, font-size, and border-width. It allows you to perform calculations using different units, such as pixels, percentages, and ems.
+syntax:-
+.container {
+  width: calc(100% - 20px);
+}
+You can also use the calc() function to perform calculations between different units, 
+.text {
+  font-size: 16px;
+  line-height: calc(1.5 * 1em + 2px);
+}
+
+
+TODO: What is the CSS specificity rule and how does it affect style precedence?
+:- 
+
+
+TODO: what is meant by RGB stream ?
+
+
+TODO: what are the difference between bold and strong ?
+
+
+TODO: what is the disadvantage of using 'float'?how do we fix that ?
+
+
+TODO: How to create a circle with different border colors?
+
+
+TODO: How to manage z-index in an app ?
+
+
+TODO: Use case for using !important ?
+
+
+TODO: why is @import only at the top ?
+
+
+TODO: what is CSS flexbox?
+:- Flexbox is a CSS layout model that allows you to arrange elements in a flexible way, regardless of their size or content. It can be used to create complex layouts that respond to different screen sizes and devices.
+:- To use Flexbox, you need to set the display property of the container to "flex".
+
+TODO: Flex-direction:- By default, Flexbox arranges items horizontally in a row. However, you can change the direction of the items to be arranged vertically in a column
+eg:-
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+TODO: Arrange the items:- you can use various Flexbox properties to arrange the items inside it.
+justify-content: sets the alignment of the items along the main axis (horizontal for a row, vertical for a column)
+align-items: sets the alignment of the items along the cross axis (vertical for a row, horizontal for a column)
+flex-wrap: sets whether the items should wrap to a new line or stay on the same line
+flex-grow: sets how much an item should grow to fill the available space
+flex-shrink: sets how much an item should shrink when there isn't enough space
+flex-basis: sets the initial size of an item before any growing or shrinking occurs
+
+
+TODO: CSS GRID:- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TOPICS for video suggestions:-
+float 
+clear
+transition
+animations
+media queries
+grid
+css specificity
+SASS
+
+
+
+
+

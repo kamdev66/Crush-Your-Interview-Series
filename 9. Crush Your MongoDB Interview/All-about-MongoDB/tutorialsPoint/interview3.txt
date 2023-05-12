@@ -1,0 +1,122 @@
+what is projection in MongoDB??
+:- Projection is nothing but another name for selecting fields for showing or hiding.
+eg:- .find({<condition>},{"tax":1,"_id":0}) //_id:0 kiya hai mtlb id hat jayega
+db.students.find({name:"kabir"},{name:1}) //1 ka mtlb true hota hai,mtlb sirf name chahiye hame ,   //{name:1} is projection
+--------------
+
+why we need indexes?
+:- Indexes is the fastest way to find information.
+
+------------------
+STeps to craete backup of mongodb data:-
+step1:-first create a folder where you want to save your data
+step2:- Run the command "mongodump.exe"
+step3:- verify the data dump and folder correctly
+
+----------------
+difference between drop() and remove():-
+:-drop() function removes the specified collection from the database.
+:-remove() function deletes documents from a collection.
+
+---------------
+difference between createIndex and reIndex?
+:-createIndex() function builds an index on a collection.
+:-reIndex() function rebuilds all existing indexes on a collection.
+
+-----------------
+How to get system info on which mongodb is running?
+:- db.hostInfo() method returns a document with information about the system mongodb runs on.
+
+------------
+How to rename the collection?
+:- db.collection.renameCollection() method changes the name of a collection.
+
+------------
+jis tarah database me join ka concept hota hai,usi tarh mongodb me query population hota hai.
+
+----------------------------------------------------------------------------------------------------------------
+
+
+//Insert Data into mongodb /create
+db.playSchool.insertOne({"name":"kamdev"})
+
+//show all documents/read all data in database
+db.playSchool.find().pretty();
+
+//how to read data from database
+db.playSchool.findOne({"age":4})
+
+
+//how to find documents that don't contain a specified field or that field contains the null value.
+db.playSchool.find({"science":{$type:"null"}}); //isme science me null hoga
+db.playSchool.find({"science":{$exists:"false"}}); //isme science field hi nhi hai
+//jisme science me null ho aur science field v na ho ek saath krna hia to
+db.playSchool.find({"science":"null"}); 
+
+
+//how to find documents where the value of a field is equal to the specified value.
+db.thirtShop.find({color:"white"})
+or,
+db.thirtShop.find({color:{$eq:"white"}})
+
+//how to find documents where the value of a field is graeter than the specified value.
+db.thirtShop.find({price:{$gt:500})
+
+//how to find documents where the value of a field is graeter than or equal to the specified value.
+db.thirtShop.find({price:{$gte:500})
+
+
+//how to find documents where the value of a field is equal to the values specified in the array.
+db.thirtShop.find({color:{$in:["white,black"]}})
+
+
+//how to find documents that match all of the mentioned conditions:-
+db.thirtShop.find({$and:[{color:"white"},{price:{$gt:1000}}]})
+
+
+//how to find documents that match any of the mentioned conditions:-
+db.thirtShop.find({$or:[{color:"yellow"},{price:{$gt:800}}]})
+
+
+//how to find documents that do not match any of the mentioned conditions:-
+db.thirtShop.find({$nor:[{color:"yellow"},{price:{$gt:800}}]})
+
+
+//how to find documents that do not match the mentioned conditions:-
+db.thirtShop.find({price:{$not:{$gt:900}}})
+
+//how to compare fields from a document using Aggregation expression.
+:-db.abcBank.find({$expr:{$gt:["$prevBalance","$currBalance"]}})  //mtlb jiska prevbalance ,currBalance se jyada hai wo de dega
+
+
+//how to find documents that satisfy the specified JSON Schema?
+:-db.studentDetails.find({$jsonSchema:{required:["contact_no"],properties:{contact_no:{bsonType:"doube"}}}})
+
+
+//how to find docs where the value of a field divided by a divisor has the specified remainder
+:-db.Pens.find({pens:{$mod:[3,0]}}) //3 se divide karne par jiska remainder 0 aaye wo de dega
+
+
+//how to update or replace data in mongodb
+:-db.playSchool.updateOne({"name":"gaurav",{$set:{"name":"gaaurav"}}})  //gaurav se gaaurav kr dega
+
+
+//currentdate in mongodb
+
+
+//how to delete a attribute
+:-db.customers.updateOne({},{$sunset:{productsInCart:1}})
+
+//how to rename attribute
+:-db.customers.updateOne({},{$rename:{"Name":"DEV"}}) //jo bhi pahle name tha,usko change karke DEV kr dega
+
+
+//correct way of incrmenting stored value
+:-db.abcBank.updateOne({"name":"sonu"},{$inc:{"amount":+5000}})
+
+//correct way of decrementing stored value
+:-db.abcBank.updateOne({"name":"sonu"},{$inc:{"amount":-5000}})
+
+
+//insert document using update() method
+

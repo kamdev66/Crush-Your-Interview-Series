@@ -1,0 +1,11 @@
+Introduction to indexes:-
+
+what is collscan?
+:- A collscan is one where every document in the collection is scanned.
+
+
+Indexes uses B-tree structure.
+SYNTAX:- 
+db.collection.createIndex(keys,options);
+eg:-
+db.people.createIndex({first:1,last:-1},{unique:true})

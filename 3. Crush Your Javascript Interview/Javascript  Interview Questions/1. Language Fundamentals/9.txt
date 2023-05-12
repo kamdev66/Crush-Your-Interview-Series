@@ -1,0 +1,38 @@
+--------------Function Currying--------------
+:- Currying is a unique way to call inner function where we can pass arguments partially or pass multiple arguments in a function but 1 argument at a time.
+
+1st method:-
+const sum=function(a){
+  return function(b){
+    return a+b;
+  }
+}
+const cl=sum(5);
+const ans=cl(6)
+console.log(ans);   //11
+
+
+2nd method:-
+const sum=function(a){
+  return function(b){
+    return a+b;
+  }
+}
+const ans=sum(5)(10); //5 jayega parent function me,10 jayega child function me
+console.log(ans);   //15
+
+
+3rd method by using arrow function:-
+const sum=a=>b=>a+b;
+const ans=sum(5)(10); //here,a=5,b=10
+console.log(ans);   //15
+
+
+
+
+
+
+
+
+
+

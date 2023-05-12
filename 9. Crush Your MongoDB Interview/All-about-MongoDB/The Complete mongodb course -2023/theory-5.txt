@@ -1,0 +1,13 @@
+Querying Embedded documents:-
+
+:-How we can query Embedded documents?
+eg:-
+{
+    name:"react JS",
+    slug:"react-js",
+    address:{city:'bangalore',place:'rajajinagar',street:"123"}
+}
+:-db.collection.find({street:"123})//this will not return anything
+we have to do like this:-
+db.collection.find({address.street:"123})
+

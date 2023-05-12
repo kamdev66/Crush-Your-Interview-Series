@@ -1,0 +1,21 @@
+Cloudinary and EJS
+------------------------------------------
+ejs:- template engine 
+cloudinary:-Cloudinary is an amazing product for storing, transforming, and optimizing your media. By using Cloudinary, you can optimize your images and make your websites faster and increase user experience.
+
+Alternatives of cloudinary:- AWS,Azure,Firebase,self hosted
+
+npm install ejs
+for using ejs,we need to set this middleware(ejs)
+app.set('view engine','ejs')
+now,its important that we should have a directory 'views'.
+
+
+Logger in nodejs:-
+:- Node. js logging is an important part of supporting the complete application life cycle.
+:- we can resolve bugs much quicker, and detect problems early using Logger.
+we will use a logger named "morgan"
+npm i morgan
+
+
+

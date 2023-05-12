@@ -1,0 +1,241 @@
+TODO:--Valid Parentheses----TODO:
+
+class Solution {
+    public boolean isValid(String s) {
+        Stack<Character>st=new Stack<>();
+        
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            
+            if(ch == '(' || ch == '[' || ch == '{'){
+                st.push(ch);
+            }
+            else{
+                if(st.isEmpty()) return false;
+                if (ch == ')' && st.peek() == '('){
+                  st.pop();  
+                }
+                else if (ch == '}' && st.peek() == '{'){
+                  st.pop();  
+                }
+            else if (ch == ']' && st.peek() == '['){
+                  st.pop(); 
+                }
+            else{
+              break;
+            }
+            }
+            }
+         return st.isEmpty();   
+    }   
+}
+
+
+TODO:-----Majority Element------TODO:
+
+Merge k Sorted Lists
+
+longest substring without repeating characters 
+
+Two Sum
+
+Product of Array Except Self
+
+Longest Palindromic substring
+
+Maximum Subarray
+
+Shuffle an Array
+3Sum Closest
+LRU Cache
+Best Time to Buy and Sell Stock
+Copy List with Random Pointer
+
+Word Ladder II
+Convert Sorted List to Binary serach tree
+String to Integer (atoi)
+Merge Two Sorted Lists
+Maximum Product Subarray
+Generate Parentheses
+Word Ladder
+Lowest Common Ancestor of a binary tree
+Remove Nth Node From End of List
+Jump Game II
+Longest Increasing Subsequence
+Single Element in a Sorted Array
+Sliding Window Maximum
+Group Anagrams
+Min Stack
+Minimum Window Substring
+Median of Two Sorted Arrays
+Reverse Linked List
+Longest Palindromic Subsequence
+Integer to English Words
+Integer to Roman
+Number of Distinct Islands
+Two Sum II
+Add Two Numbers
+Kth Smallest Element in a BST
+Maximal Rectangle
+Top K Frequent Elements
+Search in Rotated Sorted Array
+Kth Largest Element in an Array
+Add Two Numbers II
+Longest Valid Parentheses
+Balanced Binary Tree
+Delete Node in a BST
+Encode and Decode TinyURL
+Implement Queue using Stack
+Smallest Range Covering Elements from k Lists
+Valid Palindrome
+Happy Number
+First Unique Character in a String
+Most Common Word
+Add Binary
+Trapping Rain Water
+Lowest Common Ancestor of a BST
+Largest Rectangle in Histogram
+Implement strStr()
+Sort Colors
+Search a 2D Matrix
+Missing Number
+Single Number
+Binary Tree Right Side View
+Largest Number
+Robot Return to Origin
+Game of Life
+Reorder List
+Daily Temperatures
+Single Number II
+Unique Paths II
+Letter Combinations of a Phone Number
+First Missing Positive
+Remove Duplicates from Sorted List
+Remove Duplicates from Sorted List II
+Palindrome Number
+Valid Anagram
+Search a 2D Matrix II
+Compare Version Numbers
+Intersection of Two Arrays
+Minimum Size Subarray Sum
+Subarray Sum Equals K
+3Sum
+Container With Most Water
+Reverse Integer
+Roman to Integer
+Intersection of Two Linked Lists
+Merge Intervals
+Count and Say
+Merge Sorted Array
+Average of Levels in Binary Tree
+Spiral Matrix
+Unique Paths
+Rotate Image
+Insert Interval
+Spiral Matrix II
+Perfect Squares
+Linked List Cycle
+Best Time to Buy and Sell Stock II
+Find the Closest Palindrome
+Reverse Words in a String
+Find Minimum in Rotated Sorted Array
+Remove Duplicates from Sorted Array
+Shortest Unsorted Continuous Subarray
+Sqrt(x)
+Swap Nodes in Pairs
+Set Matrix Zeroes
+Move Zeroes
+Count Primes
+Simplify Path
+Next Greater Element II
+Find the Duplicate Number
+Next Permutation
+Fizz Buzz
+Rectangle Overlap
+Longest Consecutive Subsequence
+Pascal's Triangle
+Reverse String
+Remove Linked List Elements
+Reverse Words in a String III
+Majority Element II
+Minimum Path Sum
+Find Pivot Index
+Find First and Last Position of an Element in sorted Array
+Longest Common Prefix
+Basic Calculator III
+Find All Anagrams in a String
+Palindrome Linked List
+Intersection of Two Arrays II
+Contains Duplicate
+Partition List
+Max Consecutive Ones
+Reverse Linked List II
+Search in Rotated Sorted Array
+Palindrome Pairs
+String Compression
+ZigZag Conversion
+One Edit Distance
+Find the Celebrity
+Sort List
+Contains Duplicate II
+Find Peak Element
+Ransom Note
+4Sum
+Best Meeting Point
+Shortest Word Distance
+Group Shifted Strings
+Basic Calculator II
+Add Strings
+Rotate Array
+Maximum Width of Binary tree
+Global and Local Inversions
+Boats to Save People
+Find All Duplicates in an Arrays
+Insert into a Sorted Circular Linked List
+Maximize Distance to Closest person
+Sliding Window Median
+Middle of the Linked List
+Valid Triangle Number
+Peak Index in a Mountain Array
+Next Greater Element III
+Prison Cells After N Days
+Maximum Frequency Stack
+Fibonacci Number
+Squares of a Sorted Array
+Max Consecutive Ones III
+Next Greater Node In Linked List
+Two Sum Less Than K
+Valid Number
+Backspace String Compare
+Capacity To Ship Packages within d Days
+Contiguous Array
+Repeated String Match
+Longest Duplicate Substring
+Number of Atoms
+Find Minimum in Rotated Sorted array II
+Interval List Intersections
+Length of Longest Fibonacci Subsequence
+Find Common Characters
+Uncommon Words from Two sentences
+Verifying an Alien Dictionary
+Asteroid Collision
+replace-elements-with-greatest-element-on-right-side
+132 Pattern
+Pancake Sorting
+Minimum Domino Rotations For Equal Row
+Defanging an IP Address
+Time Based Key-Value Store
+Maximum Sum of Two Non-Overlapping Subarrays
+Minimum Remove to Make Valid Parentheses
+Find Winner on a Tic Tac Toe game
+Count Number of Nice Subarray
+Snapshot Array
+Minimum Swaps to Make Strings Equal
+Remove Sub-Folders from the file system
+Word Subsets
+How Many Numbers Are Smaller Than the Current Number
+Longest String Chain
+Bulb Switcher III
+Online Stock Span
+
+

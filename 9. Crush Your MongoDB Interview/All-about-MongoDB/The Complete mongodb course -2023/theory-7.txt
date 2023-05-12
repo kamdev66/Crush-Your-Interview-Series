@@ -1,0 +1,4 @@
+Update Documents:-
+
+Upsert:-upsert takes a boolean value and bydefault it set to false.
+db.collections.updateMany({name:"dev"},{{$set:"sdf"}},{upsert:true})

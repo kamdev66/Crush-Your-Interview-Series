@@ -1,0 +1,4 @@
+what is middleware
+----------------------
+:- It is a functionality injected in between
+:- middleware are just something that happens in between ,we can stop the entire execution flow of the application based on if that thing is not present or we can do other thing. 

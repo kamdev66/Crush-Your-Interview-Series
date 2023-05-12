@@ -1,0 +1,5 @@
+download mysql:- 
+step 1:- sudo apt update
+step 2:- sudo apt install mysql-server
+step 3:- mysql -u root -p or sudo mysql -u root -p
+

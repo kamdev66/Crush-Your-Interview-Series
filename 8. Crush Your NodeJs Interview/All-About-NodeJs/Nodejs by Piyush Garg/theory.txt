@@ -1,0 +1,10 @@
+Authentication Patterns:-
+1. Stateful:- which maintains state or data on server side
+2. Stateless:- which has no state.
+
+
+How to transfer uid?
+:-we can pass uid in cookies or headers from the server.
+
+flow:- client -> Auth Middleware(checks for cookie value or uid,if valid calls next() else rejects the request) -> endpoint route
+

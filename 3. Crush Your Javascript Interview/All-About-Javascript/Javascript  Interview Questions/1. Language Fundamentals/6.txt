@@ -1,0 +1,23 @@
+--------When do you get NaN as output---------------
+:- NaN is  a global property representing "Not-a-Number".
+:- we normally get this error when there is a non numeric value or operation performed.
+
+:- isNaN() is a function which returns true or false depending on the expression.
+
+let a=5;
+let b="value";
+console.log(a*b)  //NaN
+
+
+let a=5;
+let b="value";
+console.log(isNaN(a*b))  //true
+
+
+console.log(NaN==NaN)   //false
+console.log(NaN===NaN)   //false
+
+
+what is the difference between isNaN() and isFinite() method?
+:- isNaN() checks whether the value is Not-A-Number or not.
+:- isFinite() checks for NaN as well as infinity values.

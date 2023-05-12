@@ -1,0 +1,28 @@
+---------------------Template literal-------------------
+:- Tempalte literal is a newer way to declare a string 
+let str=`Kamdev Kumar`
+console.log(str)   //Kamdev Kumar
+
+
+let a=50;
+let str=`Kamdev Kumar ${a}`
+console.log(str)   //Kamdev Kumar 50
+
+:---->Tempalte literal helps you to store the format as it is then escape sequence is not required for special characters/spaces/new lines.
+let str=`first line 
+                    second line 
+                               Third line`
+console.log(str);  
+/*
+output:-first line 
+                    second line 
+                               Third line
+
+
+*/
+
+
+
+
+
+

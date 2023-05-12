@@ -1,0 +1,48 @@
+------------------Date and Time Basics-----------------------------
+
+:- The Date() object is used to deal with both date and time.
+
+:-There are different ways to use it with different arguments.
+
+:- There are 4 ways to create a date object :-
+
+1. Date():- returns the current date and time along with the local time zone.
+Syntax:- new Date()
+
+const dt=new Date()
+console.log(dt);  //2022-07-30T12:43:55.287Z or Sat Jul 30 2022 18:22:40 GMT+0530 (India Standard Time)
+
+There are two time zone:-
+1. Local time zone
+2. UTC(Universal time Coordinated)
+
+
+2. Syntax:- new Date(year,month,day,hours,minutes,seconds,milliseconds)
+This way is more preferrable & better way to deal with dates.
+
+const dt=new Date(2020,8,23,11,5,3);
+console.log(dt);  //here, numbers are index with 0, i.e. january-0 & 11-december
+//output:- Wed Sep 23 2020 11:05:03 GMT+0530 (India Standard Time)
+
+
+3. Syntax:- new Date(milliseconds) //In javascript, this milliseconds starts from  1st january 1970.
+const dt=new Date(1);
+console.log(dt); //Thu Jan 01 1970 05:30:00 GMT+0530 (India Standard Time)
+
+
+
+const dt=new Date();
+console.log(dt.getTime()); //1659185924756 , ye millisecond me hai 
+const date=new Date(1659185924756)
+console.log(date);   //Sat Jul 30 2022 18:28:44 GMT+0530 (India Standard Time)
+
+
+4. Syntax:- new Date("2020-8-23")
+const dt=new Date("2020-8-23")
+console.log(dt)   //Sun Aug 23 2020 00:00:00 GMT+0530 (India Standard Time)
+
+
+
+
+
+

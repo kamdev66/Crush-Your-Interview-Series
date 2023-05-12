@@ -1,0 +1,11 @@
+- shortest program of javascript is an empty file
+
+-what is CDN ?
+:-> 
+
+
+
+
+
+
+

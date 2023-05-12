@@ -1,0 +1,69 @@
+--------------add,remove,insert,replace in array---------------------------
+
+:- there are 4 most known methods to add or remove elements:-
+1.push()
+2.pop()
+3. shift()
+4.unshift()
+
+:-push and unshift are used to add elements:-
+Syntx of push:-
+arrName.push(element1,[element2,element3]);
+------>push() method adds 1 or more element at the end of the array
+------>unshift() method adds 1 or more element at the beginning of an array.
+
+
+:- pop() and shift() method are used to remove elements.
+------>pop() method removes last element from an array
+------>shift() method removes first element of an array
+
+let arr=[1,2,3,4];
+console.log(arr.push(5)); //5 bcoz size becomes 5 after adding
+console.log(arr);         //[1, 2, 3, 4, 5]
+
+
+let arr=[1,2,3,4];
+console.log(arr.unshift(5)); //5 bcoz size becomes 5 after adding
+console.log(arr);         //[5, 1, 2, 3, 4]
+
+
+
+let arr=[1,2,3,4,10];
+console.log(arr.pop());   //10 bcoz it removes 10 from an array
+console.log(arr);         //[1, 2, 3, 4]
+
+
+let arr=[1,2,3,4,10];
+console.log(arr.shift());   //1 bcoz it removes 1 from an array
+console.log(arr);         //[2, 3, 4, 10]
+
+
+:------>>>>>splice():-splice method can add,insert,replace,or remove one or more eements.
+Syntax of splice():-
+arrName.splice(start,[deleteCount[value1,....valueN]]);
+
+let arr=[1,2,3,4,10];
+console.log(arr.splice(2));  // [3, 4, 10] is deleted from an array
+console.log(arr);         //[1, 2]
+
+
+let arr=[1,2,30,4,10,100,25,10];
+console.log(arr.splice(2,3));  // [30, 4, 10] is deleted from an array
+console.log(arr);         //[1, 2, 100, 25, 10]
+
+let arr=[1,2,30,4,100];
+console.log(arr.splice(2,1,"kamdev"));  // [30] will be removed
+console.log(arr);         //[1, 2, "kamdev", 4, 100]​, after 30 will removed,then kamdev will add at the same position
+
+let arr=[1,2,30,4,100];
+console.log(arr.splice(2,1,"kamdev","sonu"));  // [30] will be removed
+console.log(arr);         //[1, 2, "kamdev", 4, 100]​, after 30 will removed,then kamdev and sonu will be added at the same position
+
+
+Ques:- What does splice() method return?
+:- It returs deleted items,if there is nothing to delete then it will return an empty array.
+
+
+
+
+

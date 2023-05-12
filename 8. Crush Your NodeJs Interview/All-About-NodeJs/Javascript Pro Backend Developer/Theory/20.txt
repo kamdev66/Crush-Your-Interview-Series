@@ -1,0 +1,15 @@
+What is Swagger and API Docs:-
+-------------------------------
+:- API documentation is essential part of writing API.
+we will use swagger for api documentation.
+● Swagger is an open-source software framework backed 
+by a large ecosystem of tools that helps developers design, 
+build, document, and consume RESTful Web services. 
+● Swagger allows you to describe the structure of your APIs 
+so that machines can read them.
+
+learn about swagger:-
+https://swagger.io/docs/specification/basic-structure/
+https://swagger.io/specification/
+
+ 

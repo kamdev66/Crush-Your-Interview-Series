@@ -1,0 +1,41 @@
+--------------what is event bubbling and event capturing--------------------------------
+
+:- event.target returns the reference of element which raised the event.
+:-The default path of Event propagation is bottom to top.
+
+:- Event Bubbling:- A bubble has a tendency to go up from the bottom,that's why we say it as "Event Bubbling".
+
+:- In Case if you want to stop the default propagation i.e. bottom to top, we can use event.stopPropagation().
+
+:- Event Capturing:- In case if we want to change this default propagation path, and we make it top to bottom , is called "Event Capturing".
+
+:- for capture phase, we have to use addEventListener() method to bind the event.
+:- Capturing phase means top to bottom.
+
+:- There are few events which do not get propagated like focus event.
+
+
+
+Ques:-Which is default propagation path?
+:- The default propagation path is bottom to top i.e."Bubbling".
+
+Ques:-How can you stop the event propagation?
+:- event.stopPropagation() method helps to stop the propagation.
+
+Ques:- How can you change the default propagation path?
+:- addEventListener("click",btnClick,true); //btnClick is function here
+
+Ques:- How can you get the reference of element on which event is fired?
+:- event.target,event.target.name,event.target.value
+
+
+
+
+
+
+
+
+
+
+
+

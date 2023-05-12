@@ -1,0 +1,8 @@
+I want an application that :-
+     :- returns username,followers and follows 
+     :- returns active time and date when request is made
+     :- return value from URL as testing for API learners.
+
+
+let's plan the structure using mindmap tool like:-miro
+

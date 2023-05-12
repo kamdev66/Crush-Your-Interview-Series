@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="txt">Waiting.......</h1>
+    <button onclick="startTimer()">Start Timer</button>
+    <button onclick="stopTimer()">Stop Timer</button>
+    <script>
+        let cnt=0;
+        let tObj;
+        function startTimer(){
+        tObj= setInterval(() => {
+                document.getElementById("txt").innerHTML=cnt;
+                cnt++;   
+            }, 1000);
+        }
+        
+        function stopTimer(){
+            clearInterval(tObj);
+        }
+    </script>
+</body>
+</html>

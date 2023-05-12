@@ -1,0 +1,7 @@
+Creating Model for Auth System:-
+---------------------------------
+
+Building Authentication System:- It has mainly 3 components:-register,login,restrcted routes
+restricted routes:- are the routes that can only accessed by after  login.
+
+Usually,Model name has first uppercase letters and singular. eg:- User

@@ -1,0 +1,73 @@
+----------------Extraction methods-----------------------------------
+:- we can divide the extraction method in 2 main category:-
+1. String Extraction methods
+2. Character Extraction methods
+
+:----There are 3 methods which helps to extract strings:-
+1. Slice
+2. Substr
+3. Substring
+
+
+:---1. Slice:- Slice method returns the extracted part as a new string.
+Syntax:- str.slice(startIndex,[endIndex])
+
+
+let str="Kamdev Kumar";
+console.log(str.slice(4))  //ev Kumar
+
+
+let str="Kamdev Kumar";
+console.log(str.slice(-4))  //umar, here index starts from last
+
+
+let str="Kamdev Kumar";
+console.log(str.slice(4,9))  //ev Ku
+
+
+
+_--------------------Substr----------------
+Syntax:- str.substr(startIndex,noOfCharacters)
+
+let str="Kamdev Kumar";
+console.log(str.substr())     //Kamdev Kumar
+console.log(str.substr(4))    //ev Kumar
+console.log(str.substr(4,5))   //ev Ku
+
+
+
+------------------------Substring----------------------------------
+Syntax:- str.substring(startIndex,endIndex);
+
+let str="Kamdev Kumar";
+console.log(str.substring())     //Kamdev Kumar
+console.log(str.substring(4))    //ev Kumar
+console.log(str.substring(4,5))   //e
+
+
+
+-------------------------Character Extraction methods--------------------------------
+1.charAt():- return character
+2.charCodeAt():- returns integer unicode values between 0 and 65535
+
+
+let str="Kamdev Kumar";
+console.log(str.charAt())         //K, bcoz it takes 0 as default
+console.log(str.charAt(4))        //e
+console.log(str.charCodeAt())     //75
+console.log(str.charCodeAt(4))     //101
+
+
+we can also extract like this:-
+let str="Kamdev Kumar";
+console.log(str[5])    //v         //here string looks like an array,but actually it's not.
+
+
+
+
+
+
+
+
+
+

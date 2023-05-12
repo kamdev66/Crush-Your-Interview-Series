@@ -1,0 +1,9 @@
+Razorpay Project:-
+----------------------
+https://razorpay.com/docs/payments
+
+https://razorpay.com/docs/api/orders/#create-an-order
+
+:- npm i razorpay
+
+for frontend integration:- https://razorpay.com/integrations

@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "job-matcha",
+    "slug": "job-matcha",
+    "extra": {
+      "eas": {
+        "projectId": "9b6a6517-5d65-4434-bc88-cfd4ee5de788"
+      }
+    },
+    "android": {
+      "package": "com.kamdev77.jobmatcha"
+    }
+  }
+}

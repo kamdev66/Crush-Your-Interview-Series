@@ -1,0 +1,26 @@
+change script in package.json file
+
+"scripts": {
+    "start": "node index.js"
+  },
+now,we can run using npm start or node index.js
+
+dev dependencies:- only work in development not for production
+eg:- npm i nodemon
+"scripts": {
+    "start": "nodemon index.js"
+  },
+
+
+------first express app-----------
+step1:- import express 
+const express = require('express')
+
+step2:- make an app instance
+const app = express()
+
+step3:- define port number
+const PORT = 4000 || process.env.PORT
+
+step4:- as we import express,it allows us to listen . 
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}!`))

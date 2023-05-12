@@ -1,0 +1,28 @@
+------------AJAX & XMLHttpRequest------------------------------
+:- AJAX :- we can fetch the data from the server and display without refreshing the entire page.
+:- AJAX is all about making an HTTP call to the API or REST API and that too without refreshing the page.
+:- Javascript gives the "Fetch API" nowadays to make an AJAX call.
+:- Earlier we use XMLHttpRequest.
+AJAX:- Asynchronus Javascript & XML.
+
+Syntax:- 
+XMLHttpRequest.open(method,URL,[async,user,password])
+
+:- XHR object's methods like:-open() & send().
+:- XHR object's event like:- load
+:- XHR object's property like:-response
+
+---------------------
+let request=new XMLHttpRequest();
+request.open("GET","https://jsonplaceholder.typicode.com/comments");
+request.responseType='json';
+request.send();
+request.onload=function(){
+if(request.status===200){
+console.log(request.response);
+}else{
+console.log("Inavalid Request")
+}
+}
+
+--------------------

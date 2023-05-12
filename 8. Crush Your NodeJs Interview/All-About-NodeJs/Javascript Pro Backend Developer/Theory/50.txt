@@ -1,0 +1,27 @@
+Protecting the Route:-
+------------------------
+steps:-
+use middleware
+check for token presence
+verify the token
+extract info from payload
+next()
+
+//auth.js
+Note:- the place where we look for the token is "header".specifically in Authorization.
+eg:-req.header('Authorization')
+In this authorization,we will get Bearer (space) Token but we only want token.so,we will replace 'Bearer(space) with nothing.eg:- 
+eg:- req.header('Authorization').replace('Bearer ', '')//yaha par bearer k bad space hai
+Ye token cookies me v aa skta hai
+eg:- req.cookies.token
+ye body me v aa skta h(very rarely)
+eg:- req.body.token
+Note:- Token ko hum URL me v send kr skte hai
+----------------
+
+Mobile vs Web
+-----------
+Just send the token to frontend
+Send in cookie, httpOnly
+In headers
+body

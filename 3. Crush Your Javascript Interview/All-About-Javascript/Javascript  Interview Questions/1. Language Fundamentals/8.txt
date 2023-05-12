@@ -1,0 +1,33 @@
+--------How does a closure work in javascript?--------
+:- when function comes under another function , a "closure" is created.
+
+function outer(){
+  function inner(){
+    console.log("Inner called"); //ReferenceError: inner is not defined,bcoz scope for inner function is inside the outer function.
+  }
+}
+inner()
+
+
+1st method:-
+function outer(){
+  function inner(){
+    console.log("Inner called"); // Inner called
+  }
+  inner()
+}
+outer()
+
+2nd method:- 
+function outer(){
+  function inner(){
+    console.log("Inner called"); // Inner called
+  }
+  return inner;
+}
+const cl=outer();
+cl() 
+console.log(cl)   //ƒ inner()
+
+
+:- Closure is useful when you want to make few private members available globally when needed. 

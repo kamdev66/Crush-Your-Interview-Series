@@ -1,0 +1,38 @@
+JSON stands for javascript object notation.
+JSON is a format for storing and transporting data.
+JSON is often used when data is sent from a server to a web page.
+JSON is lightweight data interchange format.
+JSON is language independent.
+
+
+in JSON,values must be one of the data types:-
+string
+number
+an object(JSON object)
+array
+boolean
+null
+
+JSON values cannot be one of the following data types:-
+function
+date
+undefined
+
+
+const obj={
+    "firstName":"Kamdev",
+    "lastName":"kumar"
+}
+
+obj.firstName="Sonu" //Modify value
+
+obj.middleName="Singh" //add new key value pair
+
+delete obj.middleName //delete key value pair
+
+-----------------------------------------------------------------
+
+var sendData={"name":"kamdev","age":18};
+var changeData=JSON.stringify(sendData) //it converts javascript object into string
+JSON.parse(changeData)  //it converts our data into Javascript object.
+

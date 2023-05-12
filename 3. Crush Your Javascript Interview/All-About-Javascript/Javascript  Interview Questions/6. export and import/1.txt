@@ -1,0 +1,5 @@
+--------------------------import and export-------------------------------
+:-Javascript gives you a way to create a module,which you can export or import as per your requirement.
+:- Module means dividing your code into various logical pieces & importing them when required.
+
+:- when import and export statements running on local machine,you need to have a server.

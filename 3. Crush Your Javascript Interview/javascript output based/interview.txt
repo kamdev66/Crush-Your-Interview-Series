@@ -1,0 +1,321 @@
+CRUSH YOUR JAVASCRIPT INTERVIEW:- 
+Hello everyone! Welcome to DSA n Dev.
+We're continuing with our "Crush Your JavaScript Interview" series with another challenging question.
+Today,we're tackling another question from the "Crush Your JavaScript Interview" series.
+Let's get started with another question from the "Crush Your JavaScript Interview" series.
+
+TODO: 
+function fun1(){
+return {
+  Intro:'Javascript Lover'
+}
+}
+
+function fun2(){
+return 
+{
+  Intro:'React Lover'
+}
+}
+console.log(fun1());  //{Intro: "Javascript Lover"}
+console.log(fun2());  //undefined
+
+:- undefined means created a memory,but doesn't store anything into it.
+Note:- "In JavaScript, while the use of semicolons is optional, they are automatically 
+added after return statements."
+
+
+TODO: 
+console.log(num);  //undefined bcoz of hoisting
+var num=1000;
+console.log(num);  //1000
+
+console.log(num);  
+const num=1000;    //will give referenceError - can't access num before initialization
+console.log(num);  
+
+console.log(num);  
+let num=1000;     //will give referenceError - can't access num before initialization
+console.log(num);  
+
+Note:- What is Hoisting?
+:- Hoisting is a concept in JavaScript where variables and function 
+declarations are moved to the top of their scope.
+ In other words, it allows you to use a variable or a function before it's declared in the code. 
+
+TODO: 
+//How do you convert a string to an int?
+In JavaScript, we can convert a string to an integer using the parseInt() function:
+let str = "123";
+let num = parseInt(str);
+console.log(num); // Output: 123
+
+or,we can also use the Number() function.
+let str = "123";
+let num = Number(str);
+console.log(num); // Output: 123
+
+Note: If the string can't be converted into a valid number, both parseInt() and Number() will 
+return NaN (Not-a-Number).
+eg:- 
+let str = "123ab";
+let num = Number(str);
+console.log(num); // Output: NaN
+
+
+TODO: INTERVIEW-4
+//what is the use of JSON.parse() and JSON.stringify():-
+JSON.stringify() takes a JavaScript object and returns a JSON string.
+let playlist = {
+    name: "Crush Your JavaScript Interview",
+    video: 30
+  };
+  let jsonString = JSON.stringify(playlist);
+  console.log(jsonString); //{"name":"Crush Your JavaScript Interview","video":30}
+
+JSON.parse() takes a JSON string and converts it back into a JavaScript object. 
+let playlist = '{"name":"Crush Your Javascript Interview","video":30}';
+let obj = JSON.parse(playlist);
+console.log(obj);
+
+TODO: INTERVIEW-5
+// method1:-
+console.log(Math.min(1,3,5)) // 1
+var array=[1,3,5]
+console.log(Math.min(array)) //NaN
+console.log(Math.min(...array)) //1
+
+// method2:-
+console.log(Math.min.apply(null,[10,35,54])) //10 
+
+// method3:-
+const arr1 = [11,30,53,78,98,56,47,41];
+let minVal = arr1[0]; let maxVal = arr1[0];
+for(var i = 1; i < arr1.length; i++){
+    if(arr1[i] < minVal){ //3<1 //53<0
+        minVal = arr1[i];
+    }
+    if(arr1[i] > maxVal){ //3>1 //53>0
+        maxVal = arr1[i]; //3 //53
+     }
+}
+console.log(minVal); //11
+console.log(maxVal);  //98
+
+
+// method4:-
+var arr2 = [ 30,47,54,23,45,78,78,98 ].sort((a,b)=> { return a - b });
+    mini = arr2[0],  // min
+    maxi = arr2[arr2.length-1];
+console.log(mini, maxi);   //23 98
+
+// method5:-
+let arr3 = [11, 22, 73, 44, 83, 20, 0];
+let maxNum = arr3.reduce((prev, current) => {
+  return Math.max(prev, current)
+});
+let minNum = arr3.reduce((prev, current) => {
+  return Math.min(prev, current)
+});
+console.log(minNum); //0
+console.log(maxNum);  //83
+
+
+TODO: INTERVIEW-6:
+//Reverse an Array
+
+//Method 1:-
+var a = [1, 2, 3, 4, 5];
+a.reverse();
+console.log(a); //[5, 4, 3, 2, 1]
+
+//method 2:-
+function Reverse(originalArray) {
+  let leftIndex = 0;
+  let rightIndex = originalArray.length - 1;
+
+  while (leftIndex < rightIndex) {
+    let temp = originalArray[leftIndex];
+    originalArray[leftIndex] = originalArray[rightIndex];
+    originalArray[rightIndex] = temp;
+    leftIndex++;
+    rightIndex--;
+  }
+}
+let myArray = [1, 2, 3, 4, 5];
+Reverse(myArray);
+console.log(myArray); //[5, 4, 3, 2, 1]
+
+//Method 3:-
+let num = [1, 2, 3, 5];
+let reversedNum = [];
+for (let i = num.length - 1; i >= 0; i--) {
+  reversedNum.push(num[i]);
+}
+console.log(reversedNum); //[5, 3, 2, 1]
+
+//Method 4:-
+var newArray = [];
+var arr = [1, 2, 5];
+for (var i = 0; i < arr.length; i++) {
+  newArray[i] = arr[arr.length - 1 - i];
+}
+console.log(newArray); //[5, 2, 1]
+
+TODO: INTERVIEW-7:
+// How To Implement Stack in Javascript?
+class Stack{
+    constructor(){
+        this.items = [];
+        this.countData = 0;
+    }
+
+   // check if the stack is empty
+    isEmpty(){
+        return this.countData == 0;
+    }
+
+   //size of the stack
+    size(){
+        return this.countData;
+    }
+    
+    //empty the stack
+    clear(){
+         this.items = [];
+    }
+    
+   // check the last element of the stack
+    peekTop() {
+        if(this.countData == 0){
+            return "Stack is Empty";
+        }
+        return this.items[this.countData-1];
+    }
+
+   // check the element of the stack of the specific position
+    peek(pos){
+        var top =this.countData-1;
+        if(top-pos+1<0)
+            return "invalid index";
+        else
+            return this.items[top-pos+1];
+    }
+    
+   // add element to the stack
+    push(data){
+        this.countData++;
+        this.items.push(data);
+    }
+
+   //remove element to the stack
+    pop(){
+        if(this.items.length == 0)
+            return "Stack is Underflow";
+        this.countData--;
+        return this.items.pop();
+    }
+
+    //print all the element present in the stack
+    printAllStackElement(){
+        if(this.countData == 0){
+            return "can not Print,Stack is Empty";
+        }
+        var ele = "";
+        for (var i = this.items.length-1; i >= 0; i--)
+            ele += this.items[i] + " ";
+        return ele;
+    }
+}
+
+const myStack = new Stack();
+myStack.push("10");
+myStack.push("20");
+myStack.push("30");
+myStack.push("40");
+console.log("Top element is :",myStack.peekTop());
+myStack.push("50");
+console.log("Popped element in stack is:",myStack.pop());
+console.log("Top element at position 2 is:",myStack.peek(2));
+console.log("elements in stack are:",myStack.printAllStackElement());
+console.log("is my Stack empty? ",myStack.isEmpty());
+console.log("Size of the stack is ",myStack.size());
+
+
+TODO: INTERVIEW-8:
+// How To Implement Queue in Javascript?
+class Queue {
+    constructor() {
+      this.items = [];
+    }
+  
+  // add element to the queue
+    enqueue(element) {
+      this.items.push(element);
+    }
+  
+  //remove the element from the queue
+    dequeue() {
+      return this.items.shift();
+    }
+  
+  //returns the first element of the queue
+    peek() {
+      return this.items[0];
+    }
+  
+  //check if the queue is empty
+    isEmpty() {
+      return this.items.length === 0;
+    }
+  
+  //size of the queue
+    size() {
+      return this.items.length;
+    }
+    
+    //print all the element present in the queue
+      printAllQueueElement(){
+          var ele = "";
+          for (var i = this.items.length-1; i >= 0; i--)
+              ele += this.items[i] + " ";
+          return ele;
+      }
+  }
+  const myQueue = new Queue();
+  myQueue.enqueue("10");
+  myQueue.enqueue("20");
+  myQueue.enqueue("30");
+  myQueue.enqueue("40");
+  console.log("First element in Queue is :",myQueue.peek());
+  myQueue.enqueue("50");
+  console.log("Popped element from Queue is:",myQueue.dequeue());
+  console.log("elements in Queue are:",myQueue.printAllQueueElement());
+  console.log("is my Queue empty? ",myQueue.isEmpty());
+  console.log("Size of the Queue is ",myQueue.size());
+
+  TODO: INTERVIEW-10:
+  // how to empty an array
+// method1:-
+const arr=[1,2,3];
+arr.length=0;
+console.log(arr);   //[]
+
+//method2:-
+let array = [1, 2, 3, 4];
+array = [];
+console.log(array); //[]
+
+//method3:-
+let arr1 = [1, 2, 3, 4];
+arr1.splice(0, arr1.length);
+console.log(arr1);  //[]
+
+NOTE:- splice() method in JavaScript is used to modify an array by adding or 
+removing elements. It can be used to add new elements to an array at a specific 
+index, or to remove elements from the array.
+
+Syntax:- 
+array.splice(startIndex, deleteCount, elementsToAdd1, elementsToAdd2, ...)
+
+

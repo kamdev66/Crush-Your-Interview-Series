@@ -1,0 +1,119 @@
+Agenda:-
+Intro the aggregation framework
+indexing your data
+data modelling
+
+---------------
+{
+    "_id":ObjectId("573a1395h787481dsdsdw78954"), //unique primary key for this document, it will automatically generated
+    "title":"baclsmith"
+}
+
+Note:- MongoDB stores data in BSON format.
+
+MQL(MongoDb Query Language):-
+
+db.collection.findOne():- Match a single document
+db.collection.find():- Match,sort,or count multiple documents
+db.collection.aggregate():- match,combine & aggregate documents
+
+eg:-Find one document
+db.movies.findOne({
+    "title":"Blacksmith scene"
+})
+This will give all documents that matches this title.but we can add extra parameter here
+db.movies.findOne({
+    "title":"Blacksmith scene"
+}, {
+    "title":1,
+    "year":1,
+    "plot":1,
+})
+iska mtlb ye sirf title,year aur plot documents hi dega
+this is called projection in mongodb.
+Projection in mongoDB : 
+-> You can select the field you want in query to return 
+-> if you want field use {"field":1}
+-> _id field is compasary if you dont want it use {"_id":0}
+
+eg:- find many documents
+db.movies.find({
+    "year":"2010"
+})
+
+we can also sort the data here according to the imdb ratings
+db.movies.find({
+    "year":"2010"
+},{
+    "title":1,
+    "imdb.rating":1,
+    "_id":0  //id show nhi krega
+}).sort({"imdb.rating":-1})  //-1 ka mtlb hai ye pahle largest value return krega
+
+hum agar chahte hai ki ek documents hi print ho to ,hum limit use kar skte hai
+eg:- print only most popular movie of 2010
+db.movies.find({
+    "year":"2010"
+},{
+    "title":1,
+    "imdb.rating":1,
+    "_id":0  
+}).sort({"imdb.rating":-1}).limit(1);
+
+
+
+----------------THE AGGREGATION FRAMEWORK--------------
+An aggregation pipeline consists of one or more stages that process documents:
+Each stage performs an operation on the input documents. For example, a stage can filter documents, group documents, and calculate values.
+
+db.movies.aggregate([{
+    "$match":{"year":2010}   //instead of find(),we use $match.once match stage is passed,it will go on the project stage
+   },{
+    "$project":{
+        "title":1,
+        "imdb.rating":1,
+        "_id":0 
+    }
+   },{
+    "$sort":{"imdb.rating":-1}
+   },{
+    "$limit":1 
+}])
+
+$match:-filters the documents to pass only the documents that match the specified condition(s) to the next pipeline stage.
+      :-same query syntax as find()
+      :-place as early in the pipeline as possible.
+
+$project:- passes along the documents with the requested fields to the next stage in the pipeline.
+        :-the specified fields can be existing fields from the input documents or newly computed fields.
+        :- this restructures your documents
+        :- don't attempt to optimize pipelines with this stage.
+
+
+Note:- The aggregation pipeline has 35 operations in mongodb6.eg:- sort,project etc.
+
+$group:-groups input documents by the specified _id expression and for each distinct grouping,outputs a document.
+the _id field of each output document contains the unique group by value.
+      :-generates new document using multiple documents as input.
+      eg:-
+      let groupByYear={
+        "$group":{
+            "_id":"$year"
+        }
+      }
+
+
+Accumulator operators:- $accumulator,$avg,$count,$first/$last,$min/$max ,$sum ,etc.
+
+Tools for building pipelines:-compass,atlas data explorer,mongodb for vscode.
+
+read :- https://www.practical-mongodb-aggregations.com/
+
+
+INDEX:-
+db.movies.createIndex({
+    "year":1,
+    "type":1,
+    "imdb.votes":1,
+})
+here,order is important

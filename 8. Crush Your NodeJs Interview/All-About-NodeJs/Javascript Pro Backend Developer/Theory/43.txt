@@ -1,0 +1,23 @@
+Registering a user in auth system
+----------------------------------
+while registring user:-
+  get all information
+  check mandatory fields
+  already registered
+  take care of password
+  generate token or send success message
+
+
+
+  app.post('/register',(req,res)=>{
+    const {firstname,lastname,email,password}=req.body;   //express can't handle the json file directly.It needs to use middleware for that. eg:- app.use(express.json())
+    
+    if(!(email && password && firstname && lastname)){
+        res.status(400).send('All fields are required');
+    }
+
+    const existingUser=User.findOne({email:email})
+    if(existingUser){
+        res.status(401).send('User Alreday registered');
+    }
+})

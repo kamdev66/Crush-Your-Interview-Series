@@ -1,0 +1,18 @@
+Install MongoDB on Linux:-
+sudo apt-get install mongodb
+
+type mongo to start the mongo shell
+
+use <database name>:- create new database and switched to that database.
+
+
+WHat is referencing in mongodb?
+:- referencing stores the relations between the data by including links.
+:-By storing the ID of one document ,to another document ,it can form the relation.
+
+What is embedding in mongodb?
+:- embedding is the technique to store related data in a single document structure.
+:-we can store these types of documents as sub-documents in MongoDB.We can either store them as an array or as an object.
+
+What is Replication in mongodb?
+:-

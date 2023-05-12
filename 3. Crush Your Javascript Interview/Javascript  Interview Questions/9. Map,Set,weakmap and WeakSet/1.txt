@@ -1,0 +1,176 @@
+--------------Map------------------------------------
+:- Any programming language has various data structures:-
+In javascript:- 1. Arrays 2.Object Literals
+In es6, few more are added:- 1.Map  2.WeakMap  3.Set  4.WeakSet.
+
+:-In map, keys can also have types like string,number,boolean etc.
+:-Map is the data structure where we are mapping value to value.
+:-Values inserted in map collection are retrieved in the same order.
+:-To create a map,we use map constructor.
+:-Map is iterable
+:-There are 3 methods that we use for iteration the Map:- 1.values() 2.keys() 3.entries()
+
+Note:- size property-returns the count of key value pair
+Note:- In Arrays, we have length property ,but in object literal, we don't have any property like this.
+
+-----------------------
+let product=new Map();
+product.set('pCode','1001');
+product.set(1,'Apple');
+product.set(true,'Available');
+console.log(product);   //Map(3) {'pCode' => '1001', 1 => 'Apple', true => 'Available'}
+console.log(product.get(1));  //Apple
+console.log(product.get(true));  //Available
+console.log(product.size)  //3
+product['price']=3000; //it is not preferrable.bcoz it works like object literal
+console.log(product);  //Map(3) {'pCode' => '1001', 1 => 'Apple', true => 'Available'} price: 3000
+
+-----------------------------------------------
+Note:- .set method returns the map itself.
+so,we can use it like this:-
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+console.log(product);   //Map(3) {'pCode' => '1001', 1 => 'Apple', true => 'Available'}
+
+------------------------------------------------------------------
+
+1. values():-It helps to loop through all the values of map.
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+
+for (let v of product.values()){
+console.log(v);  //1001 Apple Available
+}
+
+
+2. keys():-
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+
+for (let k of product.keys()){
+console.log(k);  //pCode 1 true
+}
+
+3.entries():-It returns both keys and values as an array.
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+
+for (let e of product.entries()){
+console.log(e);  // ["pCode", "1001"] [1, "Apple"] [true, "Available"]
+}
+
+---------------------------
+Bcoz entries() returns both keys and values as an array so, that we can destructure it .
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+
+for (let [k,v] of product.entries()){
+console.log(`${k}-${v}`);  //pCode-1001 1-Apple true-Available
+}
+
+--------------------------------
+Note:- entries() can convert object into array.
+let obj={
+pCode:1001,
+pName:'Orange',
+price:56
+}
+console.log(Object.entries(obj));   //[["pCode", 1001], ["pName", "Orange"], ["price", 56]]
+
+----------------------------------------
+Note:- When we pass this array(jo object se array me convert kiya hai humne) in the contructor of Map method, then it converted into Map .
+let obj={
+pCode:1001,
+pName:'Orange',
+price:56
+}
+let product=new Map(Object.entries(obj));
+console.log(product);  //Map(3) {'pCode' => 1001, 'pName' => 'Orange', 'price' => 56}
+
+-------------------------------------------------------------------------------
+Object.fromEntries():- it converts map into simple object (reverse of entries() method)
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+let obj=Object.fromEntries(product.entries());
+console.log(obj);  //{1: 'Apple', pCode: '1001', true: 'Available'}
+
+
+-----------------------------------------------------------------------------------
+Map.has(key):- checks whether the given key is existing in the map or not
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+console.log(product.has('pCode')); //true
+
+------------------------------------------------------------------
+Note:- we can use forEach() with map method also.
+let product=new Map();
+product.set('pCode','1001')
+       .set(1,'Apple')
+       .set(true,'Available');
+product.forEach((v,k,m)=>{
+console.log(`${v}-${k}`);
+})
+/*
+output:-
+"1001-pCode"
+"Apple-1"
+"Available-true"
+*/
+
+--------------------------------------------------------------------
+delete():- delete() method removes values by key.
+
+let product=new Map();
+product.set('pCode','1001')
+       .set('pName','Apple')
+       .set('price','60');
+console.log(product); //Map(3) {'pCode' => '1001', 'pName' => 'Apple', 'price' => '60'}
+product.delete('pName');
+console.log(product);  //Map(2) {'pCode' => '1001', 'price' => '60'}
+
+----------------------------------------------------------------------
+clear():- clear() method wipes out everything from the Map.
+
+let product=new Map();
+product.set('pCode','1001')
+       .set('pName','Apple')
+       .set('price','60');
+console.log(product); //Map(3) {'pCode' => '1001', 'pName' => 'Apple', 'price' => '60'}
+product.clear();
+console.log(product);  //Map(0) {size: 0}
+
+------------------------------------------------------------------------
+
+ques:- What are the advantages of using Map over objects?
+1. Map's keys can also be values.They can be of any data type.
+   Object have keys only as string.
+
+2. In Map,value to value mapping is possible.
+   In Object,value to value mapping isn't possible.
+
+3. In Map,Insertion and retrieval of keys is always in the same order.
+   In Object,Keys are not ordered.
+
+4. In Map,Map has size() property which returns number of key/values pairs.
+   In Object,Object don't have any direct way to count the key/value pairs.
+
+5. Maps are iterable
+   Objects are not iterable.
+
+
+ques:- How will you iterate through Map?
+:-with the help of values(),keys() and entries() methods in for of loop and another method is we can use forEach().

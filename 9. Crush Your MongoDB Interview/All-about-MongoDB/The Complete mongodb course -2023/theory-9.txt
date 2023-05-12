@@ -1,0 +1,45 @@
+$match:-
+we can use $match anywhere in the pipeline,but we should use earlier.
+db.collection.aggregate([{$match:{year:{$gte:2002}}}])
+
+
+$project:-
+It's like project parameter in the find() method.
+db.collection.aggregate([{$match:{year:{$gte:2002}}},{$project:{year:1,category:1}}])
+
+
+$addFields:-
+It's like $project ,it can add new fields to a document.These new fields can hold 
+values from existing fields and can be computed using operators.
+
+$project allows us to select which fields to take on to the next stage and which ones
+to remove.
+$addFields can only add fields to the pipeline.
+SYNTAX:-$addFields:{newField:expression,...}
+
+
+Cursor stages:-
+$sort:It takes in a document of fields and each field has a value of 1(asc) or -1(desc).
+$count:counts all documents that passed through this stage.
+$limit:returns only the first "n" documents that pass through this stage.
+$skip:skips the first 'n' documents that pass through this stage.
+
+
+$group:-
+This stage groups documents by a specified _id expression and outputs a document for 
+each distinct grouping of that expression.
+db.collection.aggregate([{$group:{"_id":"$colour","total val":{$sum:"$val"}}}])
+
+$facet:- 
+This stage allows you to process multiple pipeline stages at the same time.
+db.collection.aggregate([{$facet:{"BucketManual":[{$bucket:{groupBy:"$trip"}}]}}])
+
+
+$unwind:-
+This stage deconstruct the array fields from the input documents to output document
+for each element.
+
+
+
+
+

@@ -1,0 +1,15 @@
+Introduction to Aggregation Framework:- 
+
+:-Mongo Query Language(MQL) is sufficient for simple queries.
+But,
+The aggregation Framework allows for more advanced operations.
+
+:-Pipelines in Aggregation Framework:-
+These pipelines are considered to be operations or stages:-
+Each stages perform a different operation.
+$match stage -> $project stage -> $group stage
+
+NOTE:- The Aggregation Framework also allows for a single stage to be used or many stages.
+
+SYNTAX:-
+db.collection.aggregate([{stage 1},{stage 2},...{stage N}],{options})

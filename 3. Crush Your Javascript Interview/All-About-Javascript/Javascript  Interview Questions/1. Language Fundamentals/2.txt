@@ -1,0 +1,29 @@
+--------------Function Scope vs Block Scope--------------------
+What is scope of a variable?
+:- Scope of a variable is the lifetime or avialabilty of a variable.
+:- Scope of a variable can be local or global.
+
+function a(){
+let x=10;     //here variable x is local to function a() 
+}
+function b(){
+console.log(x);   //gives reference error
+}
+a()
+b();
+
+
+let x=10;  //global variable
+function a(){
+x=x+5;
+}
+function b(){
+console.log(x); //15
+}
+a();
+b();
+
+:- Hoisting means bringing the declaration on top.
+Variables declared with let and const are also hoisted but, unlike var , are not initialized with a default value. An exception will be thrown if a variable declared with let or const is read before it is initialized.
+
+:- Block scope is nothing but the brackets{}.

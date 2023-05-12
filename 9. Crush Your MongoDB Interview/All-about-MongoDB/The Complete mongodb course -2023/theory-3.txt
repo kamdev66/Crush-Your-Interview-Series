@@ -1,0 +1,6 @@
+Advantages of Mongodb database:-chatgpt
+
+1. Less complexity vs relational database
+2. Schema-Less
+3. easier to maintain
+4. easy to scale.

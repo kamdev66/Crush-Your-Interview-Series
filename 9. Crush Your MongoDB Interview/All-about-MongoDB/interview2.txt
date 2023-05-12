@@ -1,0 +1,170 @@
+show dbs:-
+use college:-
+db:- it will tell you the current database you are in.
+
+
+------CREATE--------------------
+:-db.students.insertOne({name:"Kamdev",email:"test@gmail.com",mno:123456789})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("62fbdd42a2393b7bddb66150")
+}
+
+:-show collections
+students
+
+:- db.students.find().pretty()
+{
+        "_id" : ObjectId("62fbdd42a2393b7bddb66150"),
+        "name" : "Kamdev",
+        "email" : "test@gmail.com",
+        "mno" : 123456789
+}
+
+:- db.students.insertMany([{name:"dev",email:"dev@gmail.com",mno:7789556789},{name:"Sonu",email:"sonu@gmail.com",mno:987456123}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62fbdf04a2393b7bddb66151"),
+                ObjectId("62fbdf04a2393b7bddb66152")
+        ]
+}
+
+
+------------READ--------------
+db.collection.find(query,projection)
+
+:-db.students.find()
+{ "_id" : ObjectId("62fbdd42a2393b7bddb66150"), "name" : "Kamdev", "email" : "test@gmail.com", "mno" : 123456789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "name" : "dev", "email" : "dev@gmail.com", "mno" : 7789556789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66152"), "name" : "Sonu", "email" : "sonu@gmail.com", "mno" : 987456123 }
+
+
+:- db.students.find({name:"dev"}) //show particular field
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "name" : "dev", "email" : "dev@gmail.com", "mno" : 7789556789 }
+
+
+:- db.students.find({name:"dev"},{name:1})  //show particular field in one document
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "name" : "dev" }
+
+:- db.students.find({name:"dev"},{name:0})
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "email" : "dev@gmail.com", "mno" : 7789556789 }
+
+:- db.students.find({name:"dev"},{_id:0,name:1}) //show particular field in one document without ID.
+{ "name" : "dev" }
+
+
+:- db.students.findOne({name:"Sonu"})
+{
+        "_id" : ObjectId("62fbdf04a2393b7bddb66152"),
+        "name" : "Sonu",
+        "email" : "sonu@gmail.com",
+        "mno" : 987456123
+}
+
+
+
+-------------UPDATE-------------
+updateOne():- 
+updateMany():-
+$set operator is used to replace the value of a field with the specified value.
+
+:-  db.students.updateOne({name:"Kamdev"},{$set:{email:"devgeeky.com"}})  //update one particular field in one document
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+:- db.students.updateOne({name:"dev"},{$set:{email:"devgeeky.com"}})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+:- db.students.find()
+{ "_id" : ObjectId("62fbdd42a2393b7bddb66150"), "name" : "Kamdev", "email" : "devgeeky.com", "mno" : 123456789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "name" : "dev", "email" : "devgeeky.com", "mno" : 7789556789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66152"), "name" : "Sonu", "email" : "sonu@gmail.com", "mno" : 987456123 }
+
+
+:-  db.students.updateMany({email:"devgeeky.com"},{$set:{name:"KAMDEV KUMAR"}})  //update one particular field in two or more document
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 1 }
+
+:-  db.students.find()
+{ "_id" : ObjectId("62fbdd42a2393b7bddb66150"), "name" : "KAMDEV KUMAR", "email" : "devgeeky.com", "mno" : 123456789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "name" : "KAMDEV KUMAR", "email" : "devgeeky.com", "mno" : 7789556789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66152"), "name" : "Sonu", "email" : "sonu@gmail.com", "mno" : 987456123 }
+
+
+:- db.students.updateOne({name:"Sonu"},{$set:{mno:7004569875223,email:"sonu@dev.com"}})   //update more than one field in one document.
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+ 
+:- db.students.find()
+{ "_id" : ObjectId("62fbdd42a2393b7bddb66150"), "name" : "KAMDEV KUMAR", "email" : "devgeeky.com", "mno" : 123456789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "name" : "KAMDEV KUMAR", "email" : "devgeeky.com", "mno" : 7789556789 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66152"), "name" : "Sonu", "email" : "sonu@dev.com", "mno" : 7004569875223 }
+
+
+:- db.students.updateMany({name:"KAMDEV KUMAR"},{$set:{mno:12345,email:"test@mail.com"}})    //update more than one field in two or more documents.
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }         
+
+:-  db.students.find()
+{ "_id" : ObjectId("62fbdd42a2393b7bddb66150"), "name" : "KAMDEV KUMAR", "email" : "test@mail.com", "mno" : 12345 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66151"), "name" : "KAMDEV KUMAR", "email" : "test@mail.com", "mno" : 12345 }
+{ "_id" : ObjectId("62fbdf04a2393b7bddb66152"), "name" : "Sonu", "email" : "sonu@dev.com", "mno" : 7004569875223 }
+
+
+----------------DELETE-----------------------
+deleteOne():-
+deleteMany():-
+
+:-  db.students.deleteOne({name:"Sonu"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+
+:- db.students.deleteMany({email:"test@mail.com"})
+{ "acknowledged" : true, "deletedCount" : 2 }
+
+
+----------------------------------------------------
+what are the ways to connect mongodb to nodejs?
+:- 1. Using mongodb npm :- npm i mongodb
+2. Using mongoose javascript framework
+
+
+What is Schema?
+:- A mongoose schema defines the structure of the document,default values,validators, etc.
+
+What is Model?
+:- A mongoose Model is a wrapper on the Mongoose Schema.
+:- A model provides an interface to the database for creating,querying,updating,deleting records etc.
+
+//How to Read or Query the documents using mongoose
+const readDocuments=async()=>{
+    try {
+        const result=await Student.find();
+        console.log(result);
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+readDocuments()
+
+
+------------Comaparison Query operator--------------------------
+Link:- https://www.mongodb.com/docs/manual/reference/operator/query-comparison/
+
+------------Logical Query Operator---------
+Link:- https://www.mongodb.com/docs/manual/reference/operator/query-logical/
+
+--------------------------------
+
+Link:-MongoDB:- https://database.guide/category/dbms/nosql/mongodb/
+      SQL:- https://database.guide/category/sql/
+      MySQL:- https://database.guide/category/dbms/rdbms/mysql/
+
+
+
+
+
+
+-----------------------------------------------------------------------------------
+what is advanced indexing?
+:- Indexes in MongoDB are essential in improving the performance of their data retrieval speed.
+
+
+
+

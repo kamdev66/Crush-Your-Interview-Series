@@ -1,0 +1,47 @@
+--------------What is "this" object-------------------
+
+:- "this" refers to the current object.
+:- "this" can have different values ,depending on where it is placed.
+
+
+//
+console.log(this)   //[object Window],bcoz window is global in browser.
+
+---------------------------------------------------------
+function test(){
+console.log(this)   //[object Window], bcoz test function is a part of window object, and window is global
+}
+test()
+
+
+------------------------------------------------------
+window.a=5;
+function test(){
+console.log(this.a)   //5
+}
+test()
+
+----------------------------------------------------
+const obj={
+test(){
+console.log(this);  //{test: test()}   , here "this" is pointing to obj
+}
+}
+obj.test();
+
+---------------------------------------------------------
+when we use arrow function in object, then "this" points to the window object.
+Note:- It means "this" object does not work with arrow function.
+
+const obj={
+test:()=>{
+console.log(this);   //[object Window]
+}
+}
+obj.test();
+
+-------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,91 @@
+
+:- When REST clients(web,app)sends the request it will handle by the routes.
+:- after route,if we want to validate any data ,validate token, we use middleware.
+:- If any type of validation fails,we will send error message to the Rest clients(web,android,ios).
+:- If the validation is success,then it will transfer the request to controller.
+:- Controller:- It is nothing but callback to a route.
+:- Controller talks with mongodb .
+:- then, controller sends the response to the client.
+
+----
+:-Destructuring allows us to fetch the property from an object and values of an array.
+const {name,country}=user;  //object Destructuring
+const [foo,bar]=myArr;      //Array Destructuring
+
+we will make:-
+REST Api endpoints:-
+user api:- In user app,we will use jwt token to authenticate the users
+POST:/user/login
+POST:/user/signup
+
+
+product api:-
+POST:/product
+GET:/product
+GET:/product/:id
+PUT:/product/:id
+DELETE:/product/:id
+
+------
+dotenv is used to setting up environment variable in nodejs.
+
+app.use() method is used to implement the application level middleware.
+
+------
+application level middleware:-
+const myMiddleware=(req,res,next)=>{
+    console.log('hey world');
+    next()  
+}
+app.use(myMiddleware)
+
+------
+Router level middleware:-It works in the same way like application level middleware except it is mounted on the express.Router() instance instead of express().
+It helps us to write modular routes.
+eg:- const router=express.Router()
+
+------
+Request payload middleware:-
+app.use(express.json());   //this will help in parsing the content Type:"application/json"
+app.use(express.urlencoded({extended:true}));  //it will help in parsing the form-urlencoded data.
+
+------
+Third Party middleware:-
+CORS:- when we are building REST ap, it is very important to have your server cors enabled,bcoz if we don't enable our server with cors ,we will get a error.
+Install cors:- npm i cors
+const cors=require('cors')
+app.use(cors);
+
+------
+mongoose is a ODM(Object data Model) library.
+The schema will  basically help you in storing the consistent data accross your database. 
+
+DB_URL="mongodb://localhost/apiDB" //apiDB is the name of our database
+
+-------
+Joi:- it is a npm library for object schema description language and validator for javascript objects.
+:- is se hum apne data ko validation lga skte eg:- password ka length,etcc.
+
+----------
+JWT:-
+iska use hum jaha pr login ka controller/logic code hai,usme krenge
+const jwt=require('jsonwebtoken')
+const token=jwt.sign({id:user._id},process.env.SECRET_KEY || 'my-secret-key',{expiresIn: 'Id'});
+return {token:token} or return {token}
+401:-unauthorize access (mainly used for login validation)
+
+now,we need to verify jwt token:-
+jwt.verify(token,process.env.SECRET_KEY || 'my-secret-key')
+
+-------
+make API documentation using Swagger UI:-
+step1:-npm i swagger-ui-express yamljs
+step2:- create file- 'swagger.yaml'
+step3:-go to the server.js,import swaggerui packages and yamljs packages
+const swaggerUI=require('swagger-ui-express)
+const YAML=require('yamljs');
+const swaggerDocument=YAML.load('./swagger.yaml)
+step4:- we will deifine routes on which we will host the swagger documentation.
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocument))
+step5:- write all the yaml documentation in swagger.yaml.
+

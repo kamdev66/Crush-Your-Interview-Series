@@ -1,0 +1,22 @@
+--------------length property and search methods--------------------------
+
+string is a primitive data type.
+
+let str="Ka mdev";
+console.log(str.length)  //7
+
+:-------->we can search character or string by using two methods:- 
+1.indexOf()
+2.lastIndexOf()
+
+
+
+
+
+
+
+
+
+
+
+

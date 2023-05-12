@@ -1,0 +1,4 @@
+starting with package.json file:-
+
+npm init
+npm i express

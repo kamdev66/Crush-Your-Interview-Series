@@ -1,0 +1,49 @@
+steps:- 1. create a package using ' npm init'.
+2. install express -> npm install --save express.
+3. create a file using server.js.
+4. In server.js, we will do :- 
+i. grab our dependencies 
+
+//grab our dependencies
+const express=require('express');
+app=express();
+port=process.env.PORT || 8080;
+
+
+ii. set the routes 
+//set the routes
+app.get('/',(req,res)=>{
+    res.send('Hello i am kamdev');
+})    
+isko hta kar 
+app.use(require('./app/routes')) likhna hai.isko route.js me kr dena h.
+
+
+iv. start our server.
+//start our server
+app.listen(port,()=>{
+    console.log(`App listening on http://localhost:${port}`);
+})
+
+
+--------------------------------------------APP STRUCTURE---------------------------------------------------
+ -app/
+    -controllers/ 
+            -main.controller.js --> route.js is only for routing our applicaion not for working of our app.so, we have to make controller
+    
+
+    -models/
+    -routes.js
+ -public/  -->for public assets like css,js,images
+ -views/
+
+
+------------------Connecting to MongoDB-------------------------------
+1. Connection String(URI)
+2. User and Pass
+3. Database
+
+mongodb URI:- 
+local->mongodb://<user>:<pass>@localhost/olympics
+remote->mongodb://<user>:<pass>@ds1343.mlab.com:43234/olympics
+

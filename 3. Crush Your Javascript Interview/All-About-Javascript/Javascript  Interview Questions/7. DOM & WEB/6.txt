@@ -1,0 +1,111 @@
+------------------getElementBy <id,tags,class & name >----------------------------------
+
+:-getElementById:--------------
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id="cnt">Content When Page Loaded...</h1>
+        <button onclick="btnClicked()">Change Content</button>
+    </body>
+    <script>
+      function btnClicked(){
+        document.getElementById("cnt").innerHTML = "Content after button clicked"
+      }
+    </script>
+</html>
+--------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 id="cnt">Content When Page Loaded...</h1>
+        <button onclick="btnClicked()">Change Content</button>
+    </body>
+    <script>
+      function btnClicked(){
+        const cntEle = document.getElementById("cnt");
+        cntEle.innerHTML = "Content after button clicked";
+      }
+    </script>
+</html>
+------------------------------------------------------------------
+
+:- document.getElementByTagName:-
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            <p>First</p>
+            <p>Second</p>
+            <p>Third</p>
+            <h3>H31</h3>
+            <h3>H32</h3>
+       </div>        
+        <button onclick="btnClicked()">Change Content</button>
+    </body>
+    <script>
+      function btnClicked(){
+        const elements = document.getElementsByTagName("p");
+        console.log(elements);
+      }
+    </script>
+</html>
+
+----------------------------------------------------------------------
+
+:- getElementByClassName:-
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            <p>First</p>
+            <p>Second</p>
+            <p class="a">Third</p>
+            <h3 class="a">H31</h3>
+            <h3>H32</h3>
+       </div>        
+        <button onclick="btnClicked()">Change Content</button>
+    </body>
+    <script>
+      function btnClicked(){
+        const elements = document.getElementsByClassName("a");
+        console.log(elements);
+      }
+    </script>
+</html>
+
+----------------------------------------------------------------------------
+
+:- getElementByName:-
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            <p name="para">First</p>
+            <p name="para">Second</p>
+            <p class="a">Third</p>
+            <h3 class="a">H31</h3>
+            <h3>H32</h3>
+       </div>        
+        <button onclick="btnClicked()">Change Content</button>
+    </body>
+    <script>
+      function btnClicked(){
+        const elements = document.getElementsByName("para");
+        console.log(elements);
+      }
+    </script>
+</html>
+
+------------------------------------------------------------------------------------
+
+Note:- getElementById() method is always applied with document.
+
+---------------------------------------------------------------------
+Ques:- Can you use document.getElementById() and element.getElementById()?
+:- document.getElementById() is possible but element.getElementById is not possible bcoz the searching of element by "id" is always for ebtire document.
+
+Ques:-What does the getElementByTagName return?
+:- It returns the array of elements.

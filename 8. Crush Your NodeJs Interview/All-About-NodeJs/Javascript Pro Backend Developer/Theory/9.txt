@@ -1,0 +1,5 @@
+Types of major web request:-
+GET :- request information
+POST :- Add to database
+PUT :- Edit to database
+DELETE :- Delete to database

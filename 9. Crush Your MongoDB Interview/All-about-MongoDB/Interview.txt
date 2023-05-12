@@ -1,0 +1,204 @@
+1. Which cursor method should you use to force MongoDB to use a specific index for a query?
+:- cursor.hint()
+Explanation:--
+You can call cursor.hint() method on a query to override MongoDB's default index selection and query optimization process.
+
+
+2. In which of the following CRUD operations can you specify a write concern? Select all that apply.
+:- db.collection.update(),db.collection.updateMany(),db.collection.insertOne(),db.collection.insert()
+Explanation:- Write concern describes the level of acknowledgment requested from MongoDB for write operations to a standalone mongod or to replica sets or to sharded clusters. All update and insert operations have write concern option.
+
+
+3. Given a movies collection where each document has the following structure:
+{
+    _id: ObjectId("573a1390f29313caabcd60e4"),
+    genres: [ 'Short', 'Comedy', 'Drama' ],
+    title: 'The Immigrant',
+    year: 1917,
+    imdb: { rating: 7.8, votes: 4680, id: 8133 },
+    countries: [ 'USA' ]
+}
+Which of the following queries will find all movies that do not contain the Comedy and Romance genres?
+:-db.movies.find({genres : {$nin : ["Comedy","Romance"]}})
+Explanation:-
+$nin selects the documents where:
+the field value is not in the specified array or
+the field does not exist.
+If the field holds an array, then the $nin operator selects the documents whose field holds an array with no element equal to a value in the specified array (for example, <value1>, <value2>, and so on).
+Syntax: { field: { $nin: [ <value1>, <value2> ... <valueN> ] } }
+
+
+
+4. Select all true statements about text search in MongoDB. 
+:- To perform text searches on a collection we use $text operator.
+:- To perform text search queries,you must have a text index on your collection.
+:- MongoDB provides text indexes to support text search queries on string content.
+:- Text indexes can include any field whose value is a string.
+Explanation:-
+Text indexes cannot include any field whose value is an array of string elements. - FALSE
+text indexes can include any field whose value is a string or an array of string elements.
+A collection can have multiple text search indexes. - FALSE
+A collection can only have one text search index.
+$text performs a text search on the content of the fields indexed with a text index. A $text expression has the following syntax:
+{
+  $text:
+    {
+      $search: <string>,
+      $language: <string>,
+      $caseSensitive: <boolean>,
+      $diacriticSensitive: <boolean>
+    }
+}
+
+
+5. Suppose you have a developers collection with the following document structure:
+{
+  _id: 1,
+  fname: 'Bob',
+  lname: 'Smith',
+  tech_stack: [ 'git', 'c++', 'sqlite', 'linux' ]
+}
+Select a query that can be executed without errors.
+Answer:- db.developers.updateOne({_id:1},{$set:{fname:'John'}})
+Explanation:-
+db.collection.updateOne(filter, update, options) updates a single document within the collection based on the filter.
+You cannot update the _id field, so only db.developers.updateOne( { _id: 1 }, { $set: { fname: 'John' } } ) is ok.
+
+
+6. In your database there is a collection named trips with the following document structure:
+{
+  '_id': ObjectId("572bb8222b288919b68abf6d"),
+  'trip_duration': 858,
+  'start_station id': 532,
+  'end_station_id': 401,
+  'bike_id': 17057,
+  'start_station_location': { type: 'Point', coordinates: [ -73.960876, 40.710451 ] },
+  'end_station_location': { type: 'Point', coordinates: [ -73.98997825, 40.72019576 ] },
+  'start_time': ISODate("2016-01-01T00:09:31.000Z"),
+  'stop_time': ISODate("2016-01-01T00:23:49.000Z")
+}
+How can you extract all trips from this collection ended at stations that are to the west of the -73.5 longitude coordinate?
+
+Answer:- db.trips.find({'end_station_location.coordinates.0':{$lt:-73.5}})
+Explanation:-
+$lt selects the documents where the value of the field is less than (i.e. <) the specified value.
+Syntax: { field: { $lt: value } }
+
+
+7. Given a companies collection where each document has the following structure:
+{
+    _id: ObjectId('61a8b90c6d5ce6a7d8fef95e'),
+    name: 'Facebook',
+    tag_list: ['facebook', 'college', 'students', 'network'],
+    description: 'Social network'
+}
+Which of the following commands will add new fields to the updated documents?
+
+Answer:- db.companies.updateMany({"name":"Facebook"},{"$set":{"country":"USA"}})
+      :- db.companies.updateMany({"name":"Facebook"},{"$set":{"sector":"IT"}})
+
+
+What is Aggregation in MongoDB? 
+Answer:- Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline
+
+
+
+----------------------------------------------------------------------
+:- Mongod is basically a daemon process for the MongoDB system.It generally handles data requests,manages data access,and performs background management operations.
+
+
+1. what is the difference between mongod and mongo files?
+:- Mongod and mongo both are executable files.
+:- Mongod basically helps you to run the server, whereas mongo actually runs the shell where you can type the commands.
+
+
+2. How will you change the database path?
+:- To change the database path you can use the mongod utility with "--dbpath".
+eg:- mongod --dbpath D:\Mongo\data\db
+
+
+:- According to mngodb documentation or rules- the database will only be listed if it has at least one collection.
+
+:- The commands in mongodb are case sensitive,unlike MySQL-which is case insensitive.
+
+:- The data stored in MongoDB is in BSON format.
+
+:- BSON stands for Binary JSON.BSON is a superset of JSON which includes more advanced data types that are not present in JSON.
+
+:- MongoDB comes with two different types of documents :-
+1. Relational document
+2. Embedded document
+:- Relational documents work the same way -where you will have different documents for parent,child and a reference of parent will be stored in the child document.
+:- Embedded documents is one where you have parent and child values in the same document.
+
+
+------Update Documents--------
+
+db.collectionname.update(filter,update,options)
+filter:- the condn. for which we want to update the document.
+update:- the fields that we want to update.
+options:- optional parameter which can contain some configuration.
+here, the update function always updates the first document that is matched and exit.
+To update multiple document that match the criteria,we have to pass the third parameter as an object in the function.
+eg:- db.collectionname.update({name:'mary jane},{$set:{email:'newgmail.com'}},{multi:true})
+
+
+----------Query Documents----------------
+db.collectionname.find(condition,fields)
+
+Ques:- How to exclude "_id" fields from the document?
+:- we have to specify the field name with true or false value in the second parameter.
+eg:- db.collectionname.find(query,{_id:false or 0})
+
+
+-----------Query documents with comparison operatores--------
+
+list of camparison operator:-
+1. $gt:-matches value that are greater than a specified value
+2. $gte:- matches value that are greater than or equal to  a specified value
+3. $lt:- matches value that are less than a specified value
+4. $lte:- matches value that are less than or equal to  a specified value
+
+
+-----------Query document using IN & NOT IN----------------
+here,we query a document with an array of values.
+
+
+----------Limiting Records------------
+:- Limiting reords will be helpful only when used with a proper application and some programming languages,bcoz mongosh shell displays only the first 20 records.
+eg:- db.movies.find({},{title:1}).limit(5)
+:- Limit command is used to limit the number of documents to fetch in the list.
+
+skip():- it will the skip the documents.
+eg:- db.movies.find().skip(2)   //this will skip the first 2 documents.
+
+
+------------Sorting Records------------
+:- we will use sort() method to sort the documents.
+eg:- db.movies.find().sort(1 or -1) //1 for ascending and -1 for descending.
+:- By default the sort method will sort the documents in ascending order.
+:- if no parameters or field are provided in the sort() method,then bydefault sorting will be done on KEY field. i.e., _objectId
+
+
+---------Aggregate Command-countDocuments()-----------------
+:- The countDocuments() function will return the number of the documents in the collection based on some condition if provided.
+
+-------Aggregate Command-distinct()----------------
+:- The distinct() function is used to retrieve the unique values from the collection and will return the value in the array.
+
+
+--------Aggregate Command-aggregate()-------------
+:- aggregate() function is used to process the documents and return the result as combined output.
+:-Basically,we are talking about commands like:- max,min,average,sum etc.
+
+
+--------Date Query-----------
+:- MongoDB returns the date either as string or date object.
+:- Date() function returns the current date as a string format in current time zone.
+:- new Date() function returns the current date as a date object in UTC time zone.
+
+--------MongoDB Indexes---------
+:- By default, MongoDB implements indexing on the "_id" field.
+:- Indexing helps to improve the speed of search operations as the search will be carried upon indexes that carry few fields instead of traditionally searching the whole document.
+syntax:-db.collectionname.createIndex({fieldname:1 or -1}) //1 means ascending ,-1 means descending
+

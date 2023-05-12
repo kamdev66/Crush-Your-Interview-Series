@@ -1,0 +1,7 @@
+Database connecton in auth System
+-----------------------------------
+MONGODB_URL=mongodb://127.0.0.1:27017/myauthapp
+
+ye hamne mongodb compass se connect kiya hai,jo hmare computer me install hai(means localhost )
+
+deployment ke time ham ye change kr skte  hai aur mongodb atlas par le jaa skte hai

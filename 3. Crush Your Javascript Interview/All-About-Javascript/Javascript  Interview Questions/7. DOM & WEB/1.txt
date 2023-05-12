@@ -1,0 +1,39 @@
+-----------------differnce between document object and window object----------------------------
+
+:- Window is main/container/global object
+:- Document object is child of window object.
+
+:- setInterval,setTimeout etc. are method of window object.
+:- document is an object of "window".
+:- document object does have various object,methods,or properties like document.getElementById()
+:- window object has properties like :-
+      1. innerHeight
+      2. innerWidth
+
+
+:- 
+console.log(window.innerHeight);  //280 in full size window
+console.log(innerWidth);          //662 in full size window
+console.log(window.location);   //[object Location]
+
+
+-----------DOM and BOM---------------
+DOM:-Document Object Model
+BOM:-Browser Object Model
+
+
+Ques:- What is DOM or DOM API?
+:- DOM means "Document Object Model".It means the browser is giving you the "Document object" which helps you to access the elements through Javascript.
+
+Ques:- What is BOM?
+:- BOM means Browser Object Model.It gives you few objects related to window & using that we access location,history,screen,height & width of window etc.
+
+
+
+
+
+
+
+
+
+

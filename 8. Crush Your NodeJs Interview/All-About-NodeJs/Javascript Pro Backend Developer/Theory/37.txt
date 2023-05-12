@@ -1,0 +1,20 @@
+Picking up a database for the backend:_
+-----------------------------------------
+
+Do i really need an ORM and ODM?
+:-yes ,we will use ORM.
+An ORM maps between an Object Model and a Relational Database. An ODM maps between an Object Model and a Document Database
+
+
+we will use mongoose 
+Mongoose is an Object Data Modeling (ODM) library for MongoDB.
+Both ODMs and ORMs can make your life easier with built-in structure and methods. The structure of an ODM or ORM will contain business logic that helps you organize data.
+
+
+
+------------------------------------------
+Schema is the structure  of how your data is going to look like.every aplication has a structure
+read:- https://mongoosejs.com/docs/guide.html
+
+
+

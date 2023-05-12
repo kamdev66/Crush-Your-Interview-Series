@@ -1,0 +1,91 @@
+// ------------Reverse of array :---------------------
+// 1st method:-
+// -------------
+
+var a = [1,2,3,4,5];
+a.reverse();
+console.log(a)  //[5, 4, 3, 2, 1]
+
+// 2nd method:-
+// --------------
+function Reverse(originalArray) {
+  let leftIndex = 0;
+  let rightIndex = originalArray.length - 1;
+
+  while (leftIndex < rightIndex) {
+    let temp = originalArray[leftIndex];
+    originalArray[leftIndex] = originalArray[rightIndex];
+    originalArray[rightIndex] = temp;
+    leftIndex++;
+    rightIndex--;
+  }
+}
+let myArray = [1, 2, 3, 4, 5];
+Reverse(myArray);
+console.log(myArray);  //[5, 4, 3, 2, 1]
+
+
+// 3rd method:-
+// --------------
+let num = [1, 2, 3, 5];
+let reversedNum = [];
+for(let i = num.length -1; i >= 0; i--) {
+  reversedNum.push(num[i]);
+}
+console.log(reversedNum); //[5, 3, 2, 1]
+
+// 4th method:-
+// ----------------
+var newArray = [];
+var arr = [1,2,5];
+for(var i = 0; i < arr.length;i++){
+   newArray[i] = arr[arr.length-1-i]
+}
+console.log(newArray); //[5, 2, 1]
+
+// -------------------------------Find Minimum and Maximum Values in an Array:-----------------------
+// method1:-
+// ---------
+console.log(Math.min(1,3,5)) // 1
+var array=[1,3,5]
+console.log(Math.min(array)) //NaN
+console.log(Math.min(...array)) //1
+
+// method2:-
+// ----------
+console.log(Math.min.apply(null,[10,35,54])) //10 
+
+// method3:-
+// ----------
+const arr = [11,30,53,78,98,56,47,41];
+let minVal = arr[0]; let maxVal = arr[0];
+for(var i = 1; i < arr.length; i++){
+    if(arr[i] < minVal){ //3<1 //53<0
+        minVal = arr[i];
+    }
+    if(arr[i] > maxVal){ //3>1 //53>0
+        maxVal = arr[i]; //3 //53
+     }
+}
+console.log(minVal); //11
+console.log(maxVal);  //98
+
+
+// method4:-
+// ----------
+var arr = [ 30,47,54,23,45,78,78,98 ].sort((a,b)=> { return a - b });
+    mini = arr[0],  // min
+    maxi = arr[arr.length-1];
+console.log(mini, maxi);   //23 98
+
+// method5:-
+// -----------
+let arr = [11, 22, 73, 44, 83, 20, 0];
+let maxNum = arr.reduce((prev, current) => {
+  return Math.max(prev, current)
+});
+let minNum = arr.reduce((prev, current) => {
+  return Math.min(prev, current)
+});
+//console.log(minNum); //0
+//console.log(maxNum);  //83

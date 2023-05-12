@@ -1,0 +1,296 @@
+TODO: How to continuosly run express server using nodemon?
+:- npm i nodemon
+
+TODO: How to Use import export in nodejs?
+:- node doesn't support import export bydefault.so,we fix it by using:-
+"type":"module" in package.json
+
+TODO: How to use env and gitignore files in Nodejs?
+:- we use .env file and .gitignore
+env file is used to put some values in a variable and the values might changed when you pushed on the
+live server.
+if you want to keep secret something(not want to push publicly) then use .env file.
+to use .env file we need to install:- npm i dotenv
+const dotenv=require('dotenv');
+dotenv.config();
+whenever you will change anything in .env file,you have to restart the server. 
+add .env and node_modules in .gitignore.
+
+we use # to comment line in .env file.
+
+TODO: How to connect to MongoDB locally?
+:- To use MongoDB we have two options:- i. we can install MongoDB locally
+                                       ii. we can use cloud service called mongo atlas.
+npm i mongoose:- it is a ODM 
+
+TODO: How to use mongo atlas as database in the cloud?
+:- go to atlas,select connect your application
+MONGO_URL=mongodb+srv://kamdev:bholenath123@ecommerce.jqtely8.mongodb.net/?retryWrites=true&w=majority
+
+TODO: 
+create 2 folders:- routes,controllers
+In the routes folder,we will put all our endpoints.
+const router=express.Router(); //we use Router fn. of express and put it in the router variable.
+
+TODO: How to use controller functions?
+:- exports.users=async(req,res)=>{
+    res.json({
+        data:'Hii I am Kamdev'
+    });
+  }
+
+TODO: How to create mongoose model using Schema?
+:- create a folder called models.
+To create a user,first we have to write schema.
+const {Schema}=mongoose;
+const userSchema=new Schema({
+    
+})
+module.exports=mongoose.model('User',userSchema) //1st argument is model name and 2nd is schema
+
+Once,we have schema ,we can save user in the database
+we will add one more properties in schema is :- timestamp(it will give us created and updated date 
+automatically whenever we save anything in database)
+
+TODO: How to use bcrypt to hash and compare password?
+:- create a new folder called 'helpers'.
+npm i bcrypt
+
+for hashed the password:- first we need to generate the salt.
+hashedPassword will be used when user registered for the first time.
+comparePassword will be used when we want to check if user is giving right password or not.
+
+exports.hashedPassword=(password)=>{  //password is the plain password
+   return new Promise((resolve,reject)=>{
+    bcrypt.genSalt(12,(err,salt)=>{    //genSalt fn. used to generate the salt.  12 is the strength
+        if(err){
+            reject(err);
+        }
+        bcrypt.hash(password,salt,(err,hash)=>{
+            if(err){
+                reject(err);
+            }
+            resolve(hash);
+        })
+    })   
+   })
+}
+
+or, we can directly encrypt the password like this :- 
+//encrypt the password
+    const myEncPassword=await bcrypt.hash(password,10)
+
+now we will code for comparePassword,it will take 2 arguments:- 1st one is real password,2nd one 
+is hashedPassword that is stored in the database:-
+exports.comparePassword=(password,hashed)=>{  //password is the plain password and hashed is the hashedpassword that stored in the database
+    return bcrypt.compare(password,hashed); 
+}
+
+TODO: How to use 'morgan' as middleware to log incoming requests?
+:- npm i morgan
+we will use this right the database connection
+app.use(morgan('dev')) //give argument dev bcoz we r using it in development mode.
+when we hit any api,it shows like this:-
+GET /api/users 304 2.805 ms - - here, 304 is the statuscode and 2.805 is the response time.
+
+TODO: How to use postman to test nodejs API?
+:- exports.register=async(req,res)=>{
+    console.log(req.body);
+}
+it will give 'undefined' in console tab.
+bcoz we need one more middleware to parse this json data.
+bydefault our server does not parse the json data.so,to handle the json,we have another middleware
+:- app.use(express.json());
+previously we used the middleware called bodyParser.but nowadays we use express.json()
+
+TODO: How to save data in MongoDB?
+:- always try to use try-catch at the time of making an API.
+try {
+        
+} 
+catch (error) {
+console.log(error);
+}
+1st we have to import the model.(User model)
+then,
+put this value in the variable called 'user'.
+Using the new keyword we are trying to create a new instance of user.and under the parenthesis of
+new User() we will give the information needed to create a user.
+so, we can simply pass req.body bcoz we will send req.body from frontend.
+then make sure that y have saved.
+const user=await new User(req.body);
+user.save();
+once you saved,you can send the response.
+res.send(user);
+
+
+TODO: How to register user with validation and error responses?
+:- Things to fix before saving user to database :
+i. all validation
+ii. check if email is taken
+iii. hash password
+
+steps:-
+//1. destructure name,email,password from req.body
+//2. all fields require validation
+//3. check if email is taken
+//4. hash the password
+//5. register user
+//6. create signed jwt token
+//7. send the response
+
+TODO: How to generate JWT ?
+:- In register user with validation me hum response me data send kr rhe the ,lekin hum chahte hai
+ki uske saath hum token v send kre
+When we generate the token,we will use SECRET KEY.
+npm i jsonwebtoken
+to create a signed token,we will use jwt.sign() method,it takes 3 arguments:-
+1. some data(payload)    note:- we can extract this data later.
+2. secret key
+3. how long do you want this token to be valid(expiresIn:)
+const token=jwt.sign(_id:user._id) //based on token we will be able to get the user id and then we can find the users
+now,
+we can send the token with user information.and we will not send the password.
+res.json({
+    user:{
+        name:user.name,
+        email:user.email,
+        role:user.role,
+        address:user.address,
+    },
+    token:token or simply token
+})
+later,
+we will have more routes,so,those routes we will be protecting only for the user with the role of
+admin.
+
+TODO: How to login user using compare password?
+:-  //1. destructure email,password from req.body
+    //2. all fields require validation
+    //3. check if email is registered or not
+    //4. compare the password
+    //5. create signed jwt token
+    //6. send the response
+
+
+TODO: how to send authorization token in HTTP request headers?
+:- now,we will se how we can protect the routes from not logged in users.
+for protecting the routes,we will verify the token:-
+so,when we make a request,we will send this token in the headers and that token in the headers 
+will be able to receive in the server.
+if token is valid only then we will allow them to see the secret routes data.
+So,
+we will create a middleware and we can apply in the secret routes.
+create a folder named 'middlewares'
+
+//testing
+router.get('/secret',requireSignin,(req,res)=>{
+    res.json({message:"You have access to this secret route"});
+});
+
+//in middleware folder
+exports.requireSignin=(req,res,next)=>{
+    console.log(req.headers);
+    next();
+}
+
+
+TODO: How to protect routes using JWT verify?
+:- till now,we are able to receive the token.
+now,we will do verify that,so only if can verify we use this next(),otherwise user will not able to
+see this response.
+NOTE:- by default status code sent is 200(OK).
+const decoded=jwt.verify(req.headers.authorization,process.env.JWT_SECRET);
+verify also takes 2 arguments:--  1st is token and 2nd is secret key.
+here, this decoded will have information about the user bcoz when we generate the token,we use this
+users id ,so that id is important.we want to receive that id from this token when we decode.
+
+try {
+    const decoded=jwt.verify(req.headers.authorization,process.env.JWT_SECRET);
+    console.log(decoded); //ouput:-  { _id: '63887bc45e562765fd1fd181', iat: 1669895219, exp: 1670500019 }here,iat acts like date.
+    req.user=decoded;
+   } catch (err) {
+    return res.status(401).json(err);
+   }
+
+i want to put that decoded information in the req object by the name of 'user'.
+req.user=decoded;
+
+So,only login users can access secret route.
+
+
+TODO: How to protect routes for admin users only using isAdmin middleware ?
+:- 
+exports.isAdmin=async(req,res,next)=>{
+   try {
+      const user=await User.findById(req.user._id);
+      if(user.role !== 1){   //maine pahle !== isliye check kiya h qki pahle hame error check krke return krna chahiye
+         return res.status(401).send('Unauthorized');
+      }else{
+         next();
+      }
+   } catch (error) {
+      console.log(error);
+   }
+}
+
+
+TODO: How to create category model?
+:- 
+
+TODO: How to make a POST request with JWT token in request headers and data in body?
+:- 
+//routes
+router.post('/category',requireSignin,isAdmin,create);
+//controllers
+exports.create=async(req,res)=>{
+    try {
+        console.log(req.body);
+    } catch (error) {
+       console.log(error);
+       return res.status(400).json(error); 
+    }
+}
+
+TODO: How to create a category and save in MongoDB?
+:- to save the category,we need to create a slug and for that we will use npm package called 'slugify'
+
+
+TODO: Creating category CRUD routes:-
+:- we have completed "C" part in Crud which is create.we will do the rest.
+If the methods are different,we don't need to change the routes.eg;-
+router.post('/category',requireSignin,isAdmin,create);
+router.put('/category',requireSignin,isAdmin,update);
+see,here /category is same in both,but in delete method we will add /:id with category route.
+router.delete('/category/:categoryId',requireSignin,isAdmin,remove);//at the place of remove we can't use delete ,bcoz delete is the reserved keyword in javascript
+
+
+TODO: How to do CRUD with Nodejs and MongoDB?
+:- iska code complete ho gya h bas video dekh k notes bnana hai
+
+
+TODO: How to write product schema to create product model?
+;- 
+
+TODO: creating product using json data vs form data?
+:- here,we will upload a photo.
+when there is a file upload,to handle the file we cannot use the json data .
+we use form data ,json data is technically possible if u send binary data from client to server.
+like to handle the json data,we used middleware like express.json(),
+to handle the form data we used a middleware called - express-formidable
+
+TODO: how to handle form data with image upload and apply validation?
+:- npm i express-formidable
+we don't need to use this in every route thats why we will not put this formidable in index.js.
+we will put in product route.
+
+TODO: How to save a product in mongodb?
+:- 
+
+
+
+
+
+
+
+

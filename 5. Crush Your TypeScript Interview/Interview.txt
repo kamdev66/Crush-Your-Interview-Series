@@ -1,0 +1,322 @@
+What is typescript?
+:- It is called a strongly typed superset of javascript.
+typescript is a strongly typed language.
+typescript first converted into javascript by typescript compiler then goes to the browser.
+:- TypeScript is a language that adds types to JavaScript, which allows developers to catch errors at compile-time 
+rather than runtime, and helps improve code maintainability, readability, and 
+scalability.
+
+Here are some key features of TypeScript:
+1. Static typing: TypeScript allows you to specify types for variables, functions, 
+and other constructs in your code, which are then checked by the TypeScript compiler.
+This helps catch errors before runtime and improves code readability.
+
+2. Object-oriented programming: TypeScript supports object-oriented programming (OOP)
+concepts such as classes, interfaces, inheritance, and polymorphism. This makes it 
+easier to build complex applications and maintain them over time.
+
+3. Compiler: TypeScript comes with a compiler that converts TypeScript code into 
+JavaScript code, which can then be run in any modern browser or server environment.
+
+install typescript compiler:- sudo apt install node-typescript
+---------------------
+Variables and Datatype:-
+
+javascript has var and let to declare a variable and const to declare a constant,It is same in typescript as well.
+But,In typescript we have choice to explicitly decide the Datatype.
+
+
+Primitive Datatype:- number
+Syntax:- let <variableName> : <Datatype> =value
+eg:-
+let a : number=9;
+let b:number=0.145
+console.log(a,b) //9,  0.145 
+
+-------------------
+Primitive Datatype:- Boolean(true,false)
+eg:-
+let a:boolean=true;
+let b:boolean=false;
+console.log(a) //true
+console.log(b) //false
+console.log(typeof a) //"boolean"
+console.log(typeof b) //"boolean"
+
+---------------------
+Primitive Datatype:- undefined,null,void
+eg:-
+let a:number;
+console.log(a) //undefined 
+console.log(typeof a) //"undefined" 
+let c=null 
+console.log(c) //null
+let b:number=null
+console.log(b) //null
+
+function sum(a:number,b:number):number{  //it will return number
+    return a+b;
+}
+
+function sum(a:number,b:number):void{ //it will return void means nothing
+    return a+b;
+}
+------------------------
+Primitive Datatype:- any
+:-any is one datatype in typescript which can hold any type of value.If we don't specify the type,it will be considered as 'any'
+eg:-
+let a:any;
+QUes:-when do you think "any" type is useful?
+:- when we don't know which type of value will be assigned to a variable in future.
+
+--------------
+Type Annotation and Inference:-
+eg:-
+let const <variable>:<datatype>=value;
+here,the datatype given after a colon(:) sign is basically the type Annotation.
+
+Note:- when there is no explicit type Annotation,typescript compiler assumes the type according to assigned value.
+eg:-
+let a=10;
+console.log(typeof a) //"number"
+let b="test"
+console.log(typeof b) //"string"
+
+Note:- Typescript Inference:- Typescript assumes the type of depending on the assigned value
+
+--------------------------
+Function scope vs Block scope:-
+:-scope of a variable can be local or global
+:-Global variable will be accessible for all functions.
+
+es5 has hoisting bcoz of var but in es6 we don't have hoisting bcoz of block scope
+
+----------------------
+String:-
+Typescript does not have a single character datatype .
+String is a separate datatype but can be used for a single character or multiple character.
+we can declare a variable as a string with the help of "",'' or ``.
+
+--------------------
+Type Aliases:-
+It is possible to define your own datatype in typescript.
+we use "type" keyword.
+eg:-
+type Address={
+    Street:string,
+    City:string,
+    Pin:number
+}
+function showData(obj:Address){
+    console.log(obj.Street,obj.City,obj.Pin);  //"Gandhi MAidan",  "Jehanabad",  804407 
+}
+showData({Street:'Gandhi MAidan',City:'Jehanabad',Pin:804407})
+
+
+------------------------
+"never" type:-
+Those type of function which doesn't return anything,we can set "never" as  a return type.
+Note:- Generally a function not returning anything can be defined as "void" but still returns undefined.
+But,if you have "never" data type it will give "compile time error".
+
+Note:-we can assign null or undefined to "void" type but we can't do the same with "never" type.
+eg:-
+let x:void=undefined;
+let y:never=undefined //it will give error  //Type 'undefined' is not assignable to type 'never'.
+
+----------------------------03 Typescript Compiler& Project Configuration-----------------------
+---Watch Mode:-
+tsc compiler hmare code ko .js me convert kr deta hai lekin us .ts me hum chnage krte hai to hame again se tsc app.ts krna pdega
+iske liye hm watch mode ka use kr skte hai
+eg:- tsc app.ts -w
+
+Watch mode has a limitation that :it wtaches the individual file only:-
+
+So let's learn how to make it watch for entire project:-
+tsc --init :-like npm init ,this generates a .json file (tsconfig.json file),it initiates the project
+tsconfig.json file contains various compiler options
+
+now, type only tsc -w(isse sabhi file watch mode me chlega)
+
+we can set include,exclude in tsconfig file for our project.
+
+-----------------------------
+Setting the Compilation target:-
+
+:- "target" option basically decides that the code converted by Typescript compiler should be in which version of javascript.
+
+--------------------
+Setting Modules:-
+To implement Modules,import & export statements are used.
+eg:-
+import {sum,sub} from './calc
+
+when we changed the module to "CommonJS" in config file,then our code is generated with Object.defineProperty(exports,"__esModule",)
+CommonJS is used when Nod.js related coding is to be generated.
+
+
+
+--------------------Array and Tuple----------------------------------------------
+Array BAsics:-
+In JS,when we declare an array ,it can store any type of value but In typescript,it has to be the similar type only.
+eg:-
+let a:number[]=[10,3,45,98];
+console.log(a); //[10, 3, 45, 98]
+
+:-Use [] when you know that array value will be assigned at a later stage.
+eg:-
+let a:number[]:[];
+a[0]=5;
+a[1]=45;
+
+-------------Tuple Basics---------
+:- Tuple is another useful data structure which is like an array but can store any type of data.
+:- A Tuple can limit fixed number of elements along with the data type.
+eg:-
+let person:[string,boolean]=["Kamdev",true];
+
+
+--------Union type-----------
+when we want that a variable should be able to handle 2 or more types,then we can use "|"(Union type)
+eg:-
+let a:number|string|boolean;
+
+----------Array MAnipulation-----------
+Adding & removing elements in an array:-
+:-There are 4 most known methods to add or remove elements:-
+push(),pop(),shift(),unshift()
+push&unshift are used to add elements.
+
+see in javascript
+
+---------2d array----------
+let arr:number[][]=[[1,2,3],[4,5,6]]
+console.log(arr);
+
+-----------------------------FUNCTIONS-----------------------------
+function sum(a:number,b:number){
+    return a+b;
+}
+let ans=sum(5,6);
+console.log(ans) //11
+
+
+function test(){
+    console.log("TEST"); //"TEST"
+}
+let a=test();  
+console.log(a);  //undefined
+
+
+-------Anonymous Function or function expression------
+let sum=function(a:number,b:number){
+    return a+b;
+}
+console.log(sum(5,6)); //11
+
+--------REST OPERATOR---------
+in typescript,rest parameter must be of an array type.
+function test(a:number,...b:number[]){
+     console.log(a); //1
+     console.log(b); //[3, 5, 4, 9, 75] 
+}
+test(1,3,5,4,9,75)
+
+--------------------------------ENUM-------------------------------
+Enum type:-
+Enumeration is a feature which allows you to define named constants.
+Enum is a collection of fixed values where numbers are automatically assigned.
+In typescript,we have numeric,string & heterogeneous enums.we use enum keyword to define enumeration.
+eg:-
+enum WorkDAys{
+     MON,TUE,WED,THURS,FRI,SAT,SUN
+}
+console.log(WorkDAys)   //{ "0": "MON", "1": "TUE", "2": "WED", "3": "THURS", "4": "FRI","5": "SAT", "6": "SUN","MON": 0, "TUE": 1, "WED": 2, "THURS": 3, "FRI": 4, "SAT": 5, "SUN": 6}
+console.log(WorkDAys.MON)  //0
+console.log(WorkDAys.WED) //2
+
+Note:-
+when we declare enum values with any number,the rest are incremented automatically.
+eg:-
+MON=2 then, tue will be 3.
+
+also,we can declare string in enum.
+enum WorkDAys{
+    MOn=1,
+    TUE="TUESDAY"
+}
+
+---------------------
+Reverse Mapping:-
+It helps us to get the numeric value from the member or vice-versa.
+eg:-
+enum WorkDAys{
+     MON,TUE,WED,THURS,FRI,SAT,SUN
+}
+console.log(WorkDAys.WED)  //2
+console.log(WorkDAys["WED"]) //2
+
+NOTE:- String enum members do not get a reverse mapping generated at all.
+
+-----------------
+Const enum:- To avoid unnecessary enum coding in your javascript file,we can make enum as const.(not advisable)
+ambient enum:- The enum declared using declare keyword itself means that is already existing and is currently used as a reference ,known as ambient enum.
+
+
+--------------------------------------Object Oriented Typescript------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------Interface-------------------------------
+with the help of interface,we can create custom variables.
+eg:-
+interface Address{
+    address1:string,
+    street:string,
+    pin:number,
+}
+let home:Address;
+home={
+    address1:'Jehanabad',
+    street:'Gandhi MAidan',
+    pin:804407
+}
+Note:- Interface declaration decides the structure of the object literal & therefore it is known as "Object Types" in newer Typescript
+
+-------
+To apply an interface on a class, implements keyword is used.
+eg:-
+interface Vehicle{
+    vId:number,
+    vName:string,
+}
+class Car implements Vehicle{  //it means the class can have its own members or properties apart from those in the interface.
+
+}
+
+-----------
+How will you inherit an interface?
+:- by using extends keyword
+
+-----------------------------
+Generics:-
+Typescript's generic feature is used to develop reusable components.
+Generics allows components to work with any data type instead of restricting to one data type only.
+Generics can be used in many ways like Generic interfaces,Generic Classes etc.
+
+-----------------------

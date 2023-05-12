@@ -1,0 +1,21 @@
+-- method 1:-
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY NOT LIKE '%a'
+  AND CITY NOT LIKE '%e'
+  AND CITY NOT LIKE '%i'
+  AND CITY NOT LIKE '%o'
+  AND CITY NOT LIKE '%u';
+
+
+-- method 2:- Using the SUBSTR function:-
+SELECT DISTINCT CITY
+FROM STATION
+WHERE SUBSTR(CITY, -1) NOT IN ('a', 'e', 'i', 'o', 'u');
+
+
+-- method 3:- Using the REGEXP_LIKE function:
+SELECT DISTINCT CITY
+FROM STATION
+WHERE NOT REGEXP_LIKE(CITY, '[aeiou]$');
+

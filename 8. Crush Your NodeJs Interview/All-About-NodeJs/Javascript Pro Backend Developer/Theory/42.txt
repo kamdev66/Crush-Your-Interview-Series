@@ -1,0 +1,4 @@
+creating userschema and doten
+-----------------------------
+User.js
+.env

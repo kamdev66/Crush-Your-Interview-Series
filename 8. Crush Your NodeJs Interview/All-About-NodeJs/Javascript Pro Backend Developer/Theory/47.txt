@@ -1,0 +1,21 @@
+What is JWT and creating token
+--------------------------------
+Token:Treat token as your car key
+token=header+payload+signature
+
+ //create token (in app.js)
+    const token=jwt.sign(
+        {user_id:user._id,email},
+        process.env.SECRET_KEY,
+        {
+            expiresIn:"2h"
+        }
+    )
+
+    //verify the token (in auth.js)
+     try{
+      const decode=jwt.verify(token,process.env.SECRET_KEY)//ye token aur secret lega
+      console.log(decode)
+    }catch(error){
+        return res.status(401).send('Invalid Tokken')
+    }

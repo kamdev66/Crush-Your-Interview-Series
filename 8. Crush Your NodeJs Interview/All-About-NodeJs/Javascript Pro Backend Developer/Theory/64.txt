@@ -1,0 +1,39 @@
+Error Handler and Promises:-
+------------------------------
+reference:-https://nodejs.org/api/errors.html
+
+Basic errors command are:-
+:-new Error(message)
+error.code
+error.message
+
+reference for promises :- https://mongoosejs.com/docs/promises.html
+
+mainly there are two ways of promises for error handling:-
+1. thenabe(then catch)
+eg:- const saveUser=(req,res)=>{
+    User.create(myuser)
+           .then(user=>{
+            //do more stuff
+           })
+           .catch(){
+
+           }
+}
+
+2. async await
+eg:- const saveUser=async(req,res)=>{
+    try{
+        const user=await User.create(myuser)
+    }
+    catch(){
+
+    }
+}
+
+mostly advanced developer use helper function in production 
+eg:-
+const BigPromise=func=>(req,res,next)=>{
+    Promise.resolve(func(req,res,next))
+    .catch(next)
+}

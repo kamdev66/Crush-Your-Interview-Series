@@ -1,0 +1,5 @@
+Hiding Secrets in Backeend:-
+-----------------------------
+
+npm i dotenv
+require('dotenv').config()

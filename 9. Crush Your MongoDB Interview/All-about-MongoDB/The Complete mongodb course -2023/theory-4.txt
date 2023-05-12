@@ -1,0 +1,29 @@
+use of $ in Mongo Query Language:-
+1. precedes operators in mQL.eg:- $lt(less than) {"salary":{$lt:1500}}
+
+
+
+Introduction to $expr:-
+
+Cursor methods:- 
+
+Projection:- return documents and display only the fields that you specify.it's done
+in find() method.
+db.collection.find({query},{projection})
+If you fill nothing in this Projection parameter bydefault,all fields are displayed.
+db.collection.find({},{"name":1,"year":1,"_id":0})
+//agar hum projection me name,year ko 1 denge to sirf name aur year hi return 
+krega us collection ka , agar hame _id nhi chahiye to is field ko hame specially
+"_id":0 dena pdta hai nhi return krwana hai to.
+
+
+
+
+
+
+
+
+
+
+
+

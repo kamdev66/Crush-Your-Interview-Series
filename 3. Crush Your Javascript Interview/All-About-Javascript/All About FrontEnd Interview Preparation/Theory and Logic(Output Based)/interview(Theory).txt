@@ -1,0 +1,79 @@
+TODO: Check property exist in object
+:-
+const employee={
+  id:1,
+  name:"John",
+  salary:5000
+}
+
+const isSalaryExist= 'salary' in employee;
+console.log(isSalaryExist); //true
+
+const isSalaryExist= 'salar' in employee;
+console.log(isSalaryExist); //false
+
+NOTE:-
+The 'in' operator returns the boolean value true/false.
+The 'in' operator returns true if a property exists in the object or its prototype chain.
+
+
+TODO: Conditionally add a property to an object.
+:- 
+const includeSalary=true;
+const employee={
+    id:1,
+    name:"John",
+    ...(includeSalary && {salary:2000})
+}
+console.log(employee);  //{
+                             id: 1,
+                             name: "John",
+                             salary: 2000
+                          }
+
+TODO: Use includes to check for multiple criteria
+:-
+const rgbColors=["red","green","blue"];
+const isRGB=(color)=>{
+return rgbColors.includes(color);
+}
+console.log(isRGB("red")) //true
+console.log(isRGB("yellow")) //false
+
+TODO: Remove duplicates from array using SET
+:-
+const numbers=[1,2,3,4,5,2,4,6,7,2,3,3]
+const colors=["red","pink","yellow","red"]
+const uniqueNumbers=[...new Set(numbers)];
+console.log(uniqueNumbers);  //[1, 2, 3, 4, 5, 6, 7]
+const uniqueColors=[...new Set(colors)];
+console.log(uniqueColors); //["red", "pink", "yellow"]
+
+NOTE:- The spread syntax(...) is used to include all the items of the Set to a new array.
+
+TODO: Avoid Delete keyword to remove property from object
+:-
+const employee={
+    id:1,
+    name:'john',
+    salary:4000
+}
+delete employee.salary;
+
+Note:- Use REST operator to create a new copy without given property name.
+const employee={
+    id:1,
+    name:'john',
+    salary:4000
+}
+const {salary,...newEmployee}=employee;
+console.log(newEmployee);  //{
+                                id: 1,
+                                name: "john"
+                             }
+                             
+NOTE:- A better way to delete a property without mutating the original object is by using the REST
+operator(...). Use the rest operator(...) to create a new copy without the given property name.
+
+TODO: 
+

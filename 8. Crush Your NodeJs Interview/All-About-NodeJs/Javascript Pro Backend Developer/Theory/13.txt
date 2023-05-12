@@ -1,0 +1,39 @@
+Request,Response and Status Code:-
+-----------------------------------
+server gives us response with some status codes.
+:- An HTTP status code is a server response to a browser's request. When you visit a website, your browser sends a request to the site's server, and the server then responds to the browser's request with a three-digit code: the HTTP status code.
+
+successful respons:-
+200(OK):- request succeeded, it is mainly used in GET,HEAD,PUT or POST
+201(created) :- request succeeded and a new resource created as a result, mainly used for POST or some PUT requests.
+202(Accepted):- It indicates that the request has been accepted for processing, but the processing has not been completed; in fact, processing may not have started yet.
+
+
+client error responses:-
+400(Bad request):- the server could not understand the request due to invalid syntax.
+404(Not Found):-It means that the page you wanted to access , couldn't be found on their server.
+
+
+server error responses:-
+500(Internal Servr error):-  It means that the server encountered an unexpected condition that prevented it from fulfilling the request 
+502(bad Gateway):-
+
+
+read:- https://expressjs.com/en/4x/api.html
+
+express.json():- It is a built-in middleware function in Express. This method is used to parse the incoming requests with JSON payloads and is based upon the bodyparser.
+
+
+steps to deploy on heroku:-
+git init
+git add .
+git commit -m "f"
+optional-> push to github
+open heroku cli:- heroku login
+heroku git:remote -a social-media-app-dev
+push code to heroku app:- git push heroku master
+
+
+deployed link:- https://social-media-app-dev.herokuapp.com/
+
+

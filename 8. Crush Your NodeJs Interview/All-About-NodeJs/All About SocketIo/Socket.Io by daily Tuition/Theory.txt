@@ -1,0 +1,23 @@
+What is Socket.io?
+:- Real-time ,bidirectional and event-based communication between the browser and the server.
+:- it uses nodejs server and javascript client library for the browser.
+
+
+:-websocket is a communication protocol which provides full duplex and low latency channel between the server and the browser.
+:-socket.io is bidirectional means two or more parties take part in the conversation.
+:-every action in socket.io is considered as event.So,to send the message you emit an event with the message data
+
+
+npm i express nodemon socket.io
+"start":"nodemon main.js --w" /*--w because i want to watch this file every time we make changes in itthats why i'm passing here watch flag*/
+create main.js in socket folder
+
+Now,we use socket.io file to craete a communication between client and server.
+To create socket.io,we have to first call the http module.and you have to pass your app to this http.
+const http=require('http').Server(app);
+
+we have to attach this http to the  socket.io:-
+const io=require('socket.io')(http);
+
+now we have to create a new connection .
+when you want to to connect two people you have to make new unique connection.To create a new connecton:-

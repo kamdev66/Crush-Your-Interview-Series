@@ -1,0 +1,9 @@
+Sending emails using nodemailer:-
+---------------------------------
+npm install nodemailer
+In nodemailer we have to do twothings :-
+1. create transporter
+2. send main
+reference:- https://nodemailer.com/about/
+
+read:- https://mongoosejs.com/docs/guide.html

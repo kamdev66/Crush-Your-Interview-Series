@@ -1,0 +1,529 @@
+About Project:-
+I want to sell T-shirts online,keep track of all customers and oreders.I also want to add new products and keep a check on stock.
+
+File Structure:-
+root
+    -config
+    -controllers
+    -middlewares
+    -models
+    -routes
+    -seeds -> isme connect to database and some of the dummy data rahega
+    -utils
+    -.gitignore
+    -.env
+    -app.js/index.js
+
+
+--------
+ecomm App --------->models--------User --> name
+                                           email
+                                           password
+                                           photo
+                                           {id,secureurl}
+                                           role,
+                                           resetPasswordToken,
+                                           resetPasswordExpiry
+                                           createdAt
+
+          --------->models--------Product---> name
+                                              price
+                                              description
+                                              photos[]
+                                              category
+                                              brand
+                                              stock
+                                              ratings
+                                              numOfReviews
+                                              reviews[user,name,rating,comment]
+                                              user
+                                              createdAt
+
+        ----------->models----------Order---->  shipping Info {phoneInfo,Address,city,postalcode,country}
+                                                user
+                                                paymentInformation{}
+                                                taxAmount
+                                                ShippingAmount
+                                                totalAmount
+                                                orderStatus
+                                                deliveredAt
+                                                -------------
+                                                orderItems:[{}]
+                                                name
+                                                quantity
+                                                image[0]
+                                                price
+                                                product
+
+
+----------------
+How forget password works?
+:- agar hum password bhul jaate hai to hum req krenge hey, i am forget my password,apna email denge aur kahenge ki
+send me the instruction ,how can i reset my password.
+-ab backend me jayenge aur check krenge ki user exist krta h ki nhi
+-agar user exist krta hai to we simply create a method that is -tokenGen(),ye tokenGen() method token create karega
+-ab backend me jo token generate hua hai, wo databaseko aur frontend ko send krenge
+-ab user usi token ko aur token ke saath hi new password ko send krega backend me, sabse pahle hum token ki expiry check krenge
+-if the expiry of token is still valid then,hum compare karenge jo frontend se token aa rha hai wo aur  jo database me token hai wo dono same hai ki nhi  
+-agar same hai to new password set ho jayega 
+
+Note:- user ko verify krne ke liye yahi step follow krte hai
+
+-------------------------------------------------
+Project:- tshirtstore
+npm i bcryptjs cloudinary cookie-parser dotenv express express-fileupload mongoose jsonwebtoken nodemailer stripe razorpay validator morgan
+mkdir config controllers middleware models routes utils
+touch index.js app.js
+
+--------
+tutorial:-76
+
+ "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+
+ Note:- create a .env file
+
+app me jo kuch v hoga wo sab app.js me rahega
+app ko start krne ka configuration index.js me rahega
+Note:- require('dotenv').config() hame dono file me likhna hai nhi to kabhi kabhi eror de deta hai
+
+
+
+//Create a controller - homeController
+exports.home=(req,res)=>{ //home ke place pr kuch v de skte hai,iska mtlb hai ki controller me ek method hai jiska naam home hai
+    res.status(200).json({
+        success:true,
+        greeting:"Hello My World"
+    })
+}
+
+Note:- The functionality part will go into the controller .
+and routes folder me bas route rahega
+
+In home.js//ye hmara home route hai
+const {home}=require("../controllers/homeController");//
+router.route("/").get(home);//agar koi "/" par jayega to ,home method execute hoga
+
+NOTE:-route me sirf controller rhega,aur app.js me sirf route ka rhega
+
+In app.js,aisa structure bnayenge
+//import all routes            
+const home = require('./routes/home')
+
+//router middleware
+app.use('/api/v1',home)
+
+----------------------------------------------
+In App.js:-
+
+//import all routes
+const home = require('./routes/home')
+//router middleware
+app.use('/api/v1',home)
+
+In home.js(which is a router):-
+
+const express=require('express')
+const router=express.Router()  //router ka instance liya aur sabse pahle ab isko export kr dena h
+const {home,homeDummy}=require('../controllers/homeController')
+router.route('/').get(home)
+router.route('/dummy').get(homeDummy)
+module.exports=router;
+
+
+In homeController.js(which is a controller):-
+
+exports.home=(req,res)=>{  
+    res.status(200).json({
+        success:true,
+        greeting:"Hello My World"
+    })
+}
+exports.homeDummy=(req,res)=>{  
+    res.status(200).json({
+        success:true,
+        greeting:"Hello My World HomeDummy"
+    })
+}
+
+
+-------------------------------------------------------------------------------
+tutoral:-78
+
+var morgan=require('morgan')
+//morgan middleware
+app.use(morgan("tiny"))  //ye hame console me jo v route hit hua a wo de dega
+like this:-
+GET /api/v1/ 304 - - 5.270 ms
+GET /api/v1/dummy 304 - - 1.697 ms   
+
+:-we will always add this regular middleware in app.js
+/our regular middleware
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+
+//import and add cookieParser and fileUpload middleware
+const cookieParser=require('cookie-parser')
+const fileUpload=require('express-fileupload')
+//cookies and file middleware
+app.use(cookieParser())
+app.use(fileUpload())
+
+
+
+Swagger documentation:-
+npm i yamljs swagger-ui-express
+//for swagger documentation
+const swaggerUi=require('swagger-ui-express');
+const YAML=require('yamljs');
+const swaggerDocument=YAML.load("./swagger.yaml");
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocument));
+
+make swagger.yaml file 
+then,make nodemon.json file and under the nodemon.json write:-
+{
+    "ext":".js, .jsx, .yaml"
+}
+swagger.yaml ko nodemon automatically read nhi krta hai,isliye ya sab likhna pada
+
+-------------------
+tutorial-79:-Custom Error Handlers
+
+class CustomError extends Error{
+    constructor(message,code){   //yaha pr code mtlb status code hai,message by default rhta hai,agar hame status code lana hai to aise laa skte h
+        super(message);
+        this.code=code;
+    }
+}
+
+module.exports=CustomError;
+
+-------------------------------
+tutoral-80 :- The Big Promise
+
+module.exports=func=>(req,res,next)=>{
+    Promise.resolve(func(req,res,next)).catch(next);
+}
+//hum ise kahi v kisi naam se import kr skte hai,qki hmne ise name nhi diya hai
+//agar hum Promise use nhi krenge to hame async await me try catch use krna hoga
+
+------------
+tutorial-91 :- Creating a user model and validator
+
+const mongoose=require('mongoose')
+const validator=require('validator')
+
+const userSchema=new mongoose.Schema({
+     name:{
+        type:String,
+        required:[true,'Please provide a name'],
+        maxLength:[40,'Name should be under 40 characters']
+     },
+     email:{
+        type:String,
+        required:[true,'Please provide an email'],
+        validate:[validator.isEmail,'Please enter email in correct format'],
+        unique:true
+     },
+     password:{
+        type:String,
+        required:[true,'Please provide a Password'],
+        minLength:[6,'Password should be atleast 6 char'],
+        select:false //agar hum kisi user ko select krke laana chahte hai to uska password nhi aayega
+     },
+     role:{
+        type:String,
+        default:'user'
+     },
+     photo:{
+        id:{
+            type:String,
+            required:true
+        },
+        secure_url:{
+            type:String,
+            required:true
+        }
+     },
+     forgotPasswordToken:String,
+     forgotPasswordExpiry:Date,
+     createdAt:{
+        type:Date,
+        default:Date.now
+     }
+})
+
+module.exports=mongoose.model('User',userSchema)//mongoose ye userSChema lega aur User name se modal bna dega
+
+
+------------------
+tutoral-82 :- password encrypton and mongoose prototypes
+
+const bcrypt=require('bcryptjs')
+
+//encrypt password before save
+userSchema.pre('save',async function(next){
+   if(!this.isModified("password")){
+    return next();
+   }
+   this.password=await bcrypt.hash(this.password,10);
+})
+
+-------------------
+tutorial-83 :- validating the password:-
+
+//validate the password with passed on user password
+userSchema.methods.isValidatedPassword=async function(userSendPassword){
+    return await bcrypt.compare(userSendPassword,this.password)
+}
+
+------------------
+tutorial-84:- 
+
+In .env:-
+JWT_SECRET=thisismy
+JWT_EXPIRY=3d
+
+In user.js:-
+const jwt=require('jsonwebtoken')
+
+//create and return jwt token
+userSchema.methods.getJwtToken=function(){  //getJwtToken ke place pr hum kuch vname de skte hai
+    return  jwt.sign({id:this._id},process.env.JWT_SECRET,{   //here {id:this._id} is payload and JWT_SECRET is secret key
+        expiresIn:process.env.JWT_EXPIRY
+     })
+}
+
+tuotrial -85:- forgot password and crypto hashing
+
+const crypto=require('crypto')//It is  a default node package used for generating random large string, ise hame install nhi karna pdta 
+
+//generate forget password token(string)
+userSchema.methods.getForgotPasswordToken=function(){
+    //generate a long and random string
+    const forgotToken=crypto.randomBytes(20).toString('hex');
+    this.forgotPasswordToken=forgotToken;
+
+    //time of token
+    this.forgotPasswordExpiry=Date.now()+ 20*60*1000;
+
+    return forgotToken
+}
+
+
+---------------
+tutorial-user routes:-
+
+userController.js:-
+
+const User=require('../models/user')
+const BigPromise=require('../middleware/bigPromise')
+
+exports.signup = BigPromise(async(req,res,next)=>{
+    res.send("signup route");
+})
+
+user.js in routes:-
+const express=require('express')
+const router=express.Router();
+
+const {signup} =require('../controllers/userController');
+
+router.route('/signup').post(signup)
+
+then app.js:-
+//import all routes
+const home = require('./routes/home')
+const user=require('./routes/user')
+
+//router middleware
+app.use('/api/v1',home)
+app.use('/api/v1',user) //jab koi api/v1/signup krega tab ye api hit hoga
+
+
+--------------
+tutorial:-87:- signup a user cookies
+
+In userController.js:-
+
+exports.signup = BigPromise(async(req,res,next)=>{
+     const {name,email,password}=req.body;
+     if(!email || !name || !password){
+        //hum yaha par jo error solve ke liye customError bnaya tha uska use krenge,first  import
+        return next(new CustomError('Name,Email and password are required',400)) //isko humnext ke andar likenge qki ye middleware hai jisko hamne utils me likha h 
+     }
+     //agar name email aur pasword diya hai to database me store kra denge
+     const user=await User.create({
+        name,
+        email,
+        password
+     })
+     //user jab successfully register kr lega to hum use cookie token send krenge
+     const token=user.getJwtToken();
+     const options={
+        expires:new Date(Date.now()+3*24*60*60*1000),
+        httpOnly:true
+     }
+     //ab hum token aur options ko as a cookie send kr denge aur json me token aur user ko vejenge
+     res.status(200).cookie("token",token,options).json({ //"token" ye jo double quotes me hai ye cookie ka name hai
+           success:true,
+           token,user
+     })  
+})
+
+
+--------------------
+tutorial-88:- database connection
+
+const mongoose=require('mongoose')
+
+const connectWithDB=()=>{
+    mongoose.connect(process.env.DB_URL,{
+        useNewUrlParser:true,
+        useUnifiedTopology:true
+    })
+    .then(console.log(`DATABASE CONNECTED`))
+    .catch(error=>{
+        console.log(`DATABASE CONNECTION ERROR`);
+        console.log(error);
+        process.exit(1);
+    })
+}
+
+module.exports=connectWithDB;
+
+-----------------------
+tutoral-90:- Handling image upload:-
+
+in .env:-
+CLOUDINARY_NAME=dglijvsgh
+CLOUDINARY_API_KEY=981156217562944
+CLOUDINARY_API_SECRET=r7qUeBiMnuBPLRB-FPNKDkYAeCE
+
+in index.js:-jisme databas hota hai usme cloudinary ko config krna jyada better hota hai
+const cloudinary=require('cloudinary');
+
+//cloudinary config goes here
+cloudinary.config({
+    cloud_name:process.env.CLOUDINARY_NAME,
+    api_key:process.env.CLOUDINARY_API_KEY,
+    api_sceret:process.env.CLOUDINARY_API_SECRET
+})
+
+in app.js:-
+app.use(fileUpload({
+    useTempFiles:true,
+    tempFileDir:"/tmp/"
+}))
+In userController.js:-
+const fileUpload=require('express-fileupload')
+const cloudinary=require('cloudinary')
+
+if(req.files){
+        let file=req.files.photo //fronend ko btana pdega ki photo call kro tabhi work krega
+        result=await cloudinary.v2.uploader.upload(file,{
+         folder:"users",
+         width:150,
+         crop:"scale"
+        })
+    }
+
+     const user=await User.create({
+        name,
+        email,
+        password,
+        photo:{
+         id:result.public_id,
+         secure_url:result.secure_url
+        }
+     })
+
+
+
+------------------------------
+tutorial:-93:- Login route and controller:-
+
+userController.js:-
+exports.login = BigPromise(async (req,res,next)=>{
+   const {email,password}=req.body;
+
+   //chack for presence of email and password
+   if(!email || !password){
+      return next(new CustomError('Please provide email and pasword',400))
+   }
+   //get user from DB
+   const user=await User.findOne({email}).select("+password") //select("+password") ye hamne isliye lgaya hai qki hamne modal me isko false kiya tha.   //yaha par hum email se find kr rhe hai,hum id se v kr skte hai
+   //if user not found in DB
+   if(!user){
+      return next(new CustomError('You are not registered in our database',400))
+   }
+   //match the password
+   const isPasswordCorrect=await user.isValidatedPassword(password) //isme hamne user(small) diya hai qki ham database me nhi kr rhe h
+   
+   //if password is not correct
+   if(!isPasswordCorrect){
+      return next(new CustomError("password doesn't match or exist",400))
+   }
+
+   //now,we have checked everythig, if all goes good,we will send the token now
+   const token=user.getJwtToken();
+     const options={
+        expires:new Date(Date.now()+3*24*60*60*1000),
+        httpOnly:true
+     }
+     //agar hum password nhi send krna chahte hai to
+     user.password=undefined;
+     //ab hum token aur options ko as a cookie send kr denge aur json me token aur user ko vejenge
+     res.status(200).cookie("token",token,options).json({ //"token" ye jo double quotes me hai ye cookie ka name hai
+           success:true,
+           token,user
+     })  
+
+})
+
+
+in user.js routes:-
+router.route('/login').post(login)
+
+
+---------------------------------------
+tutorial:-94:- logout route:-
+
+exports.logout = BigPromise(async (req, res, next) => {
+   //clear the cookie
+   res.cookie("token", null, {
+     expires: new Date(Date.now()),
+     httpOnly: true,
+   });
+   //send JSON response for success
+   res.status(200).json({
+     succes: true,
+     message: "Logout success",
+   });
+ });
+
+
+ ----------------------------
+ tutorial:-95:- Send email from node
+
+//hm ise utils me likhenge qki iska use hum kahi v import kra ke kr skte hai (emailHelper.js):-
+//we will use mailtrap.io for smtp details(like host,port etc.) 
+
+//ye hum mailtrap se nodemailer me jaake le lenge
+SMTP_HOST=smtp.mailtrap.io
+SMTP_PORT=2525
+SMTP_USER=d925a7910f2f6e
+SMTP_PASS=3c5bd25d5750aa
+
+-------
+tutorial-96:- forgot password:-
+
+check in user.js:-
+
+-----------
+tutorial97:- Reset password controller and routes:-
+
+

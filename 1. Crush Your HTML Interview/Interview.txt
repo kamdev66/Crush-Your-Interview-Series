@@ -1,0 +1,200 @@
+TODO: What are the differences between HTML and XHTML?
+:- HTML and XHTML are both markup languages used to create web pages. The main difference between them is that HTML is a more lenient language, allowing for a wider range of coding practices, while XHTML is stricter and more precise in its syntax. XHTML is actually a stricter version of HTML that follows the rules of XML, which means that it requires all tags to be properly nested and closed, and all attributes to have values. 
+
+
+TODO: What is semantic HTML, and why is it important?
+:- Semantic HTML is a way of writing HTML that uses meaningful tags to describe the content of a web page, rather than just using tags for presentation. This makes the code more readable for humans and machines, and helps search engines and other web crawlers understand the structure and meaning of the content on a page. 
+eg:- nav,header,footer etc.
+
+
+
+TODO: Can you explain the box model in HTML and CSS?
+:- The box model is a concept in HTML and CSS that describes how elements are laid out on a page. Every element on a web page is considered a rectangular box, consisting of four areas: content, padding, border, and margin. The content area is where the actual content of the element is displayed, while the padding area is the space between the content and the border. The border area is the actual border around the content, and the margin area is the space between the border and the next element on the page. 
+
+
+TODO: What is the difference between the <div> and <span> elements?
+:- The <div> and <span> elements are both used for grouping elements together, but they differ in their default display properties. The <div> element is a block-level element, meaning that it takes up the full width of its container and creates a line break after it.It is often used for grouping together larger sections of a page, such as a header or a footer. 
+:- The <span> element, on the other hand, is an inline-level element, meaning that it only takes up as much space as its content, and can be placed within a line of text. It is often used for grouping together smaller elements, such as a single word or phrase within a paragraph.
+
+
+TODO: How do you use HTML5 Canvas to draw graphics and animations?
+:- The HTML5 Canvas element allows you to draw graphics and animations on a web page using JavaScript. To use the canvas element, you first need to create a canvas object in your HTML document using the <canvas> tag. Then, you can use JavaScript to draw shapes, lines, and other elements onto the canvas using the CanvasRenderingContext2D API. 
+
+eg:-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas Example</title>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500"></canvas>
+	<script src="myScript.js"></script>
+</body>
+</html>
+
+myScript.js file:- 
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+// Draw a rectangle
+ctx.fillStyle = "blue";
+ctx.fillRect(50, 50, 100, 100);
+
+// Draw a circle
+ctx.fillStyle = "red";
+ctx.beginPath();
+ctx.arc(250, 250, 50, 0, 2*Math.PI);
+ctx.fill();
+
+
+TODO: What are the new features in HTML5, and how do they differ from previous versions?
+:- Semantic tags: HTML5 introduces several new tags that provide more semantic meaning to the content of a web page. Examples include <article>, <section>, <header>, and <footer>. These tags allow search engines to better understand the structure of the page, making it easier to index and rank content.
+:- Audio and video support: HTML5 includes built-in support for audio and video playback, eliminating the need for third-party plugins like Flash. 
+:- Canvas element: The <canvas> element allows developers to draw graphics and animations on a web page using JavaScript. This provides a way to create dynamic and interactive web content without relying on plugins or external libraries.
+
+
+TODO: How do you optimize images in HTML for faster loading times?
+:- Compress images: Compressing images reduces their file size without significantly reducing image quality. There are several image compression tools available that you can use to compress images before uploading them to your website.
+:- Resize images: Large images take longer to load, so it's important to resize images to their appropriate dimensions before uploading them.
+:- Use appropriate file types: Different file types have different file sizes and loading times. JPEG is the best option for photographs, while PNG is better for graphics and images with transparency. GIFs are good for animated images, and SVG is ideal for vector graphics.
+:- Use CDN: Content Delivery Networks (CDNs) cache your images on servers located around the world, making them load faster for users in different regions. You can use a CDN to store and serve your images, reducing the load on your website's server and improving page load times.
+:- Lazy loading: Lazy loading is a technique where images are loaded only when they are visible in the user's viewport, rather than loading all images at once. This helps reduce page load times and improve performance
+
+
+TODO: How do you create responsive designs in HTML and CSS?
+:- Use responsive frameworks: There are several responsive frameworks like Bootstrap, Foundation, and Materialize that provide pre-designed layouts and components that can be easily customized to fit your needs.
+:- Use media queries: Media queries allow you to apply different styles to your web page based on the device screen size. 
+eg:- 
+/* Apply styles for screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+:- Use fluid layouts: Fluid layouts use percentages for widths and heights instead of fixed pixels, making them adaptable to different screen sizes. This allows your web page to expand or contract based on the screen size.
+eg:-
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+:- Use flexible images and media: Images and media can also be made responsive by using CSS to set their maximum width to 100%. This allows them to scale proportionally with the screen size.
+eg:- 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+TODO: What are the benefits of using a CSS preprocessor, such as SASS or LESS?
+:- Variables: CSS preprocessors allow you to define variables that can be reused throughout your style sheets, making it easier to maintain consistency across your design. This makes it easier to make changes to your design, as you can update the variable once and have it reflected across your entire style sheet.
+eg:-
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+.nav-link {
+    color: $primary-color;
+}
+.btn {
+    background-color: $secondary-color;
+}
+:- Nesting: Preprocessors allow you to nest your selectors, making your style sheets easier to read and understand. This also makes it easier to target specific elements within your design hierarchy.
+eg:-
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+:- Mixins: Preprocessors allow you to define mixins, which are reusable blocks of CSS that can be included in your style sheets. This makes it easier to create complex styles and maintain consistency across your design.
+eg:-
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+.button {
+    @include border-radius(4px);
+    padding: 10px;
+}
+:- Functions: Preprocessors provide a way to define and use functions, allowing you to create complex calculations and manipulate your styles dynamically.
+eg:-
+$base-font-size: 16px;
+@function em($px) {
+    @return $px / $base-font-size * 1em;
+}
+h1 {
+    font-size: em(24px);
+}
+
+
+
+TODO: should we have more than one h1 tags ?
+:- It is generally recommended to use only one <h1> tag per web page as the main heading that describes the content of the page. 
+:- Using more than one <h1> tag on a page can lead to confusion for both users and search engines. When multiple <h1> tags are used, it becomes unclear which heading represents the main topic of the page. This can also affect the search engine optimization (SEO) of the page.
+
+
+TODO: Difference between canvas and svg ?
+:-Canvas and SVG (Scalable Vector Graphics) are both used for creating graphics on the web, but they differ in how they create and render the graphics.
+:- Interactivity: Canvas allows for interactivity through JavaScript, while SVG allows for interactivity through both JavaScript and CSS.
+:- Text rendering: SVG offers better text rendering capabilities compared to Canvas, as text is treated as a separate object that can be styled and manipulated.
+:- Performance: Canvas can be faster than SVG when it comes to rendering complex animations and graphics, as it uses less memory.
+:- In summary, Canvas is best for creating dynamic, interactive graphics, while SVG is best for creating graphics that need to be scalable and retain their quality at any size. 
+
+
+TODO: How is dom rendered by browser?
+:- When a browser receives an HTML document, it first parses the HTML to create a Document Object Model (DOM) tree. The DOM is a hierarchical representation of the HTML document, where each HTML element is represented as a node in the tree.
+:- Once the DOM tree is created, the browser goes through a process called layout or reflow. During this process, the browser determines the size and position of each element on the page based on the CSS styles applied to each element and the layout rules defined by the browser.
+:- The rendering process is optimized by modern browsers through techniques such as pre-fetching, caching, and lazy-loading of resources, and incremental rendering to improve page load times and performance.
+
+
+TODO: Difference between async and defer in html ?
+:- Both `async` and `defer` are attributes used in HTML to control how scripts are loaded and executed on a web page.
+:- The key difference between async and defer is when the scripts are executed. With async, the script is executed as soon as it is downloaded, potentially before the rest of the page has finished loading. With defer, the script is executed after the rest of the page has finished loading.
+
+
+TODO: Describe the process you follow for cross-browser compatibility testing, and what tools do you use to accomplish this?
+:- Cross-browser compatibility testing is an important step in web development to ensure that a website works as intended across different web browsers and versions.
+:- Use browser testing tools: There are several browser testing tools available that allow developers to test their websites across different browsers and devices. Some popular ones include BrowserStack, Sauce Labs, CrossBrowserTesting, and LambdaTest.
+:- Manual testing: While browser testing tools are useful, it's important to manually test the website on each browser to ensure that everything is working as expected. This may involve testing different features, such as forms, videos, and animations, to ensure that they work correctly.
+
+
+TODO: Difference between attribute and property :-
+:- The key difference between an attribute and a property is that attributes are defined in HTML markup and can be set or changed using JavaScript, whereas properties are JavaScript values that correspond to attributes and can be accessed and modified directly through JavaScript.
+:- It is worth noting that some attributes and properties have the same name, such as the id attribute and the id property.
+
+
+TODO: What is the use of 'alt' attribute in 'img' tag ?
+:- The alt attribute in the <img> tag is used to provide alternative text that is displayed in place of the image if the image cannot be displayed, 
+
+
+TODO: What are the key differences between the HTML <img> tag and the CSS background-image property, and when would you use one over the other?
+:- Use the <img> tag when you want to display an image that is an essential part of the content and that needs to be accessible to all users. Use background-image when you want to use an image as a design element, such as a repeating pattern or a background image for a section of the page. Additionally, when working with responsive design, it's generally easier to use <img> tags to control the size and scaling of the image.
+
+
+TODO: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

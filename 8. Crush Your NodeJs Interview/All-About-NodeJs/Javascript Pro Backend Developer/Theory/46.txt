@@ -1,0 +1,11 @@
+Handling Password Situation:-
+--------------------------------
+Pre middleware functions are executed one after another, when each middleware calls next.
+const schema = new Schema(..);
+schema.pre('save', function(next) {
+  // do stuff
+  next();
+});
+
+
+npm i bcryptjs//for securing Password

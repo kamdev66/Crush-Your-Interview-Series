@@ -1,0 +1,25 @@
+Setting up Secure Cookies-
+-----------------------------
+
+If we want to use cookies to send the data:-
+first require things is options
+const options={
+    expires:new Date(Date.now()+3*24*60*60*1000), //3 din baad expires ho jayega
+    httpOnly:true, //isse ye sirf backend server me read kr payenge
+} 
+res.status(200).cookie('token(kuch v name de skte hai)',token(value of the cookie),options)
+or
+res.status(200).cookie('token(kuch v name de skte hai)',token(value of the cookie),options).json({
+    success:true,
+    token,
+    user
+})
+
+
+without-> app.use(express.json()),we can't read the json data 
+similarly for cookies,if you want to read the cookie data then,we have to install cookie-parser package.
+npm i cookie-parser
+//const cookieParser=require('cookie-parser')
+//app.use(cookieParser())
+
+:- jab humlog form se data send krte hai (x-www-form-urlencoded) ,then we have to use app.use(express.urlencoded());
