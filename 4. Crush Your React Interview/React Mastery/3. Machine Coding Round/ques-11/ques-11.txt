@@ -1,0 +1,11 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #11 - Data Table
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+1️⃣ Create a data table as shown below.
+2️⃣ Make an Api call to fetch data.
+3️⃣ Data should be rendered and shown in table format .
+4️⃣ Make use of proper table tags .
+5️⃣ Use of any library is not allowed .
+
+
+🔥 𝐁𝐨𝐧𝐮𝐬 / 𝐀𝐝𝐝 𝐨𝐧 : Apply proper CSS .

@@ -1,0 +1,9 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #10 - Custom hook useIntersectionObserver ...
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+1️⃣ Create a custom hook useIntersectionObserver.
+2️⃣ It should make use of the Intersection observer api.
+3️⃣ This should be usable in any other practical use cases to lazy load content.
+
+
+🔥 𝐁𝐨𝐧𝐮𝐬 / 𝐀𝐝𝐝 𝐨𝐧 : Try to use it and show practical implementation by using in some other components.

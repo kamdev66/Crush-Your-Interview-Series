@@ -1,0 +1,12 @@
+
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #9 - Autocomplete Typeahead
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+1️⃣ Create autocomplete functionality as shown below.
+2️⃣ Make an Api call to fetch data.
+3️⃣ Populate the data in the dropdown as per the text entered.
+4️⃣ User should be able to select the field among the results.
+
+
+🔥 𝐁𝐨𝐧𝐮𝐬 / 𝐀𝐝𝐝 𝐨𝐧 : Try to optimise the search using debouncing and create a custom debounce hook.
+Bind the esc and enter key properly.
