@@ -1,0 +1,103 @@
+
+ques-1. common modal component/window.confirm/Dialog -(sadanand Pai github JS)
+ques-2. Todo list-(sadanand Pai github,Coding Artist)
+ques-3. Counter-(sadanand Pai github)
+ques-4. Image Slideshow/Carousel-(sadanand Pai github JS,Coding Artist)
+ques-5. Dark/Light mode-(sadanand Pai github)
+ques-6. Stopwatch-(sadanand Pai github,Coding Artist)
+ques-7. Login/Register with localstorage
+ques-8. Tree/Folder Structure View/File Explorer-(sadanand Pai github,roadside coder(utube))
+ques-9. Autocomplete Typeahead Online-(sadanand Pai github)
+ques-10. Typeahead AutoComplete Offline-(sadanand Pai github)
+ques-11. Data Table/Column Table-(sadanand Pai github)
+ques-12. Tic Tac Toe Game-(sadanand Pai github,Coding Artist)
+ques-13. Star Rating-(sadanand Pai github)
+ques-14. Pagination-(sadanand Pai github)
+ques-15. Infinite scrolling Online-(sadanand Pai github)
+ques-16. Infinite scrolling offline-(sadanand Pai github)
+ques-17. Investment Calculator-(sadanand Pai github)
+ques-18. Progress bar-(sadanand Pai github)
+ques-19. Implement Day Calendar
+ques-20. Implement Memory Game-(Coding Artist)
+ques-21. Develop a Simple Calculator-(sadanand Pai github JS)
+ques-22. Accordion(sadanand Pai github,Coding Artist)
+ques-23. Develop a Notifications /toast/popup-(sadanand Pai github)
+ques-24. Match Pair Game-(sadanand Pai github)
+ques-25. Guess The Number-(sadanand Pai github)
+ques-26. Implement Stack-(sadanand Pai github)
+ques-27. Password Generator (roadside coder(utube),sadanand Pai github)
+ques-28. Table Colorizer-(sadanand Pai github)
+ques-29. Expense Tracker-(sadanand Pai github)
+ques-31. BMI Calculator-(sadanand Pai github,Coding Artist)
+ques-32. password strength-(sadanand Pai github,coding artist)
+ques-33. Skeleton Loader(sadanand Pai github in JS)
+ques-34. Multi-Typing/Typing Effect(sadanand Pai github in JS)
+ques-35. Bill Split(sadanand Pai github in JS)
+ques-36. Brick Breaker-(sadanand Pai github in JS)
+ques-37. Weather App-(sadanand Pai github in JS)
+ques-38. Implement Pixel Art grid-(sadanand Pai github in JS)
+ques-39. Implement color spotter game-(sadanand Pai github in JS)
+ques-40. String Transformer-(sadanand Pai github in JS)
+ques-41. Gradient Generator-(sadanand Pai github in JS,Coding Artist)
+ques-42. Lift Simulation-(sadanand Pai github in JS)
+ques-43. Implement chess board-(sadanand Pai github in JS)
+ques-44. Chips Input/Tags Generator-(sadanand Pai github in JS)
+ques-45. Analog Clock-(sadanand Pai github in JS)
+ques-46. Match Pair-(sadanand Pai github in JS)
+ques-47. Typing Speed Test-(sadanand Pai github in JS,Coding Artist)
+ques-48. Countdown timer-(sadanand Pai github in JS)
+ques-49. OTP Input-(sadanand Pai github in JS)
+ques-50. Quiz App-(sadanand Pai github in JS,Coding Artist)
+ques-51. Snake Game-(sadanand Pai github in JS)
+ques-52. Hangman Game-(sadanand Pai github in JS,Coding Artist)
+ques-53. Calender-(sadanand Pai github in JS)
+ques-54. Comment Box-(sadanand Pai github in JS)
+ques-55. JSON Creator-(sadanand Pai github in JS)
+ques-56. Array Methods-(sadanand Pai github in JS)
+ques-57. Spin Wheel-(Coding Artist)
+ques-58. Highlight Searched Text--(Coding Artist)
+ques-59. Random Joke Generator-(Coding Artist)
+ques-60. Double Range Slider-(Coding Artist)
+ques-61. Roll the dice-(Coding Artist)
+ques-62. Age Calculator-(Coding Artist)
+ques-63. Number Gussing Game-(Coding Artist)
+ques-64. Draggable element-(Coding Artist)
+ques-65. Temperature Converter-(Coding Artist)
+ques-66. Limit Character in Input Field-(Coding Artist)
+ques-67. Digital Clock-(Coding Artist)
+ques-68. Rock-Paper Scissor-(Coding Artist)
+ques-69. Alarm App-(Coding Artist)
+ques-70. Currency Converter-(Coding Artist)
+ques-71. Captcha Generator-(Coding Artist)
+ques-72. Scratch Calendar-(Coding Artist)
+ques-73. QR Code Generator-(Coding Artist)
+ques-74. Decimal Binary Converrter-(Coding Artist)
+ques-75. Live word Counter-(Coding Artist)
+ques-76. random password Generator-(Coding Artist)
+ques-77. Palindrome Checker-(Coding Artist)
+ques-78. guess the word-(Coding Artist)
+ques-79. Take screenshot-(Coding Artist)
+ques-80. Background color change on Onclick-(Coding Artist)
+ques-81. Fireworks on Click-(Coding Artist)
+ques-82. OTP Input Field-(Coding Artist)
+ques-83. Detect Internet Speed-(Coding Artist)
+ques-84. Copy to Clipboard-(Coding Artist)
+ques-85. Lorem Ipsum Generator-(Coding Artist)
+ques-86. Anagram Checker-(Coding Artist)
+ques-87. How to build a Text Converter? 
+ques-88. Build a FAQ page
+ques-89. Build a GIF Search Engine
+ques-90. Build a Room Reservation System
+ques-91. Build a Simple Price Calculator 
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,6 +8,6 @@ delete channel.video;
 const getChannel=channel.video; 
 
 
-console.log(channel);  //{ channelName: 'Future Forward' }
-console.log(getChannel);  //undefined
+console.log(channel); 
+console.log(getChannel); 
 

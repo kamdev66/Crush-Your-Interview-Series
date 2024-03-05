@@ -1,0 +1,34 @@
+JS Specific Important topics:-
+1. throttle
+2. Debounce
+3. this
+4. eventtarget
+5. curry function
+6. compose function
+7. memoize
+8. Propagation
+9. Progressive enhancement vs graceful degradation
+10. Prototypal inheritance
+11. null vs undefined vs undeclared
+closures
+call vs apply
+event bubbling
+hoisting
+event delegation
+Rest vs spread operators
+host objects vs native objects
+classical inheritance vs prototypal inheritance
+Linting
+polyfill
+type of,instanceof and Object.prototype.toString
+reflow vs repaint
+Micro vs Macro tasks
+Handling memory leaks
+Object.create vs new
+
+Machine Coding:- 
+
+Build a Promise class from scratch(DOM API)-frontend lead.com
+Flatten Arrays Recursively and Iteratively(write a func to flatten a multi-dimensional arr into a sigle-level array.provide both recursive and iterative solution.-frontend lead.com
+Find Corresponding Nodes(given two trees with identical structures,but with different text content,and a node in the first tree,write a func. that finds the corresponding node in the second tree.
+Filtering Matching JSON (Filtering based on match inside json)

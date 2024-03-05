@@ -1,0 +1,45 @@
+what is DNS?
+
+:- DNS stands for Domain Name System. It's a hierarchical 
+decentralized naming system used to translate human-readable 
+domain names (like www.example.com) into machine-readable 
+IP addresses (like 192.0.2.1).
+
+Here's how DNS works:-
+Domain Names: Domain names are organized in a hierarchical structure, with the right-most part representing the top-level domain (TLD) and the left-most part representing the specific subdomains. For example, in the domain name www.example.com, ".com" is the top-level domain and "example" is the second-level domain.
+DNS Servers: DNS operates using a distributed system of servers. There are different types of DNS servers, including:
+Root Servers: These servers store information about the top-level domains (.com, .org, .net, etc.).
+Top-Level Domain (TLD) Servers: These servers store information about specific top-level domains (e.g., .com servers store information about domain names ending in ".com").
+Authoritative Name Servers: These servers store information about individual domain names and their corresponding IP addresses.
+
+DNS Resolution: When a user enters a domain name into their web browser, their device initiates a DNS query to resolve the domain name into an IP address. The DNS resolution process typically involves the following steps:
+The user's device checks its local DNS cache to see if it has a recent record of the domain name.
+If the domain name is not found in the local cache, the device sends a DNS query to its configured DNS resolver (usually provided by the ISP).
+The DNS resolver checks its cache and if it doesn't have the IP address, it starts querying the root DNS servers to find the authoritative name server for the requested domain.
+The resolver then queries the authoritative name server for the IP address of the requested domain.
+Once the IP address is obtained, it is returned to the user's device, which can then establish a connection to the desired website or service.
+
+:- DNS ek aisi internet service hai, jo ki domain name ko ip 
+address me badal deti hai,
+kyuki internet ip address built hota hai .
+
+jab hum google.com apne browser me search krte hai tab browser
+sabse pahle us IP address ko apne local cache me search krta hai,
+jisme latest visited website ki information save rhti hai,
+agar browser ko local cache me website ki ip address nhi milti 
+tab hmara computer ISP's DNS server se communicate krta hai,
+iske server cache me sabhi popular website ki information cached
+hoti hai,agar iske pass v address nhi milta hai to fir ye query DNS 
+root name server ke paas jati hai,fir root name server us address
+ko samajhta hai aur aage top level domain server (.com,.org) ke pass
+vejta hai , har ek top level domain ka apna name server ka set hota 
+hai, uske bad TLD server request ko review krta hai 
+(jaise www.google.com) aur aage authoritative Name Server ko vej
+deta hai ,jiske pass domain name se related puri information hoti 
+hai aur tab ye domain se related ip address ke information ko
+aapke PC (client computer )ko vej deta hai , uske bad wo website 
+accesible ho jata hai.
+
+1. Top Level Domain Name:- .com, .net, .org, .edu etc
+2. country level domain name:- .in(india),.au(australia),.us(USA)
+

@@ -1,0 +1,12 @@
+what is smtp?
+
+:- SMTP stands for Simple mail transfer protocol.
+It's a protocol used for sending email messages 
+over the internet.
+
+:-
+jab v hum apne email clients(gmail,yahoo) se kisi ke email address
+par email send krte hai , tab aapka email client email ko sending mail 
+server par transfer krta hai, iske bad mail server check krta hai 
+ki aapne jo address diya hai wo sahi hai ya nhi,agar sahi to wo
+smtp protocol ke through receiving mail server pr send kr deta hai

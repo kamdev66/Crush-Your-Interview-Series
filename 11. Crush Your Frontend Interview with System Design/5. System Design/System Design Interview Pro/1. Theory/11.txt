@@ -1,0 +1,42 @@
+Monolithic vs  MicroService:-
+
+Architecture:- Internal design details for building the applications.
+
+
+1. Monolithic Architecture:- iska mtlb wo architecture jiske andar
+(frontend,backend,and data storage) teeno likhe gye ho aur 
+deploy v saath me kiye gye ho.
+
+:- If all the components and functionalities of a project are 
+entangled and combined in a single codebase,is known as Monolithic
+app.
+:- monolithic architecture has less complexity
+:- easier to understand
+:- higher productivity
+:- It is also known as centralised system.
+
+Disadvantages :-
+1. every module is combined in a single system,so if there is an error
+or bugs in a single module,it can destroy the complete system.
+
+2. whenever a single module is updated,whole system needs to be updated.
+
+
+2. Distributed System:- A distributed system is a collection of
+multiple individual system connected through a network that share
+resources,communicate and coordinate to achieve common goals.
+
+eg:- hmare pass 10gb ka storage hai usko hmne 5 jagah 2-2 gb krke 
+store kr diya
+suppose,ek machine khrab ho gya to hum baaki 4 ke kisi me se v data
+le skte hai.
+
+Advantages:-
+1. Scalable
+2. NO SPOF(single point of failure)
+3. low latency(mtlb hum server ko kahi v rkh skte h,monolithic me ek server isliye ek jagah hi rkh skte the(high  latency))
+
+Disadvantages:-
+1.Complex 
+2. management required
+3. difficult to secure

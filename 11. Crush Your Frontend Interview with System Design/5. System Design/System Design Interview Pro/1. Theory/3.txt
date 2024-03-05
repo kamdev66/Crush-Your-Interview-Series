@@ -1,0 +1,46 @@
+Ques:- Horizontal vs Vertical Scaling?
+
+Scalability:-
+:- Scalability refers to the ability of a system, network, 
+or process to handle growing amounts of traffic.
+
+(Scalability ka mtlb hai agar traffic badh jaati hai to hmara 
+system down hoga ya sahi rhega).
+
+2 types:-
+
+1. Vertical Scalability (Scaling Up):-we increase the capacity of existing hardware
+ or software resources within a single server.we can upgrade 
+ more powerful server with a faster CPU and more memory.
+
+pros:-
+1. easy implementation
+2. less power(ek server h less power lgegi)
+3. management is easy
+
+cons:- 
+1. single point of failure(spof)
+2. limitation(ek limit tak hi badha skte hai)
+
+2. Horizontal Scalability (Scaling Out):-  we add more instances of servers,
+databases, or other resources to distribute the workload 
+across multiple nodes.
+In a web application,for horizontal scalability, 
+we used to deploy multiple servers behind a load balancer
+to distribute incoming requests.
+
+pros:-
+1. not single point of failure
+2. not limitation
+
+cons:-
+1. tough to secure(security tough ho jayegi).
+2. management is hardware
+
+QUes:- When to use horizontal and Vertical scaling?
+Vertical Scaling:-
+1. When traffic is low.
+2. Simplicity is its advantage
+Horizontal Scaling:-
+1. For large scale applications
+2. Huge traffic

@@ -1,0 +1,8 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #2 - 𝐖𝐢𝐧𝐝𝐨𝐰.𝐂𝐨𝐧𝐟𝐢𝐫𝐦
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+1️⃣  Create a custom hook which has similar functionality as window.confirm .
+2️⃣  Should be usable like in other components as below :
+        const { triggerConfirm, ConfirmDialog } = useConfirm();
+
+Use Case:  Before deleting a content in a component this Confirmation pop up should come up and on click of confirm deletion should be done .

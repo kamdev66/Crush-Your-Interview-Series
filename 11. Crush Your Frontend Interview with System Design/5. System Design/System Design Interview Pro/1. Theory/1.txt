@@ -1,0 +1,28 @@
+Ques:- What is System Design
+
+Answer:-
+System Design is the process of designing the elements of a system,
+such as the architecture,modules and components,the different 
+interfaces of those components.
+
+There are two types of system design:-
+1. LLD
+2. HLD
+
+Diff. between LLD and HLD?
+LLD:-
+1. Describes the design of each element mentioned in the High level
+design of the system.
+(jo hamne HLD ke andar elements likhe hai uski design ko describe krenge)
+2. Classes,interfaces,relationships between different classes,and
+actual logic of various components.
+
+HLD:- 
+1. Describes the main components that would be developed for the 
+resulting product.
+(agr hame resulting components bname hai to use main(mukhya)
+ components HLD pr banne hai)
+2. the system architecture details ,database design,services and 
+processes,relationship between various modules and features.
+
+

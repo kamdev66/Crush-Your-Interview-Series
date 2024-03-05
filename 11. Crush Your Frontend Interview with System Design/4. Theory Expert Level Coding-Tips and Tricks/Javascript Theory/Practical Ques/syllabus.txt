@@ -1,0 +1,88 @@
+1. Implement a function that converts a Javascript value into a JSON string.
+2. Implement a function that performs a deep copy of a value, but also handles circular references.
+3. Implement a function to construct a table of contents from an HTML document.
+4. Implement a function to filter rows of data matching a specified requirement.
+5. Implement a function that performs insertion sort.
+6. Implement a function that returns a memoized version of a function which accepts any number of arguments.
+7. Implement a function that acts like setInterval but returns a function to cancel the Interval.
+8. Implement a function that merges two objects together
+9. Implement a function to highlight text if searched terms appear within it.
+10. Implement a function to recursively transform values.
+11. Implement a function that determines if two values are deep equal.
+12. Implement a function to highlight text if a searched term appears within it.
+13. Implement a function that returns a new object after squashing the input object.
+14. Implement a function that creates a resumable interval object.
+15. Implement the functionality behaviour of Promise.any()
+16. Implement the functionality behaviour of Promise.allSettled()
+17. Implement a function that returns a memoized version of a function which accepts a single argument.
+18. Implement a function that formats a list of items into a single readable string.
+19. Implement a function that converts a JavaScript value into a JSON string.
+20. Implement a class that can subscribe to and emit events that trigger attached callback functions.
+21. Implement a debounce function that comes with a cancel method to cancel delayed invocations.
+22. Implement a function to merge rows of data from the same user.
+23. Implement a function that recursively flattens an array into a single level deep.
+24. Implement a function that returns an object with all falsey values removed.
+25. Implement a function to resolve a given value to a Promise.
+26. Implement a Turtle class that moves a turtle on a 2D plane.
+27. Implement a function to execute N async tasks in series.
+28. Implement a promisify function that allows the original function to override the return value.
+29. Implement a function to deserialize a JSON string.
+30. Implement a function to convert all the keys in an object to camel case.
+01. Implement Debounce - Easy(Asked in Meta, Google, Flipkart, IBM, MakeMyTrip
+02. Implement Throttle-Medium(Asked in Google, Meta, Tekion)
+03. Implement Currying - Easy(Asked in Intuit, Tekion, Adobe, MakeMyTrip, Jio, Paytm
+04. Implement Currying with Placeholders - Medium(Asked in Amazon, Flipkart, Yandex, Xiaomi, Vimeo, Gojek, Zeta
+05. Deep Flatten I-Medium(Asked in Roblox, Disney+ Hotstar, Rippling
+06. Deep Flatten II-Medium(CoinSwitch
+07. Deep Flatten III-Easy
+08. Deep Flatten IV-Hard(Asked in Meta, Tik Tok, Google, Apple, Yandex, Flipkart
+09. Negative Indexing in Arrays (Proxies) - Medium
+10. Implement a Pipe Method-Easy
+11. Implement Auto-retry Promises - Medium
+12. Implement Promise.all-Medium
+13. Implement Promise.allSettled-Medium 
+14. Implement Promise.any-Medium Asked in Zepto
+15. Implement Promise.race - Easy
+16. Implement Promise.finally-Medium Asked in Google
+17. Implement Custom Javascript Promises - Super Hard Asked in Amazon, Airbnb, Tekion, Cars24
+18. Throttling Promises by Batching-Medium
+19. Implement Custom Deep Equal-Hard Asked in Google, Tekion
+20. Implement Custom Object assign - Medium Asked in ServiceNow, Flipkart
+21. Implement Custom JSON.stringify - Hard Asked in Meta
+22. Implement Custom JSON.parse - Super Hard Asked in Meta
+23. Implement Custom typeof operator. Medium
+24. Implement Custom lodash get()-Medium
+25. Implement Custom lodash_set()- Medium
+26. Implement Custom lodash_omit(). Medium
+27. Implement Custom String Tokenizer - Medium
+28. Implement Custom setTimeout-Medium /// Asked in Swiggy, Disney Hotstar
+29. Implement Custom setinterval-Medium Asked in Meta, TikTok, Swiggy
+30. Implement Custom clearAllTimers - Easy Asked in Meta
+31. Implement Custom Event Emitter Medium Asked in Meta, Flipkart, Adobe, Jio, Tekion
+32. Implement Custom Browser History-Medium
+33. Implement Custom lodash_chunk() Medium
+34. Implement Custom Deep Clone Medium Asked in Adobe, Tekion, Navi
+35. Promisify the Async Callbacks-Easy
+36. Implement 'N' async tasks in Series-Hard Asked in Jio, MakeMyTrip, Tekion
+37. Implement 'N' async tasks in Parallel Medium Asked in Zepto Paytm, BookstyShow
+38. Implement 'N' async tasks in Race - Easy
+39. Implement Custom Object.is() method-Easy
+40. Implement Custom lodash partial()-Medium Asked in Meesho
+41. Implement Custom lodash_once() Medium
+42. Implement Custom trim() operation-Medium
+43. Implement Custom reduce() method-Medium Asked in Amazon, Apple, Expedia, Paytm, ByteLeam
+44. Implement Custom lodash memoize(). Medium Asked in Meta, Intuit, Gameskraft
+45. Implement Custom memoizeLast() method - Medium
+46. Implement Custom call() method-Medium Asked in Meesho
+47. Implement Custom apply() method-Medium
+48. Implement Custom bind() method Medium Asked in Rippling, Flipkart, BookMyShow
+49. Implement Custom React "classnames" library Medium //// Asked in Meta
+51. Implement Custom Virtual DOM-I (Serialize) - Hard 
+52. Implement Custom Virtual DOM - II (Deserialize) - Medium
+53. Implement Memoize/Cache identical API calls - Hard
+
+
+
+https://learnersbucket.com
+https://www.greatfrontend.com
+https://devtools.tech/

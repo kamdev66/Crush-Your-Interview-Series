@@ -1,0 +1,13 @@
+What is https?
+
+:- HyperText transfer protocol secure.
+:- for secure communication over a computer network, most commonly the internet.
+:-HTTPS is designed to provide a secure connection between a web browser and a web server.
+
+
+Here's how HTTPS works:-
+1. Encryption: HTTPS uses encryption to secure the data transmitted between the web browser and the web server. This encryption is typically achieved using SSL (Secure Sockets Layer) or its successor, TLS (Transport Layer Security). These protocols encrypt the data to protect it from being intercepted or read by unauthorized parties.
+2. Authentication: HTTPS also provides authentication, ensuring that the web browser is communicating with the intended web server and not an impostor. This is done using digital certificates, which are issued by trusted Certificate Authorities (CAs). These certificates contain information about the identity of the website and are used to verify its authenticity.
+
+
+HTTPS is essential for protecting sensitive information transmitted over the internet, such as login credentials, payment details, and personal data. 

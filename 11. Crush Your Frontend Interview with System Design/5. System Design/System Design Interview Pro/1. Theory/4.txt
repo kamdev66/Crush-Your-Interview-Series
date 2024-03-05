@@ -1,0 +1,7 @@
+What is Capacity Estimation?
+
+:- Capacity estimation refers to the process of determining 
+the maximum amount of work that a system, process, or 
+resource can handle within a given timeframe. 
+
+(research more about this)

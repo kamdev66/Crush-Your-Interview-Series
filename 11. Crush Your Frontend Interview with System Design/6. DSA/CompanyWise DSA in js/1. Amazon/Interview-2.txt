@@ -1,0 +1,6 @@
+Ques-2:- Majority Element
+
+Java Solution:-
+
+
+Javascript Solution:- 

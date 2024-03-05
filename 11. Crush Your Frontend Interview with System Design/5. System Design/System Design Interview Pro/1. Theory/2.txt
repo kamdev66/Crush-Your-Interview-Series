@@ -1,0 +1,2 @@
+//What is tradeoffs in System Design?
+:- The Situation of making a decision between need of your system and then decide accordingly,is known as tradeoffs.

@@ -1,0 +1,6 @@
+Ques:- Two Sum
+
+Java Solution:-
+
+
+Javascript Solution:-

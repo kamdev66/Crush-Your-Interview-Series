@@ -1,0 +1,7 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #3 - 𝐂𝐨𝐮𝐧𝐭𝐞𝐫
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+
+1️⃣  Create a counter with Start / Stop / Pause / Reset Functionality
+2️⃣  Value should range from 0 to N .
+3️⃣ Buttons should be properly aligned as per current state .

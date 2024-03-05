@@ -1,0 +1,11 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #13 - Star Rating
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+
+1️⃣ Create a star rating component as shown in image.
+2️⃣ Rating should change on user click .
+3️⃣ Change the colour of the star on hover temporarily.
+4️⃣ Number of stars provided to the user must be dynamic .
+
+
+🔥 𝐁𝐨𝐧𝐮𝐬 / 𝐀𝐝𝐝 𝐨𝐧 : Try to provide customisable styles .

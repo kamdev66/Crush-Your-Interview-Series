@@ -1,0 +1,11 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #14 -  Pagination
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+
+1️⃣ Create a Pagination component that can be added to any table .
+2️⃣ It should have the number of rows per page and total pages shown.
+3️⃣ Bind the next and last button accordingly( include exceptions )
+4️⃣ Total number of buttons should change as per the number of rows in a page.
+
+
+🔥 𝐁𝐨𝐧𝐮𝐬 / 𝐀𝐝𝐝 𝐨𝐧 : Implement it with a data table .

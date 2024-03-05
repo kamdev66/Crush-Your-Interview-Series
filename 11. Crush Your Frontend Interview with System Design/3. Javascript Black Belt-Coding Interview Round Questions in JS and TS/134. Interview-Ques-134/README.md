@@ -1,0 +1,1 @@
+Implement a stack data structure in JavaScript that contains the following operations:

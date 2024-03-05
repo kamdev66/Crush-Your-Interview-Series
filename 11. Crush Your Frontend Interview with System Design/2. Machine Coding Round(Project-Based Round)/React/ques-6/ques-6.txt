@@ -1,0 +1,7 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #6 - 𝐂𝐮𝐬𝐭𝐨𝐦 𝐀𝐜𝐜𝐨𝐫𝐝𝐢𝐨𝐧
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+
+1️⃣  Create a shared / common Accordion component that can be used by other components .
+
+2️⃣  Parent comp should be able to pass dynamic content .

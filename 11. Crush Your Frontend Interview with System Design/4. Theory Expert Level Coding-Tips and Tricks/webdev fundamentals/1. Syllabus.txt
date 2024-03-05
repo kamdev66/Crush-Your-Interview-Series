@@ -1,0 +1,15 @@
+ ✅ Explain different strategies for improving web performance.
+ ✅ How would you optimize a web application for mobile devices?
+ ✅ Discuss the importance of lazy loading and its impact on web performance.
+ ✅ Why is web accessibility important, and what techniques would you use to make a website accessible?
+ ✅ How would you ensure your code complies with WCAG (Web Content Accessibility Guidelines)?
+ ✅ Describe different testing methodologies in frontend development.
+ ✅ How do you approach debugging in JavaScript? Share some techniques or tools you use.
+ ✅ Explain the role of bundlers like Webpack in a frontend development workflow.
+ ✅ How would you optimize a website for SEO (Search Engine Optimization)?
+What are different web storages and difference between them? 
+What are the best ways to store the JWT tokens? and how do you access them when you are sending the each request to server? 
+About JSX and how it helps to secure your code from XSS?
+How will you select between SSR and CSR for you application? What parameters will you consider.
+
+

@@ -7,11 +7,11 @@
 let num1;
 let num2=10;
 let x=num1 ?? num2;
-console.log(x);//10
+console.log(x);
 
 //Important Note:- If num1 has any other value (even if it's falsy, like 0 or an 
 // empty string), x will be assigned the value of num2.
 let num3=[];
 let num4=10;
 let ans=num3??num4;
-console.log(ans);  //[]
+console.log(ans); 

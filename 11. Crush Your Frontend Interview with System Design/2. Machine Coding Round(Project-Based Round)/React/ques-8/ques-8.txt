@@ -1,0 +1,10 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #8 - Tree / Folder Structure View
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+1️⃣ Create a tree-like structure or folder like in VScode .
+2️⃣ Make an Api call to fetch data.
+3️⃣ Data should be displayed as a tree .
+4️⃣ Click functions should work properly on nodes
+
+
+🔥 𝐁𝐨𝐧𝐮𝐬 / 𝐀𝐝𝐝 𝐨𝐧 : Try to add default css and provide some transition to change in css when  clicking nodes

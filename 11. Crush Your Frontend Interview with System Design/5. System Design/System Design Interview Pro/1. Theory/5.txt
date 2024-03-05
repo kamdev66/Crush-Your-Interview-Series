@@ -1,0 +1,13 @@
+What is HTTP?
+
+:- HTTP stands for Hypertext Transfer Protocol. It's a 
+fundamental protocol used for transferring data on the 
+World Wide Web. 
+
+In simpler terms, it's the set of rules 
+that allow web browsers (like Chrome, Firefox, or Safari)
+and web servers (computers that store and deliver web pages) 
+to communicate with each other.
+
+(ye ek req-res protocol hai,jiske through client aur server ek dusre se communicate kr paate hai)
+ye bydefault port 80 ka use krta hai.

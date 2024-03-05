@@ -12,4 +12,4 @@ Promise.resolve()
   });
 console.log("D");
 
-//D B C A
+

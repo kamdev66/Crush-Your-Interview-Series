@@ -1,0 +1,10 @@
+𝐌𝐚𝐜𝐡𝐢𝐧𝐞 𝐂𝐨𝐝𝐢𝐧𝐠 𝐈𝐧𝐭𝐞𝐫𝐯𝐢𝐞𝐰 #12 - Tic Tac Toe Game
+
+𝐏𝐫𝐨𝐛𝐥𝐞𝐦 𝐒𝐭𝐚𝐭𝐞𝐦𝐞𝐧𝐭 :
+1️⃣ Create a game similar to Tic Tac Toe .
+2️⃣ Design proper box-like structure.
+3️⃣ Once a player has won , the game should not allow more entries .
+4️⃣ Provide reset functionality .
+
+
+🔥 𝐁𝐨𝐧𝐮𝐬 / 𝐀𝐝𝐝 𝐨𝐧 : Handle all combinations of player winning a game.
