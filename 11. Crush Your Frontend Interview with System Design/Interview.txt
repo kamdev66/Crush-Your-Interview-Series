@@ -1,30 +1,4 @@
-JS Specific Important topics:-
-1. throttle
-2. Debounce
-3. this
-4. eventtarget
-5. curry function
-6. compose function
-7. memoize
-8. Propagation
-9. Progressive enhancement vs graceful degradation
-10. Prototypal inheritance
-11. null vs undefined vs undeclared
-closures
-call vs apply
-event bubbling
-hoisting
-event delegation
-Rest vs spread operators
-host objects vs native objects
-classical inheritance vs prototypal inheritance
-Linting
-polyfill
-type of,instanceof and Object.prototype.toString
-reflow vs repaint
-Micro vs Macro tasks
-Handling memory leaks
-Object.create vs new
+
 
 Machine Coding:- 
 

@@ -1,0 +1,10 @@
+Array:-
+1.Equilibrium Index-(GFG and Leetcode)
+2.Array Change-(blackbelt)
+3.Three consecutive odds-(Leetcode)
+4.Set Matrix Zeros-(Striver)
+5.Pascal's Trianle-(Striver)
+6.Next Permutation-(Striver)
+7.Kadane's Algorithm-Maximum Subarray-(Striver)
+8.Sort an array of 0's, 1's and 2's-(Striver)
+9.Stock Buy and Sell-(Striver)

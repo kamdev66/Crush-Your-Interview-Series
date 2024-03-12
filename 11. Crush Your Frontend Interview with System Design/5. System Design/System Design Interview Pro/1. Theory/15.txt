@@ -1,0 +1,28 @@
+what is Consistency ?
+
+:- when more than one client requests the system,for all such requests,
+it will be called consistent when each client gets the same data.
+
+:- the data should always be consistent,regardless of who is accessing it.
+
+(suppose hum IRCTC se flight book kr rhe hai, jisme 2 seat khali hai
+jisme se maine ek seat book kr ki,turant hi koi aur v usi seat ko book krta
+hai mtlb data inconsistent hai).
+
+2nd me jisne seat book kiya, use hum 'dirty read' bolte hai qki wo 
+galat data read kr rha hai
+
+Consistency in monolithic > Consistency in distributed
+(qki monolithic me ek hi server hai to saare user isi me update 
+krenge,lekin distributed me kisi v server se data change kr skte h)
+
+Factors improving Consistency:-
+1. Improving network bandwidth(network ki speed bdha do)
+2. Stop the read(Jab tak sare server update na ho jaye,tab tak 
+read ko stop kr dijiye)
+
+
+Types of consistency:-
+1. Strong Consistency:-
+2. Eventual Consistency:-
+3. Weak Consistency:-

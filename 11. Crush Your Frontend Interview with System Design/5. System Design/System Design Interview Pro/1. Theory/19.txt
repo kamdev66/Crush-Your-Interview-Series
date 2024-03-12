@@ -1,0 +1,26 @@
+19. What is Load Balancer?
+
+:-Load Balancing is the process of efficient distribution of
+network traffic across all nodes in a Distributed system.
+
+:- agar koi user request kr rha hai to kis server pr wo request
+jayegi wo load balancer decide krta hai
+
+:- load balancer ke andar hum code likh dete hai ki kon si
+request kis server pr jayegi
+
+
+ROLES OF LOAD BALANCER:-
+1. load distribution is equal over every node.
+2. Health Check(if server is not operational,request is passed to another server)
+3. Load balancer ensures high scalability,high throughput and high Availability.
+
+NOTE:- In monolithic,we have only one server,so we dont need it.
+In MicroService, we need load balancer.
+
+
+Cons of Load Balancer:-
+Single Point of Failure:-During a load balancer malfunctioning,
+the communication between clients and servers would be broken.
+To solve this issue,
+we will use two load balancer :- one is active load balancer and another one is passive load balancer.

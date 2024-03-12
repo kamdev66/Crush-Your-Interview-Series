@@ -1,3 +1,5 @@
+// QUESTION: Set Matrix Zeros
+
 // Time Complexity: O(M * N)
 // Space Complexity: O(1)
 
@@ -23,7 +25,7 @@ function setZeroesOptimalApproach(matrix) {
     }
   }
 
-  // Mark zero elements in the first row and first column
+  // Mark zero elements and put zero in first row and first column
   for (let i = 1; i < rows; i++) {
     for (let j = 1; j < cols; j++) {
       if (matrix[i][j] === 0) {

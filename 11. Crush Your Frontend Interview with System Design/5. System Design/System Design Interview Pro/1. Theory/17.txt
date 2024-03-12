@@ -1,0 +1,28 @@
+What is CAP theorem?
+
+:- 
+C-Consistency
+A-Availability
+P-Partition tolerance:-(suppose isme hamara Distributed system me se
+ek server down ho jata hai, to ushe hum bolenge ki partition ho gya hai
+tolrance ka mtlb hai ki isko hone se bachana hai mtlb ki agar koi 
+server down hota hai to uska replica hum bna denge,aisa nhi ki 
+wo down ho gya hai to usko down hi rhne denge).
+
+:- For a Distributed system,CAP theorem states that we can attain only
+two properties and the third would be always compromised.
+
+:- The System requirements should define which two properties 
+should be chosen over the rest.
+
+:- In simple language 3 me se app koi 2 hi achieve kr skte ho
+
+--------------
+1. Consistency (C): All nodes in the distributed system have the same data at the same time
+2. Availability (A): Every request to the distributed system receives a response, even in the presence of failures. 
+3. Partition Tolerance (P): The system continues to operate and provide consistent and available service even in the presence of network partitions or communication failures that cause some nodes to be unreachable by others.
+
+
+1. For CP:- hame dirty read band krna pdega isliye hum Availability(A) ko band kr denge.like(bank websites down chli jati hai jab koi update aata hai)
+2. For AP:- social media ke liye hum Consistency ko ignore kr skte hai
+3. For CA:- mtlb hmara application centralized hai bcoz isme ek hi server rhega qki jis server me hum data update kr rhe hai usi me request aa rhi hai tabhi to data consistent rhega.

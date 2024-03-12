@@ -1,0 +1,19 @@
+What are Database Indexes?
+
+:- Database indexing is a technique used to improve the performance of database queries by creating data structures (indexes) that allow for efficient retrieval of data based on certain criteria. 
+
+:- jab hum indexing ka use krte hai to us column ke liye ek
+separate memory allocate ho jati hai,jisme wo column ke elements
+sorted order me honge. aur isme jo value hoga wo original col ke 
+value ko point krega.
+
+:- O(logn ) complexity me search krega qki ye sorted hai
+
+:- Indexing creates a lookup table with the column and the pointer
+to the memory location of the row,containing this column.
+
+:- B-trees data structure is used to store the indexing as
+it is a multilevel format of tree-based indexing,which has balanced
+binary trees.
+
+:- read queries bahot jyada aa rhi hai wahi pr hame indexing lgani hai.

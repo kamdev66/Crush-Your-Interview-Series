@@ -1,0 +1,25 @@
+what is Throughput and how to improve Throughput?
+
+:- the volume of work or information flowing through a system
+(hamara system per second me kitna work kr rha hai)
+
+:- Throughput is the amount of data transmitted per unit of
+time.
+:- It is measured in bits per second. i.e. bps.
+
+Throughput in monolithic < Throughput in Distributed
+kyuki hum Distributed me aur v macine add kr skte hai ,jisse kaam 
+fast krega
+
+Causes of low Throughput:-
+1. latency:- agar latency jyada hoga to throughput kam hoga
+2. protocol overhead:- agar 2 server ke bich me handshake communication
+ho rha h to usse latency badhegi,aur throughput kam hoga
+3. congestion:- agar bahut jyada request aa rhi h to
+
+How to improve throughput?
+1. CDN
+2. Caching
+3. Distributed System
+4. Load balancer
+5. improve resources

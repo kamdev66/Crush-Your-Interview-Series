@@ -1,0 +1,27 @@
+25. what is synchronus communication and asynchronus communication?-(Engineering Digest)
+
+:- synchronus communication(Blocking call):-
+Aap is time kahi v nhi jaa skte hai jab tak ye complete na ho jaye
+
+:-refers to a communication pattern where the sender of a 
+message or function call waits for a response or completion
+before proceeding with further execution. In other words, 
+synchronous communication blocks the sender until the 
+operation being performed is finished or a response is received.
+
+
+:- High Consistency ke liye hum Synchronus communication ka use krte hai
+
+
+ASYNCHRONUS COMMUNICATION:-
+Asynchronous communication, also known as non-blocking 
+communication, is a communication pattern where the sender
+initiates an operation or message transmission without 
+waiting for an immediate response or completion. Instead 
+of blocking and waiting for the operation to finish, the 
+sender continues its execution, and the response
+
+where is it necessary:-
+1. computation takes a lot of time
+2. Scalability of applications
+3. avoid cascading failure

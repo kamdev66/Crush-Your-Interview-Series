@@ -1,0 +1,25 @@
+what is latency in network ?
+
+:- 
+(agar hum amazon.com likhte hai , to ye request amazon ke server 
+pr jayega,aur fir waha se response aayega. to jitna time laga is
+round trip me ,usi ko latency bolte hai).
+
+suppose,
+t1-jaane me(req)
+t2-aane me(res)
+t3-backend computation (logic)
+
+Latency=network delay+computational delay
+
+:->> latency of monolithic < latency of Distributed
+
+Note:- monolithic me network delay nhi hogi qki saare components
+ek sath hai,isliye isme sirf(computational delay) hoga,
+lekin Distributed me (network+computational delay) dono hoga qki
+isme saare modules alag alag deployed honge isliye isme network calls
+add ho jaati hai
+
+How can we reduce latency?
+1. Caching:- Caching is the process of storing information for a set period of time on a computer.
+2. Use CDN 

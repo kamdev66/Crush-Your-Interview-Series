@@ -1,0 +1,22 @@
+normalization vs denormalization
+
+:- 
+normalization:-agar hmare pass ek single table hai,usko multiple 
+table me divide kr denge.
+
+(putting data in multiple tables to avoid redundancy)
+
+denormalization:- agar hamare pass multiple table hai,usko single
+table bana denge.
+
+
+Benefits of denormalization?
+1. Faster data read operations
+2. Management Convenience
+3. High Data Availability
+4. reduces the number of network calls to fetch data from multiple places.
+
+
+Challenges of denormalization:-
+1. Redundant data->wastage of memory
+2. data inconsistency

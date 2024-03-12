@@ -1,0 +1,34 @@
+What is a Caching?
+
+:- Caching is a technique of storing frequently accessed or computed data in a temporary storage location called "cache".
+
+:- This cache is typically faster to access than the 
+original data source,eg. database,3rd party API etc.
+
+:- 2 types of Caching-
+(i)in-memory/local cache
+(ii)Distributed cache
+
+:-  It can be implemented using various technologies such 
+as in-memory data stores (e.g., Redis, Memcached), local 
+storage (e.g., browser cache), or content delivery
+networks (CDNs).
+
+:- Cache Hit: When the requested data is found in the cache, it's called a cache hit. This results in faster retrieval since the data is readily available in the cache.
+:- Cache Miss: When the requested data is not found in the cache, it's called a cache miss. In this case, the system needs to retrieve the data from the original data source, which takes more time.
+
+
+What is Cache Eviction Strategies?
+:- 
+Cache eviction strategies are mechanisms used to determine 
+which items (data or resources) should be removed or 
+replaced from a cache when the cache reaches its capacity 
+limit.
+
+some common cache eviction strategies are:
+1. LRU:-This strategy evicts the least recently accessed item from the cache when the cache is full.
+2. FIFO:-FIFO eviction strategy evicts the oldest item (the one that was first added to the cache) when the cache reaches its capacity limit.
+3. LFU:-LFU eviction strategy evicts the least frequently accessed item from the cache when the cache is full.
+4. MRU(Most recently Used):-
+5. LIFO:-
+6. RR(Random Replacement):-

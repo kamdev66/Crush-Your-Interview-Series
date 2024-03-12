@@ -1,0 +1,4 @@
+What are NoSQL databases?types of NoSQL databases
+
+:- 
+NoSQL databases, also known as non-relational or distributed databases, are a type of database management system (DBMS) that provides a mechanism for storing and retrieving data in a schema-less format, often at high speed and with horizontal scalability. Unlike traditional relational databases (SQL databases), NoSQL databases do not use a fixed schema and typically do not support SQL (Structured Query Language) for querying data.

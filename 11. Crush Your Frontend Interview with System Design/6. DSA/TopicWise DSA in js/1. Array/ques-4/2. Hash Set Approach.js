@@ -1,3 +1,5 @@
+// QUESTION: Set Matrix Zeros
+
 // Time Complexity: O(M * N)
 // Space Complexity: O(M + N)
 
@@ -19,12 +21,13 @@ function setZeroesHashSet(matrix) {
 
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
+            console.log(zeroRows.has(i))
+            console.log(zeroCols.has(j))
             if (zeroRows.has(i) || zeroCols.has(j)) {
                 matrix[i][j] = 0;
             }
         }
     }
-
     return matrix;
 }
 matrix = [[1,1,1],[1,0,1],[1,1,1]]

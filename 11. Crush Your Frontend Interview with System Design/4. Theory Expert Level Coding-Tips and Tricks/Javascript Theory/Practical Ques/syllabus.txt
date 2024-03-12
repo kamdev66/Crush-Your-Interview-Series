@@ -1,5 +1,13 @@
 1. Implement a function that converts a Javascript value into a JSON string.
 2. Implement a function that performs a deep copy of a value, but also handles circular references.
+(polyfill for call,apply and bind)
+(polyfill for map,filter,reduce,for each)
+(Build a Promise from Scratch)
+Polyfill of Promise all, Promise.race, Promise.allSettled,Promise.any,Promise.resolve,Promise.reject)
+Implement Async parallel, Async series which executes a set of async tasks parallel and in series
+Implement findIndex
+Implement intersectionWith
+Implement classNames
 3. Implement a function to construct a table of contents from an HTML document.
 4. Implement a function to filter rows of data matching a specified requirement.
 5. Implement a function that performs insertion sort.

@@ -6,64 +6,56 @@ Explain different types of scopes in javascipt?
 Explain the event loop in JavaScript.
 What is the use of the `this` keyword in JavaScript?
 Explain the difference between function declaration and function expression.
-Explain Call,apply and bind(polyfill for call,apply and bind)
-explain map, reduce, filter(polyfill for map,filter,reduce,for each)
+Explain Call,apply and bind
+explain map, reduce, filter
 What is the difference b/w promise and async/await?
 Explain debounce vs throttling.
-Object.create and Object.assign
-Iterators and generators
-Flatten Array
-Explain Promises (Build a Promise from Scratch)
-Polyfill of Promise all, Promise.race, Promise.allSettled,Promise.any,Promise.resolve,Promise.reject)
-What is the purpose of the prototype property in JavaScript?
-(Implement the Function .bind, call, apply method on the Function Prototype,
-String.prototype.repeat,explain Prototype and prototype inheritance)
-
-what is cookies?
-localstorage vs sessionstorage
-11. What is a callback function?
-12. Explain the concept of a pure function.
-14. What is the purpose of the arguments object in a function?
-Polyfill for setTimeout,clearTimeout
-What is memoization?
-17. What is the difference between a shallow copy and a deep copy?
-18. How does the call stack work in JavaScript?
-19. Explain the concept of function currying. Currying with example?
-20. How can you avoid callback hell in JavaScript?
-21. What is prototypal inheritance?
-22. How do you create an object in JavaScript?
-24. Explain the difference between Object.create and the constructor pattern.
-25. How do you add a property to an object in JavaScript?
-26. What is the hasOwnProperty method used for?
-Object Methods:-(Object.create,object.keys etc.)
-27. How can you prevent modification of object properties in JavaScript?
-28. Describe the use of the new keyword.
-29. Explain the concept of Object Destructuring in JavaScript.
+Describe the use of the new keyword.
+Explain the concept of Object Destructuring in JavaScript.
 Explain event delegation in JavaScript.
 Explain the concept of event propagation.
 Describe event bubbling and event capturing.
+
+Iterators and generators
+Flatten Array
+Explain Promises 
+explain Promise all, Promise.race, Promise.allSettled,Promise.any,Promise.resolve,Promise.reject)
+What is the purpose of the prototype property in JavaScript?
+String.prototype.repeat,explain Prototype and prototype inheritance)
+what is cookies?
+localstorage vs sessionstorage
+What is a callback function?
+Explain the concept of a pure function.
+What is the purpose of the arguments object in a function?
+Polyfill for setTimeout,clearTimeout
+What is memoization?
+What is the difference between a shallow copy and a deep copy?
+Explain the concept of function currying. Currying with example?
+How can you avoid callback hell in JavaScript?
+What is prototypal inheritance?
+How do you create an object in JavaScript?
+How do you add a property to an object in JavaScript?
+What is the hasOwnProperty method used for?
+Object Methods:-(Object.create,object.keys, Object.assign etc.)
+How can you prevent modification of object properties in JavaScript?
 What is the purpose of the data- attribute in HTML?
 Describe the difference between innerHTML and textContent.
-🔷 Implement findIndex
-🔷 Implement intersectionWith
-🔷 Implement classNames
-🔷 Event Emitter: Create a class that supports event subscription, emission, and callback triggering. Subscription objects are returned and can self-unsubscribe.
-🔷 Deep Clone: Develop a function that performs a deep copy of a value while handling circular references
-🔷 Implement HTML Serializer
-🔍 Explain the concept of prototypal inheritance.
-🔍 What is a common scenario for employing anonymous functions?
-🔍 Distinguish between host objects and native objects.
-🔍Clarify the distinctions among 'function User(){}', 'var user = User()', and 'var user = new User()
-🔍 Can you explain the purposes of Function.call and Function.apply, along with their notable differences?
-🔍 Explain the differences between feature detection, feature inference, and utilizing the User Agent (UA) string.
-🔍 What is type coercion, and what are some common pitfalls associated with relying on it in JavaScript code?
-🔍 Define strict mode and outline some of its advantages and disadvantages.
-🔍 Enumerate the benefits and drawbacks of immutability and explain how you can achieve it in your code.
-🔍 Differentiate between synchronous and asynchronous functions and elucidate the event loop.
-🔍 Describe the advantages of using the arrow syntax for methods in constructors.
-🔍 Define a higher-order function and provide an example of object or array destructuring.
-🔍 Give an example of generating a string using ES6 Template Literals and explain their benefits.
-Implement Async parallel, Async series which executes a set of async tasks parallel and in series
+Explain the concept of prototypal inheritance.
+What is a common scenario for employing anonymous functions?
+Distinguish between host objects and native objects.
+Clarify the distinctions among 'function User(){}', 'var user = User()', and 'var user = new User()
+Can you explain the purposes of Function.call and Function.apply, along with their notable differences?
+Explain the differences between feature detection, feature inference, and utilizing the User Agent (UA) string.
+What is type coercion, and what are some common pitfalls associated with relying on it in JavaScript code?
+Define strict mode and outline some of its advantages and disadvantages.
+Differentiate between synchronous and asynchronous functions and elucidate the event loop.
+Describe the advantages of using the arrow syntax for methods in constructors.
+Define a higher-order function and provide an example of object or array destructuring.
+Give an example of generating a string using ES6 Template Literals and explain their benefits.
 How rendering works in the browser
-Implement Memoization
-Clone an Object
+Progressive enhancement vs graceful degradation
+host objects vs native objects
+classical inheritance vs prototypal inheritance
+Linting
+Micro vs Macro tasks
+Handling memory leaks

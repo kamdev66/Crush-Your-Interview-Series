@@ -1,0 +1,19 @@
+what is messaged based communication?-(Engineering Digest)
+
+:- client sends request in form of message.
+:- received response in form of message
+:- It is async,so client is not required to halt the process
+and wait for the process.
+
+Producer:- Jo request vej rha hai
+Consumer:- Jo request receive kr rha hai
+Agent:-Producer aur Consumer ke bich me jo channel hai use agent kahte hai
+
+
+
+1. P2P model:-ek producer ek consumer rhega
+2. publish Subscribe model:-ek producer aur consumer bahot saare rhenge
+
+message based communication can be achieved through this tools:-
+1. kafka
+2. rabbitMQ

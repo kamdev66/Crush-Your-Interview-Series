@@ -1,0 +1,40 @@
+what is CDN (Content Delivery Network)?
+
+:- CDN are geographically Distributed networks of proxy servers
+and their objective is to serve content to users more quickly.
+
+:- CDNs work by caching content (such as images, videos,
+ stylesheets, JavaScript files, etc.) on multiple servers 
+ located in various data centers across the globe.
+
+eg:- When a user requests content from a website, the request 
+first goes to the CDN's edge server, which is typically 
+located closest to the user's geographical location. The 
+edge server checks if it has the requested content in its
+cache. If the content is cached on the edge server, it's
+delivered directly to the user. If not, the edge server
+retrieves the content from the origin server (the original 
+source of the content), caches it locally,and then delivers 
+it to the user.
+
+Examples of popular CDNs include:
+Cloudfare, Amazon CloudFront etc.
+
+----------
+website me 2 tarah ke content hote hai :-
+1. static content(images,videos,css,js etc.)
+2. dynamic content(changes according to user input)
+
+CDN static content ko apne pass rkh ke website ko provide karta hai
+
+CDN server user se jitna dur rhega website load hone utna hi time lega
+
+(mtlb hame static content CDN se mil jayega aur dynamic content server 
+se aayega)
+
+CDN ke pass agar content nhi rhega to wo server se le lega aur
+kuch time ke liye wo CDN server me hi store kr lega
+
+Things to consider for using CDN ?
+1. Cost:- jo content jyada use hone wala usi ko cdn me rkhenge,nhi to cost jyada aayega
+2. Expiry time:- na jyada kam rkhenge ,na hi sabse jyada

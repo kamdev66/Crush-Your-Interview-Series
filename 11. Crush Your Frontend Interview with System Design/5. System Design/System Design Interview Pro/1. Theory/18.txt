@@ -1,0 +1,12 @@
+18. what is lamport logical clock?
+
+:-suppose ek distrbuted system me 3 server hai,ek india me ek australia aur 
+ek canada me , to teeno ka time different hoga
+
+that's why we use lamport logical clock.
+
+isme agar hmare pass 2 process hai p1 aur p2, isme har process
+ke pass counter hota hai,jis pr event trigger hote rhta hai,
+
+event nhi rhega to counter ko badha denge, agar event receive 
+ho rha h to (maximum of event+1) kr denge

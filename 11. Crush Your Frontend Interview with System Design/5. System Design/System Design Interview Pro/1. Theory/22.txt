@@ -1,0 +1,9 @@
+22. what is polyglot persistence?-(Engineering Digest)
+
+:-Polyglot persistence is a concept in database design 
+and architecture where multiple types of database systems, 
+often from different categories or paradigms, are used to 
+store and manage data within a single application or system.
+
+:- agar hume ek hi project me multiple databases use krna pade
+usi ko Polyglot persistence bolte hai

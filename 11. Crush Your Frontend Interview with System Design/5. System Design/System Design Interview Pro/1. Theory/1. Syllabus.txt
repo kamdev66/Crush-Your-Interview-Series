@@ -1,7 +1,6 @@
 
 TOPICS/SYLLABUS:---
 
-takeuforward,
 1. What is System Design-(Engineering Digest,sudoCode,codeStoryWithMik)?
 components of System Design-(sudoCode)
 client server architecture-(in sudoCode only not takeuforward)
@@ -16,32 +15,42 @@ single server setup -(codeStoryWithMik only)
 9. What is the Internet TCP/IP stack?
 10. What is Subnets?
 11. Monolithic vs  MicroService-(Engineering Digest,Coding Simplified)
+12. what is latency in network ?-(Engineering Digest,techdose system design)
+13. what is Throughput and how to improve Throughput?-(Engineering Digest)
+14. what is Availability(Replication vs redundancy)?-(Engineering Digest 2 videos there)
+15. what is Consistency-(Engineering Digest,techdose system design)
+16. CDN-(codeStoryWithMik)
+17. what is CAP theorem ?-(Engineering Digest,Coding Simplified,sudoCode)
+18. what is lamport logical clock?-(Engineering Digest)
+19. What is Load Balancing?-(Engineering Digest,Coding Simplified,codeStoryWithMik)
+20. What is a Cache,what is cache eviction technique?-(Engineering Digest,Coding Simplified,codeStoryWithMik,sudoCode-(Caching | Cache Patterns | Cache Invalidation & Eviction))
+21. What are NoSQL databases?,types of NoSQL databases-(Engineering Digest)
+22. what is polygot persistence?-(Engineering Digest)
+23. normalization vs denormalization-(codeStoryWithMik)
+24. What are Database Indexes?-(Engineering Digest,Coding Simplified)
+25. what is synchronus communication and asynchronus communication?-(Engineering Digest)
+26. what is messaged based communication?-(Engineering Digest)
+27. what is web server?-(Engineering Digest)
+what is communication protocol in CN?-(Engineering Digest)
+REST API/SOA/Microservices architecture/Tier architecture-(Engineering Digest,download in phone,Coding Simplified,sudoCode-(What is a REST API? | CRUD APIs| REST vs HTTP))
+Authentication vs Authorization -(Engineering Digest)
+Basic Authentication -(Engineering Digest)
+Token Based Authentication-(Engineering Digest)
+OAuth-(Engineering Digest)	
+Forward Proxy and Reverse Proxy-(Engineering Digest)
+Reverse Proxy-(Engineering Digest)
 
 
 
 
 
-
-
-
-
-
-
-7. What are Relational Databases?
-9. What are NoSQL databases?
-8. What are Database Indexes?-(Engineering Digest,Coding Simplified)
-10. What is a Cache?-(Engineering Digest,Coding Simplified,codeStoryWithMik,sudoCode-(Caching | Cache Patterns | Cache Invalidation & Eviction))
-11. what is cache eviction technique?-(Engineering Digest)
-13. What is Load Balancing?-(Engineering Digest,Coding Simplified,codeStoryWithMik)
 Hashing-(Coding Simplified,sudoCode)
 14. What is Consistent Hashing?-(Coding Simplified,sudoCode)
 15. What is Sharding?-(Coding Simplified,sudoCode,key-based sharding-(sudoCode),range-based sharding-(sudoCode),directory-based sharding-(sudoCode))
 16. What are Bloom Filters?	
-CDN-(codeStoryWithMik)
 Stateful and Stateless Architecture-(codeStoryWithMik)
 Data centers and geoDNS-(codeStoryWithMik)
 What is Data Replication?-(sudoCode,codeStoryWithMik)
-How are NoSQL databases optimized?	
 What are Location-based Databases?	
 Database Migrations
 What is Data Consistency?	
@@ -58,7 +67,6 @@ What is Service Discovery and Heartbeats?
 How to avoid Cascading Failures?	
 Anomaly Detection in Distributed Systems	
 Distributed Rate Limiting
-What is Distributed Caching?	
 What are Content Delivery Networks?	
 Write Policies		
 Replacement Policies
@@ -66,49 +74,16 @@ How monoliths are migrated?
 Application Programming Interface (API)-(sudoCode)
 How are APIs designed?
 What are asynchronous APIs?
-REST API/SOA/Microservices architecture/Tier architecture-(Engineering Digest,Coding Simplified,sudoCode-(What is a REST API? | CRUD APIs| REST vs HTTP))
-Authentication vs Authorization -(Engineering Digest)
-Basic Authentication -(Engineering Digest)
-Token Based Authentication-(Engineering Digest)
-OAuth-(Engineering Digest)	
 Access Control Lists and Rule Engines
 Pull vs. Push
-what is latency in network ?-(Engineering Digest,techdose system design)
 Faults & Failures-(techdose system design,sudoCode)
-what is Throughput and how to improve Throughput?-(Engineering Digest)
-what is Availability(Replication vs redundancy)?-(Engineering Digest 2 videos there)
-what is Consistency-(Engineering Digest,techdose system design)
-Memory vs. Latency
-Throughput vs. Latency
-Consistency vs. Availability
-Latency vs. Accuracy
-SQL vs. NoSQL databases-(Coding Simplified)
 What is Thrashing?
 What are Threads?
-
---------
 what is bottlenecks in system design ?(download in phone pdf)
-diff between REST AND SOAP API?(download in phone)
 diff between data sharding and database partitionning?(download in phone)
 what are some metrics for measuring system performance?-(download in phone)
 Proxy Server-(Coding Simplified,sudoCode)
-Forward Proxy and Reverse Proxy-(Engineering Digest)
-Reverse Proxy-(Engineering Digest)
-what is CAP theorem ?-(Engineering Digest,Coding Simplified,sudoCode)
-what is lamport logical clock?-(Engineering Digest)
-file based storage system -(Engineering Digest)
-can RDBMS scale Horizontally?-(Engineering Digest)
-types of NoSQL databases-(Engineering Digest)
-what is polygot persistence?-(Engineering Digest)
-normalization vs denormalization-(codeStoryWithMik)
-what is denormalization in RDBMS?-(Engineering Digest)
-what is synchronus communication?-(Engineering Digest)
-what is asynchronus communication?-(Engineering Digest)
-what is messaged based communication?-(Engineering Digest)
-what is web server?-(Engineering Digest)
-what is communication protocol in CN?-(Engineering Digest)
 what is kafka?-(Coding Simplified)
-LRU Cache,How LRU Works?-(Coding Simplified)
 what is Apache Hadoop?-(Coding Simplified)
 what is HDFS?-(Coding Simplified)
 What is HBase?-(Coding Simplified)
@@ -133,7 +108,8 @@ data & data flow-(sudoCode)
 anatomy of applications & services?-(sudoCode)
 Logging,metrics,animation-(codeStoryWithMik)
 performance metrics-(sudoCode)
-Performance Metrics of components in a software-(sudoCode)
+LRU Cache,How LRU Works?-(Coding Simplified)
+
 
 
 

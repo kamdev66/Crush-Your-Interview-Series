@@ -1,0 +1,57 @@
+what is Availability?
+
+:- 
+
+Suppose, aaj hmara assignment submit krne ka last din hai,to saare
+students aaj request krenge hmare college portal pr,jisse server
+down ho jata hai,to hamre college portal ki Availability chli gyi
+
+:- hame ye dekhna hai ki wo har situation me Available rhe
+
+Availability= Total uptime/ + (Total downtime / Total uptime)×100%
+here,
+Total uptime is the total amount of time that the system is operational and accessible.
+Total downtime is the total amount of time that the system is unavailable or non-operational due to failures, maintenance, or other reasons.
+
+Availability in monolithic < Availability in Distributed(bcoz of SPOF)
+
+Fault tolerance is directly proportional to Availability
+
+How to increase Availability?
+1. Replication
+2. Distributed System
+3. redundancy
+
+redundancy:- redundancy is the duplication of nodes,in case some of them are failing.
+(suppose hmara ek component server pr deployed hai to hum us same server 
+ko dusre server pr deploy kr dunga)
+
+Replication:- includes redundancy  but synchronization of state between nodes.
+(ye ek tarah ka redundancy hi hai lekin isme synchronization v rhta h(har node ek
+dusre se synchronize rhte hai))
+
+redundancy:-
+1. Active redundancy:- is considered when each unit is operating /Active
+and to the action.multiple nodes are connected to a load balancer,
+and each unit receives an equal load.
+(suppose amazon ke 3 server server hai aur teeno hmesa working
+condition me rhega to usko hum active redundancy bolenge)
+
+2. Passive redundancy:- is considered when one node is active or
+operational and the other is not opearting.During the breakdown of 
+active node,the passive node maintains Availability by becoming 
+the active node
+(suppose isme 2 server hai , jisme se ek working condition me hai,
+aur ek nhi , lekin jab working condition wala server down ho jata
+hai to uske bad saara request jo working condition me nhi tha uske
+pass chla jayega aur ab wo work krne lgega)
+
+Replication:- redundancy + synchronization
+mtlb suppose hmare pass 1 database server hai usme kuch data store
+hai ,bad me agar hum iska dupliaction (redundancy) krte hai to 
+same data dusre server pr v hoga, lekin suppose iske baad hum ek 
+database server pr kuch data insert krte hai to dusre pr v jaakr 
+update krna hoga (isi ko hum synchronization bolte h).
+
+simply,database ke liye hum Replication hi use krte h
+
